@@ -1,0 +1,1280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Dashboard — Stackly</title>
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/AdminDashboard.css?v=37">
+  <link rel="stylesheet" href="css/CustomerDashboard.css?v=37">
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Customer Dashboard Layout -->
+  <div class="dashboard-wrapper">
+
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar" id="customerSidebar">
+      <div class="dashboard-brand">
+        <a href="404.html" class="brand-logo">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+        <button class="sidebar-close-btn" id="customerSidebarCloseBtn" aria-label="Close Sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="sidebar-menu">
+        <div class="sidebar-section-label">Account Navigation</div>
+
+        <button class="sidebar-item active" data-target="panel-my-orders">
+          <i class="fa-solid fa-box-open"></i>
+          <span>My Orders</span>
+          <span class="sidebar-badge">1 Active</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-my-shopping">
+          <i class="fa-solid fa-basket-shopping"></i>
+          <span>My Shopping</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-my-payments">
+          <i class="fa-solid fa-credit-card"></i>
+          <span>Payments</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-my-profile">
+          <i class="fa-solid fa-user-gear"></i>
+          <span>Profile &amp; Support</span>
+        </button>
+
+        <div class="sidebar-section-label" style="margin-top: 14px;">Farm &amp; Subscriptions</div>
+
+        <button class="sidebar-item" data-target="panel-weekly-crate">
+          <i class="fa-solid fa-carrot"></i>
+          <span>Weekly Crate</span>
+          <span class="sidebar-badge" style="background: rgba(40, 167, 69, 0.25); color: #5cdb80;">Active</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-farm-belts">
+          <i class="fa-solid fa-wheat-awn"></i>
+          <span>Farm Origin Belts</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-lab-certs">
+          <i class="fa-solid fa-certificate"></i>
+          <span>Lab Certificates</span>
+        </button>
+      </nav>
+
+      <!-- Harvest Loyalty Rewards Widget -->
+      <div class="sidebar-widget-card">
+        <div class="sidebar-widget-header">
+          <span><i class="fa-solid fa-seedling"></i> Green Rewards</span>
+          <span style="color: var(--accent); font-size: 0.78rem;">1,450 Pts</span>
+        </div>
+        <div class="sidebar-progress-bar">
+          <div class="sidebar-progress-fill" style="width: 72%;"></div>
+        </div>
+        <div class="sidebar-widget-sub">550 pts until Platinum (15% Off)</div>
+        <a href="404.html" class="sidebar-widget-btn">
+          <i class="fa-solid fa-gift"></i> Redeem Rewards
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="404.html" class="sidebar-item logout-item">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout Portal</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+
+      <!-- Top Bar -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="mobile-sidebar-toggle" aria-label="Toggle Sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-heading">
+            <h2 class="topbar-page-title font-serif">Customer Portal</h2>
+            <div class="topbar-breadcrumb">Organic Food Store &bull; Account Center</div>
+          </div>
+        </div>
+
+        <a href="404.html" class="topbar-mobile-logo" aria-label="Stackly Home">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+
+        <div class="topbar-actions">
+          <a href="404.html" class="action-btn" title="Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="action-badge">2</span>
+          </a>
+          <!-- Right Side Top Corner User Profile Card -->
+          <a href="404.html" class="topbar-user-card" style="text-decoration: none; cursor: pointer;">
+            <div class="topbar-user-icon">
+              <i class="fa-solid fa-circle-user"></i>
+            </div>
+            <div class="topbar-user-info">
+              <h4 class="user-display-full-name">Priya Sharma</h4>
+              <div class="topbar-user-meta">
+                <span class="user-display-email topbar-user-email">priya.sharma@example.com</span>
+                <span class="role-badge"><i class="fa-solid fa-crown"></i> VIP Gold Tier</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="dashboard-content">
+
+        <!-- 1. MY ORDERS PANEL (Default View) -->
+        <div class="dashboard-view-panel" id="panel-my-orders">
+
+          <!-- Welcome Overview Section -->
+          <div class="dashboard-overview-banner">
+            <div class="overview-banner-content">
+              <div class="overview-badge"><i class="fa-solid fa-seedling"></i> Member Overview</div>
+              <h1 class="overview-title font-serif">Welcome Back, <span class="user-display-first-name">Priya</span>!</h1>
+              <p class="overview-subtitle">Your Next Harvest Delivery: <strong>Tomorrow at 7:00 AM</strong></p>
+            </div>
+            <div class="overview-banner-action">
+              <a href="404.html" class="btn btn-primary">
+                <i class="fa-solid fa-basket-shopping"></i> Shop Harvest
+              </a>
+            </div>
+          </div>
+
+          <!-- KPI Metrics -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">1 Active</div>
+                <div class="kpi-label">Current Dawn Delivery</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-circle-check"></i> On Schedule</div>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-box-open"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="48" data-suffix="">48</div>
+                <div class="kpi-label">Total Completed Orders</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-star"></i> 100% On-Time</div>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-gift"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="1450" data-suffix=" Pts">1,450 Pts</div>
+                <div class="kpi-label">Green Rewards Balance</div>
+                <div class="kpi-change positive">Worth $14.50 Off</div>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-seedling"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">Weekly Crate</div>
+                <div class="kpi-label">Harvest Subscription</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-rotate"></i> Renews Monday</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Live Order Tracking Box -->
+          <div class="order-tracker-card" style="margin-top: 28px;">
+            <div class="order-tracker-header">
+              <div>
+                <span class="badge-organic" style="margin-bottom: 8px;"><i class="fa-solid fa-circle-notch fa-spin"></i>
+                  Live Delivery Tracking</span>
+                <h3 class="font-serif" style="font-size: 1.5rem; color: var(--primary);">Order #GH-9842 &bull; Dawn
+                  Harvest Basket</h3>
+                <p style="color: var(--text-muted); font-size: 0.9rem; margin-top: 4px;">4 Items: Hass Avocados,
+                  Strawberries, Wildflower Honey, Baby Spinach</p>
+              </div>
+              <div style="text-align: right;">
+                <div style="font-size: 1.6rem; font-weight: 800; color: var(--primary);">$38.48</div>
+                <span class="status-pill success"><i class="fa-solid fa-truck-fast"></i> Out for Delivery</span>
+              </div>
+            </div>
+
+            <!-- 4-Step Visual Timeline -->
+            <div class="order-timeline">
+              <div class="timeline-step-item completed">
+                <div class="timeline-dot"><i class="fa-solid fa-check"></i></div>
+                <div class="timeline-step-title">Picked at Dawn</div>
+                <div class="timeline-step-time">5:30 AM &bull; Sahyadri Farm</div>
+              </div>
+
+              <div class="timeline-step-item completed">
+                <div class="timeline-dot"><i class="fa-solid fa-check"></i></div>
+                <div class="timeline-step-title">Lab Inspected</div>
+                <div class="timeline-step-time">8:15 AM &bull; Residue Clean</div>
+              </div>
+
+              <div class="timeline-step-item active">
+                <div class="timeline-dot"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="timeline-step-title">Out for Delivery</div>
+                <div class="timeline-step-time">Electric Van &bull; Driver: Amit</div>
+              </div>
+
+              <div class="timeline-step-item">
+                <div class="timeline-dot"><i class="fa-solid fa-house"></i></div>
+                <div class="timeline-step-title">Doorstep Arrival</div>
+                <div class="timeline-step-time">Est. 7:00 AM Tomorrow</div>
+              </div>
+            </div>
+
+            <!-- Live Driver & Van Telemetry Card -->
+            <div
+              style="margin-top: 24px; background: rgba(36, 92, 58, 0.04); border: 1px solid rgba(36, 92, 58, 0.12); border-radius: var(--radius-lg); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+              <div style="display: flex; align-items: center; gap: 14px;">
+                <div
+                  style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
+                  <i class="fa-solid fa-user-check"></i>
+                </div>
+                <div>
+                  <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem;">Amit Verma &bull; Van #EV-01
+                  </div>
+                  <div
+                    style="font-size: 0.8rem; color: var(--text-muted); display: flex; align-items: center; gap: 8px;">
+                    <span><i class="fa-solid fa-snowflake" style="color: #28a745;"></i> Cargo Temp: <strong>2.4
+                        &deg;C</strong></span>
+                    <span>&bull;</span>
+                    <span><i class="fa-solid fa-bolt" style="color: var(--accent);"></i> Electric Clean Transit</span>
+                  </div>
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px;">
+                <a href="404.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-phone"></i> Call Driver
+                </a>
+                <a href="404.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-comment-dots"></i> Gate Notes
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Order History Table -->
+          <div style="margin-top: 32px;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+              <h3 class="font-serif" style="font-size: 1.4rem; color: var(--primary);"><i
+                  class="fa-solid fa-clock-rotate-left"></i> Past Orders History</h3>
+              <a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-bag-shopping"></i> Browse Store</a>
+            </div>
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Order #</th>
+                    <th>Date</th>
+                    <th>Items Purchased</th>
+                    <th>Total</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#GH-9720</strong></td>
+                    <td>Aug 14, 2026</td>
+                    <td>Organic Brown Rice (5kg), Virgin Coconut Oil (1L), Raw Almonds (500g)</td>
+                    <td><strong>$35.18</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                    <td><a href="404.html" class="btn btn-primary btn-sm">Re-Order</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#GH-9611</strong></td>
+                    <td>Aug 07, 2026</td>
+                    <td>Family Veggie Crate (Weekly Harvest &bull; 8kg Box)</td>
+                    <td><strong>$28.99</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                    <td><a href="404.html" class="btn btn-primary btn-sm">Re-Order</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#GH-9488</strong></td>
+                    <td>Jul 31, 2026</td>
+                    <td>Extra Virgin Olive Oil (500ml), Organic Chia Seeds (250g), Raw Honey (500g)</td>
+                    <td><strong>$38.80</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                    <td><a href="404.html" class="btn btn-primary btn-sm">Re-Order</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#GH-9340</strong></td>
+                    <td>Jul 24, 2026</td>
+                    <td>Fresh Farm Strawberries (1kg), Baby Spinach (500g), Hass Avocados (6 pcs)</td>
+                    <td><strong>$31.40</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                    <td><a href="404.html" class="btn btn-primary btn-sm">Re-Order</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#GH-9205</strong></td>
+                    <td>Jul 17, 2026</td>
+                    <td>Organic Himalayan Green Tea (100g), Artisanal Almonds (1kg)</td>
+                    <td><strong>$26.19</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Delivered</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                    <td><a href="404.html" class="btn btn-primary btn-sm">Re-Order</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2. MY SHOPPING PANEL -->
+        <div class="dashboard-view-panel" id="panel-my-shopping" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-basket-shopping"></i> Saved Wishlist &amp; Recurring Items</h3>
+              <p style="color: var(--text-muted);">Quickly re-stock your favorite weekly organic groceries in 1-click.
+              </p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="404.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-cart-plus"></i> Add All to Basket ($88.65)
+              </a>
+            </div>
+          </div>
+
+          <!-- 8-Card Responsive Catalog -->
+          <div class="dashboard-products-grid">
+            <!-- 1. Avocado -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/avocado.webp" alt="Organic Hass Avocado">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-rotate"></i> Weekly Recurring</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Fruits</span>
+                  <h4 class="dashboard-product-title">Organic Hass Avocado</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(4.9)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$4.99</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. Honey -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/honey-jar.webp" alt="Raw Wildflower Honey">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-heart"></i> Favorite</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Honey</span>
+                  <h4 class="dashboard-product-title">Raw Wildflower Honey</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(5.0)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$12.50</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 3. Olive Oil -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/olive-oil.webp" alt="Extra Virgin Olive Oil">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-droplet"></i> Cold-Pressed</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Oils</span>
+                  <h4 class="dashboard-product-title">Extra Virgin Olive Oil</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(5.0)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$18.50</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 4. Strawberries -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/strawberries.webp" alt="Fresh Farm Strawberries">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-leaf"></i> Fresh Harvest</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Berries</span>
+                  <h4 class="dashboard-product-title">Fresh Farm Strawberries</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(4.9)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$6.49</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 5. Brown Basmati Rice -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/brown-rice.webp" alt="Organic Brown Basmati Rice">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-wheat-awn"></i> Whole Grain</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Grains</span>
+                  <h4 class="dashboard-product-title">Organic Brown Basmati Rice</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(4.9)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$7.99</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 6. Chia Seeds -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/chia-seeds.webp" alt="Raw Organic Chia Seeds">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-shield-halved"></i> Superfood</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Superfoods</span>
+                  <h4 class="dashboard-product-title">Raw Organic Chia Seeds</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(5.0)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$8.99</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 7. Green Tea -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/green-tea.webp" alt="Himalayan Green Tea">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-mug-hot"></i> Organic Tea</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Beverages</span>
+                  <h4 class="dashboard-product-title">Himalayan Loose Green Tea</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(4.8)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$11.20</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+
+            <!-- 8. California Almonds -->
+            <div class="dashboard-product-card">
+              <div class="dashboard-product-thumb">
+                <img src="assets/almonds.webp" alt="Artisanal California Almonds">
+                <span class="dashboard-product-badge"><i class="fa-solid fa-bolt"></i> Protein Rich</span>
+              </div>
+              <div class="dashboard-product-body">
+                <div class="dashboard-product-meta">
+                  <span class="dashboard-product-category">Dry Fruits</span>
+                  <h4 class="dashboard-product-title">Raw California Almonds</h4>
+                  <div class="dashboard-product-rating">
+                    <i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i
+                      class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i>
+                    <span style="color: var(--text-muted); font-size: 0.75rem; margin-left: 4px;">(5.0)</span>
+                  </div>
+                </div>
+                <div class="dashboard-product-footer">
+                  <div class="dashboard-product-price">$14.99</div>
+                  <button class="btn btn-primary btn-sm btn-harvest-card-add"><i class="fa-solid fa-cart-plus"></i> Add</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. PAYMENTS PANEL -->
+        <div class="dashboard-view-panel" id="panel-my-payments" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-credit-card"></i> Saved Payment Methods</h3>
+              <p style="color: var(--text-muted);">Manage your cards, UPI handles, and auto-renewal subscriptions.</p>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-plus"></i> Add Payment Method
+            </a>
+          </div>
+
+          <div class="payment-cards-grid">
+            <!-- 1. Platinum Visa -->
+            <div class="payment-card-visual">
+              <div class="payment-card-top">
+                <div class="payment-chip"></div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <span class="role-badge"
+                    style="background: rgba(231, 169, 59, 0.3) !important; color: #ffffff !important; border: none;"><i
+                      class="fa-solid fa-check"></i> Default</span>
+                  <i class="fa-brands fa-cc-visa" style="font-size: 2rem; color: #ffffff;"></i>
+                </div>
+              </div>
+              <div class="payment-card-num">&bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull; &bull;&bull;&bull;&bull;
+                4821</div>
+              <div class="payment-card-bottom">
+                <div class="payment-card-holder">
+                  <span>Cardholder</span>
+                  <h5 class="user-display-card-name">PRIYA SHARMA</h5>
+                </div>
+                <div class="payment-card-holder" style="text-align: right;">
+                  <span>Expires</span>
+                  <h5>09 / 28</h5>
+                </div>
+              </div>
+            </div>
+
+            <!-- 2. UPI Direct Card -->
+            <div class="payment-upi-card">
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span class="badge-organic badge-gold"><i class="fa-solid fa-mobile-screen"></i> UPI Autopay</span>
+                <i class="fa-solid fa-qrcode" style="font-size: 1.8rem; color: var(--accent);"></i>
+              </div>
+              <div>
+                <div
+                  style="font-size: 0.75rem; color: var(--text-muted); font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em;">
+                  Linked VPA Handle</div>
+                <h4 style="font-size: 1.1rem; color: var(--primary); font-weight: 800; margin-top: 4px;" class="user-display-upi">
+                  priyasharma@okhdfcbank</h4>
+                <div
+                  style="display: inline-flex; align-items: center; gap: 5px; color: #1e7e34; font-size: 0.75rem; font-weight: 700; margin-top: 6px;">
+                  <i class="fa-solid fa-circle-check"></i> Active &bull; Instant 1-Click Verification
+                </div>
+              </div>
+              <div style="display: flex; gap: 8px; border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px;">
+                <a href="404.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center;">Manage UPI</a>
+              </div>
+            </div>
+
+            <!-- 3. Add Payment Card -->
+            <a href="404.html" class="add-payment-card" style="cursor: pointer; text-decoration: none;">
+              <div class="add-payment-icon">
+                <i class="fa-solid fa-plus"></i>
+              </div>
+              <div>
+                <h5 style="font-size: 1.05rem; color: var(--primary); font-weight: 700; margin-bottom: 4px;">Add New
+                  Method</h5>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin: 0;">Credit / Debit Card, UPI, or Net
+                  Banking</p>
+              </div>
+              <span class="role-badge"><i class="fa-solid fa-shield-halved"></i> 256-Bit Encrypted</span>
+            </a>
+          </div>
+
+          <!-- Loyalty Discount Auto-Apply Notice -->
+          <div
+            style="margin-top: 24px; background: linear-gradient(135deg, rgba(231, 169, 59, 0.12) 0%, rgba(36, 92, 58, 0.08) 100%); border: 1.5px solid rgba(231, 169, 59, 0.3); border-radius: var(--radius-lg); padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+            <div style="display: flex; align-items: center; gap: 14px;">
+              <div
+                style="width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem;">
+                <i class="fa-solid fa-gift"></i>
+              </div>
+              <div>
+                <div style="font-weight: 700; color: var(--primary); font-size: 0.95rem;">Harvest Green Points Discount
+                  Available</div>
+                <div style="font-size: 0.82rem; color: var(--text-muted);">You have <strong>1,450 Green Points</strong>
+                  ($14.50 value). Apply automatically to your next dawn box?</div>
+              </div>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-tag"></i> Auto-Apply $14.50
+            </a>
+          </div>
+
+          <!-- Billing History Table -->
+          <div style="margin-top: 32px;">
+            <h3 class="font-serif" style="font-size: 1.4rem; color: var(--primary); margin-bottom: 16px;"><i
+                class="fa-solid fa-receipt"></i> Subscription &amp; Order Invoice History</h3>
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Invoice #</th>
+                    <th>Date</th>
+                    <th>Description</th>
+                    <th>Payment Method</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                    <th>Receipt</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#INV-2026-88</strong></td>
+                    <td>Aug 24, 2026</td>
+                    <td>Dawn Harvest Basket (Order #GH-9842)</td>
+                    <td>Visa &bull;&bull;&bull;&bull; 4821</td>
+                    <td><strong>$38.48</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#INV-2026-75</strong></td>
+                    <td>Aug 14, 2026</td>
+                    <td>Pantry Restock Bundle (Order #GH-9720)</td>
+                    <td>UPI Autopay</td>
+                    <td><strong>$35.18</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#INV-2026-62</strong></td>
+                    <td>Aug 07, 2026</td>
+                    <td>Family Veggie Crate (Weekly Harvest)</td>
+                    <td>Visa &bull;&bull;&bull;&bull; 4821</td>
+                    <td><strong>$28.99</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#INV-2026-50</strong></td>
+                    <td>Jul 31, 2026</td>
+                    <td>Extra Virgin Olive Oil Refill &amp; Honey</td>
+                    <td>Visa &bull;&bull;&bull;&bull; 4821</td>
+                    <td><strong>$38.80</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#INV-2026-38</strong></td>
+                    <td>Jul 24, 2026</td>
+                    <td>Summer Berries &amp; Spinach Box</td>
+                    <td>UPI Autopay</td>
+                    <td><strong>$31.40</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Paid</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. PROFILE & SUPPORT PANEL -->
+        <div class="dashboard-view-panel" id="panel-my-profile" style="display: none;">
+          <div style="margin-bottom: 24px;">
+            <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                class="fa-solid fa-user-gear"></i> Personal Profile &amp; Preferences</h3>
+            <p style="color: var(--text-muted);">Update your delivery address, dietary preferences, and account
+              preferences.</p>
+          </div>
+
+          <div class="profile-grid-layout">
+            <!-- Left: Profile Form Card -->
+            <div class="profile-card-container">
+              <h4 class="font-serif" style="font-size: 1.25rem; color: var(--primary); margin-bottom: 20px;">
+                <i class="fa-solid fa-id-card"></i> Member Information &amp; Preferences
+              </h4>
+              <form id="customerProfileForm" novalidate>
+                <div class="profile-form-grid">
+                  <div class="profile-input-group">
+                    <label class="profile-label"><i class="fa-solid fa-user"></i> Full Name</label>
+                    <input type="text" class="profile-input" id="profFullName" value="Priya Sharma" required>
+                    <div class="auth-error-text" id="errProfName" style="display: none;">Please enter your full name.</div>
+                  </div>
+                  <div class="profile-input-group">
+                    <label class="profile-label"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                    <input type="email" class="profile-input" id="profEmail" value="priya.sharma@example.com" required>
+                    <div class="auth-error-text" id="errProfEmail" style="display: none;">Please enter a valid email address.</div>
+                  </div>
+                  <div class="profile-input-group">
+                    <label class="profile-label"><i class="fa-solid fa-phone"></i> Phone Number</label>
+                    <input type="tel" class="profile-input" id="profPhone" value="+91 98201 45678" required>
+                    <div class="auth-error-text" id="errProfPhone" style="display: none;">Please enter a valid phone number.</div>
+                  </div>
+                  <div class="profile-input-group">
+                    <label class="profile-label"><i class="fa-solid fa-clock"></i> Delivery Window</label>
+                    <select class="profile-select" id="profSlot">
+                      <option selected>Early Dawn (6:30 AM - 8:00 AM)</option>
+                      <option>Morning Slot (8:00 AM - 10:00 AM)</option>
+                      <option>Evening Harvest (5:00 PM - 7:00 PM)</option>
+                    </select>
+                  </div>
+
+                  <!-- Dietary Preferences -->
+                  <div class="profile-input-group full-width">
+                    <label class="profile-label"><i class="fa-solid fa-seedling"></i> Dietary &amp; Nutrition
+                      Preferences</label>
+                    <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px;">
+                      <label
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        <input type="checkbox" id="prefOrganic" checked> 100% Certified Organic
+                      </label>
+                      <label
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        <input type="checkbox" id="prefGlutenFree" checked> Gluten-Free
+                      </label>
+                      <label
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        <input type="checkbox" id="prefVegan"> Vegan Only
+                      </label>
+                      <label
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        <input type="checkbox" id="prefOils" checked> Cold-Pressed Oils
+                      </label>
+                    </div>
+                  </div>
+
+                  <div class="profile-input-group full-width">
+                    <label class="profile-label"><i class="fa-solid fa-location-dot"></i> Delivery Street
+                      Address</label>
+                    <textarea class="profile-textarea" id="profAddress"
+                      rows="3" required>Apartment 14B, Green Acres Heights, 14th Road, Bandra West, Mumbai 400050</textarea>
+                    <div class="auth-error-text" id="errProfAddress" style="display: none;">Please enter your delivery street address.</div>
+                  </div>
+                </div>
+
+                <div
+                  style="margin-top: 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+                  <button type="submit" class="btn btn-primary">
+                    <i class="fa-solid fa-floppy-disk"></i> Save Changes
+                  </button>
+                  <span style="font-size: 0.8rem; color: var(--text-muted);"><i class="fa-solid fa-shield-halved"></i>
+                    Changes auto-sync with live orders</span>
+                </div>
+              </form>
+            </div>
+
+            <!-- Right: Address & Support Card -->
+            <div class="profile-sidebar-card">
+              <div>
+                <h4 class="font-serif" style="font-size: 1.2rem; color: var(--primary); margin-bottom: 14px;">
+                  <i class="fa-solid fa-map-location-dot"></i> Saved Addresses (2)
+                </h4>
+                <div class="address-item-box" style="margin-bottom: 12px;">
+                  <div class="address-item-header">
+                    <span class="address-item-title"><i class="fa-solid fa-house"></i> Home (Default)</span>
+                    <span class="role-badge"
+                      style="background: rgba(40, 167, 69, 0.15) !important; color: #1e7e34 !important; border: 1px solid rgba(40, 167, 69, 0.3);">Active
+                      Route</span>
+                  </div>
+                  <p style="font-size: 0.86rem; color: var(--text-muted); margin: 6px 0 0 0; line-height: 1.5;">
+                    Apt 14B, Green Acres Heights, 14th Road, Bandra West, Mumbai 400050
+                  </p>
+                  <div style="margin-top: 8px;">
+                    <a href="404.html" class="btn btn-outline btn-sm" style="font-size: 0.78rem;">Edit Home Pin</a>
+                  </div>
+                </div>
+
+                <div class="address-item-box">
+                  <div class="address-item-header">
+                    <span class="address-item-title"><i class="fa-solid fa-building"></i> Office</span>
+                    <span class="role-badge"
+                      style="background: rgba(231,169,59,0.15)!important; color:#a46d14!important;">Secondary</span>
+                  </div>
+                  <p style="font-size: 0.86rem; color: var(--text-muted); margin: 6px 0 0 0; line-height: 1.5;">
+                    Level 8, One BKC, G-Block, Bandra Kurla Complex, Mumbai 400051
+                  </p>
+                  <div style="margin-top: 8px;">
+                    <a href="404.html" class="btn btn-outline btn-sm" style="font-size: 0.78rem;">Edit Office Pin</a>
+                  </div>
+                </div>
+              </div>
+
+              <div style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 18px;">
+                <h4 class="font-serif" style="font-size: 1.2rem; color: var(--primary); margin-bottom: 12px;">
+                  <i class="fa-solid fa-headset"></i> Farm Concierge Support
+                </h4>
+                <div style="display: flex; flex-direction: column; gap: 10px; font-size: 0.84rem;">
+                  <div style="color: var(--primary); font-weight: 700;">
+                    <i class="fa-solid fa-angles-right" style="color: var(--accent); font-size: 0.75rem;"></i> Need to
+                    pause your weekly box?
+                  </div>
+                  <p style="color: var(--text-muted); font-size: 0.8rem; margin: 0 0 6px 0; line-height: 1.4;">
+                    You can pause or reschedule anytime before 8:00 PM the previous evening.
+                  </p>
+                  <a href="404.html" class="btn btn-primary btn-sm" style="width: 100%; text-align: center; margin-top: 4px; display: block;">
+                    <i class="fa-solid fa-comment-dots"></i> Start Live Concierge Chat
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. WEEKLY CRATE SUBSCRIPTION PANEL -->
+        <div class="dashboard-view-panel" id="panel-weekly-crate" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-carrot"></i> My Weekly Farm Harvest Crate</h3>
+              <p style="color: var(--text-muted);">Manage your seasonal organic produce subscription box.</p>
+            </div>
+            <span class="role-badge"
+              style="background: rgba(40, 167, 69, 0.18) !important; color: #1e7e34 !important; font-size: 0.82rem; padding: 4px 12px;">
+              <i class="fa-solid fa-circle-check"></i> Active Subscription
+            </span>
+          </div>
+
+          <!-- Subscription Summary Card -->
+          <div class="order-tracker-card" style="margin-bottom: 28px;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid rgba(36, 92, 58, 0.1); padding-bottom: 18px;">
+              <div>
+                <span class="badge-organic">Family Harvest Box (7–8 kg)</span>
+                <h3 class="font-serif" style="font-size: 1.4rem; color: var(--primary); margin-top: 6px;">Next Crate
+                  Delivery: Monday, Aug 31 &bull; 7:00 AM</h3>
+                <p style="color: var(--text-muted); font-size: 0.88rem; margin: 4px 0 0 0;">Auto-renews at
+                  <strong>$28.99/week</strong> via Visa ending in 4821
+                </p>
+              </div>
+              <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="404.html" class="btn btn-outline btn-sm">
+                  <i class="fa-solid fa-pause"></i> Pause 1 Week
+                </a>
+                <a href="404.html" class="btn btn-primary btn-sm">
+                  <i class="fa-solid fa-sliders"></i> Swap Items
+                </a>
+              </div>
+            </div>
+
+            <!-- What's in your next crate (8 items) -->
+            <div style="margin-top: 22px;">
+              <h4 class="font-serif" style="font-size: 1.15rem; color: var(--primary); margin-bottom: 14px;">
+                <i class="fa-solid fa-boxes-packing"></i> Packed For Next Monday Dawn (8 Curated Items):
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/avocado.webp" alt="Avocados"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Hass Avocados</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">4 Pcs &bull; Sahyadri Belt</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/strawberries.webp" alt="Strawberries"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Farm Strawberries</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">500g &bull; Ooty Farm</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/honey-jar.webp" alt="Wildflower Honey"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Raw Wild Honey</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">250g Jar &bull; Nilgiri</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/olive-oil.webp" alt="Olive Oil"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Virgin Olive Oil</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">500ml &bull; Cold-Pressed</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/brown-rice.webp" alt="Brown Rice"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Basmati Rice</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">1 kg &bull; Bundelkhand</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/chia-seeds.webp" alt="Chia Seeds"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Organic Chia Seeds</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">200g &bull; Superfood</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/green-tea.webp" alt="Green Tea"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">Himalayan Green Tea</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">100g &bull; Loose Leaf</div>
+                  </div>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  <img src="assets/almonds.webp" alt="Almonds"
+                    style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
+                  <div>
+                    <div style="font-weight: 700; font-size: 0.9rem; color: var(--primary);">California Almonds</div>
+                    <div style="font-size: 0.75rem; color: var(--text-muted);">250g &bull; Raw Almonds</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Crate Size Upgrade Options -->
+            <div style="margin-top: 28px; border-top: 1px solid rgba(36,92,58,0.1); padding-top: 20px;">
+              <h4 class="font-serif" style="font-size: 1.15rem; color: var(--primary); margin-bottom: 14px;">
+                <i class="fa-solid fa-layer-group"></i> Upgrade Subscription Size:
+              </h4>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36,92,58,0.15); border-radius: var(--radius-lg); padding: 18px;">
+                  <div style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Solo Organic Crate (4 kg)
+                  </div>
+                  <div style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 4px 0;">$18.99 <small
+                      style="font-size: 0.75rem; font-weight: 500; color: var(--text-muted);">/ week</small></div>
+                  <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 10px 0;">Perfect for individuals.
+                    5 essentials weekly.</p>
+                  <button class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">Switch Tier</button>
+                </div>
+                <div
+                  style="background: rgba(231,169,59,0.06); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 18px;">
+                  <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <div style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Family Harvest (8 kg)
+                    </div>
+                    <span class="role-badge"><i class="fa-solid fa-check"></i> Current</span>
+                  </div>
+                  <div style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 4px 0;">$28.99 <small
+                      style="font-size: 0.75rem; font-weight: 500; color: var(--text-muted);">/ week</small></div>
+                  <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 10px 0;">Ideal for 3-4 people. 8
+                    curated items + honey.</p>
+                  <button class="btn btn-primary btn-sm" style="width: 100%;" disabled><i class="fa-solid fa-check"></i> Current Active Plan</button>
+                </div>
+                <div
+                  style="background: #ffffff; border: 1.5px solid rgba(36,92,58,0.15); border-radius: var(--radius-lg); padding: 18px;">
+                  <div style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Royal Feast Box (14 kg)
+                  </div>
+                  <div style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 4px 0;">$48.99 <small
+                      style="font-size: 0.75rem; font-weight: 500; color: var(--text-muted);">/ week</small></div>
+                  <p style="font-size: 0.82rem; color: var(--text-muted); margin: 0 0 10px 0;">Full pantry &amp; exotic
+                    fruit box + oils &amp; dry fruits.</p>
+                  <button class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">Upgrade to Feast</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. FARM ORIGIN BELTS PANEL -->
+        <div class="dashboard-view-panel" id="panel-farm-belts" style="display: none;">
+          <div style="margin-bottom: 24px;">
+            <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                class="fa-solid fa-wheat-awn"></i> Partner Farm Belts &amp; Soil Origins</h3>
+            <p style="color: var(--text-muted);">100% direct traceability to regional organic farming belts with clean
+              soil certifications.</p>
+          </div>
+
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 22px;">
+            <!-- Belt 1 -->
+            <div class="dashboard-product-card farm-origin-card" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="farm-belt-badge-row" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="badge-organic" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-mountain-sun"></i> Maharashtra</span>
+                  <span class="role-badge" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-circle-check"></i> Certified NPOP</span>
+                </div>
+                <h4 class="font-serif farm-belt-title" style="font-size: 1.25rem; color: var(--primary); margin: 0 0 10px 0; line-height: 1.3;">Sahyadri Valley Organics</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+                  Specializing in Hass Avocados, baby leafy greens, and pomegranates cultivated with rainwater harvesting.
+                </p>
+              </div>
+              <div
+                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                <span><i class="fa-solid fa-route" style="color: var(--accent);"></i> 140 km from Mumbai</span>
+                <span><i class="fa-solid fa-sun" style="color: var(--accent);"></i> 4:30 AM Dawn Pluck</span>
+              </div>
+            </div>
+
+            <!-- Belt 2 -->
+            <div class="dashboard-product-card farm-origin-card" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="farm-belt-badge-row" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="badge-organic badge-gold" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-seedling"></i> Tamil Nadu</span>
+                  <span class="role-badge" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-circle-check"></i> Pure Apiary</span>
+                </div>
+                <h4 class="font-serif farm-belt-title" style="font-size: 1.25rem; color: var(--primary); margin: 0 0 10px 0; line-height: 1.3;">Nilgiri Apiary Estate</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+                  High-altitude 1,800m apiary producing unprocessed raw wildflower honey and cold-pressed medicinal herbs.
+                </p>
+              </div>
+              <div
+                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                <span><i class="fa-solid fa-ban" style="color: var(--accent);"></i> Zero Antibiotics</span>
+                <span><i class="fa-solid fa-certificate" style="color: var(--accent);"></i> Grade A Raw</span>
+              </div>
+            </div>
+
+            <!-- Belt 3 -->
+            <div class="dashboard-product-card farm-origin-card" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="farm-belt-badge-row" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="badge-organic" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-snowflake"></i> Himachal Pradesh</span>
+                  <span class="role-badge" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-circle-check"></i> 100% Chemical Free</span>
+                </div>
+                <h4 class="font-serif farm-belt-title" style="font-size: 1.25rem; color: var(--primary); margin: 0 0 10px 0; line-height: 1.3;">Shimla Highland Orchards</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+                  Glacier-fed mountain soil producing naturally sweet Royal Delicious apples and sun-dried organic
+                  walnuts.
+                </p>
+              </div>
+              <div
+                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                <span><i class="fa-solid fa-water" style="color: var(--accent);"></i> Glacier Fed</span>
+                <span><i class="fa-solid fa-tree" style="color: var(--accent);"></i> Heritage Trees</span>
+              </div>
+            </div>
+
+            <!-- Belt 4 -->
+            <div class="dashboard-product-card farm-origin-card" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="farm-belt-badge-row" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="badge-organic" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-pepper-hot"></i> Kerala</span>
+                  <span class="role-badge" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-circle-check"></i> Bio-Dynamic</span>
+                </div>
+                <h4 class="font-serif farm-belt-title" style="font-size: 1.25rem; color: var(--primary); margin: 0 0 10px 0; line-height: 1.3;">Wayanad Spices &amp; Palm</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+                  Lush rain-forest slopes producing organic Malabar black pepper, wild cardamom, and virgin cold-pressed
+                  coconut oil.
+                </p>
+              </div>
+              <div
+                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                <span><i class="fa-solid fa-droplet" style="color: var(--accent);"></i> 100% Cold Process</span>
+                <span><i class="fa-solid fa-leaf" style="color: var(--accent);"></i> Single Origin</span>
+              </div>
+            </div>
+
+            <!-- Belt 5 -->
+            <div class="dashboard-product-card farm-origin-card" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="farm-belt-badge-row" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="badge-organic badge-gold" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-wheat-awn"></i> Madhya Pradesh</span>
+                  <span class="role-badge" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-circle-check"></i> NPOP Certified</span>
+                </div>
+                <h4 class="font-serif farm-belt-title" style="font-size: 1.25rem; color: var(--primary); margin: 0 0 10px 0; line-height: 1.3;">Bundelkhand Organic Grains</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+                  Traditional heirloom grain cultivars including unpolished brown basmati rice, ancient emmer wheat, and
+                  desi pulses.
+                </p>
+              </div>
+              <div
+                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                <span><i class="fa-solid fa-sun" style="color: var(--accent);"></i> Sun Dried</span>
+                <span><i class="fa-solid fa-award" style="color: var(--accent);"></i> Zero Bleach</span>
+              </div>
+            </div>
+
+            <!-- Belt 6 -->
+            <div class="dashboard-product-card farm-origin-card" style="padding: 22px; display: flex; flex-direction: column; justify-content: space-between;">
+              <div>
+                <div class="farm-belt-badge-row" style="display: flex; justify-content: space-between; align-items: center; gap: 8px; margin-bottom: 12px; flex-wrap: wrap;">
+                  <span class="badge-organic" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-oil-can"></i> Rajasthan</span>
+                  <span class="role-badge" style="font-size: 0.72rem; padding: 4px 10px; white-space: nowrap; flex-shrink: 0;"><i class="fa-solid fa-circle-check"></i> Wood Pressed</span>
+                </div>
+                <h4 class="font-serif farm-belt-title" style="font-size: 1.25rem; color: var(--primary); margin: 0 0 10px 0; line-height: 1.3;">Jodhpur Cold-Pressed Oils</h4>
+                <p style="font-size: 0.88rem; color: var(--text-muted); line-height: 1.5; margin-bottom: 14px;">
+                  Traditional wooden Kolhu (Ghani) extraction preserving natural vitamins in extra virgin olive oil,
+                  sesame, and mustard.
+                </p>
+              </div>
+              <div
+                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                <span><i class="fa-solid fa-temperature-low" style="color: var(--accent);"></i> &lt; 35&deg;C
+                  Press</span>
+                <span><i class="fa-solid fa-seedling" style="color: var(--accent);"></i> First Cold Extract</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. LAB CERTIFICATES PANEL -->
+        <div class="dashboard-view-panel" id="panel-lab-certs" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-certificate"></i> Verified Purity &amp; Lab Test Reports</h3>
+              <p style="color: var(--text-muted);">Third-party chemical residue and pesticide screening for all harvest
+                batches.</p>
+            </div>
+            <span class="role-badge"
+              style="background: rgba(40, 167, 69, 0.15) !important; color: #1e7e34 !important; padding: 6px 14px;">
+              <i class="fa-solid fa-shield-halved"></i> 100% Zero-Residue Guarantee
+            </span>
+          </div>
+
+          <!-- QC Overview Stat Cards -->
+          <div class="kpi-grid" style="margin-bottom: 28px;">
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-shield-virus"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value" style="color: #1e7e34;">0.00 PPM</div>
+                <div class="kpi-label">Pesticide Residue</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-check"></i> 100% Clean</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-vial-circle-check"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">99.8%</div>
+                <div class="kpi-label">Microbial Purity</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-check"></i> Grade A Safe</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-dna"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">Non-GMO</div>
+                <div class="kpi-label">Seed Authenticity</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-check"></i> Heirloom Verified</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Batch Test Certificates Table (5 Batches) -->
+          <h4 class="font-serif" style="font-size: 1.25rem; color: var(--primary); margin-bottom: 14px;">
+            <i class="fa-solid fa-file-contract"></i> Recent Batch Inspection Certificates
+          </h4>
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Batch ID</th>
+                  <th>Harvest Produce</th>
+                  <th>Testing Agency</th>
+                  <th>Inspection Date</th>
+                  <th>Chemical Screen</th>
+                  <th>Status</th>
+                  <th>Certificate</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#B-9842</strong></td>
+                  <td>Hass Avocados &amp; Baby Spinach</td>
+                  <td>Eurofins Analytical Labs</td>
+                  <td>Aug 23, 2026</td>
+                  <td>0.00 PPM (Residue Free)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> PASS</span></td>
+                  <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> PDF</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#B-9720</strong></td>
+                  <td>Raw Wildflower Honey</td>
+                  <td>SGS Purity Testing Ltd</td>
+                  <td>Aug 13, 2026</td>
+                  <td>100% Pure (Zero C4 Sugars)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> PASS</span></td>
+                  <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> PDF</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#B-9611</strong></td>
+                  <td>Cold-Pressed Olive Oil</td>
+                  <td>TÜV SÜD Organic Division</td>
+                  <td>Aug 06, 2026</td>
+                  <td>Acidity &lt; 0.3% (Grade A)</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> PASS</span></td>
+                  <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> PDF</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#B-9540</strong></td>
+                  <td>Organic Brown Basmati Rice</td>
+                  <td>NABL Accredited Agri-Test</td>
+                  <td>Jul 28, 2026</td>
+                  <td>Heavy Metals &lt; Limit of Quant.</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> PASS</span></td>
+                  <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> PDF</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#B-9430</strong></td>
+                  <td>Fresh Farm Strawberries</td>
+                  <td>Eurofins Analytical Labs</td>
+                  <td>Jul 20, 2026</td>
+                  <td>Zero Synthetic Fungicide Detected</td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> PASS</span></td>
+                  <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-download"></i> PDF</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Store Admin Console — Stackly</title>
+
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/AdminDashboard.css?v=37">
+</head>
+
+<body class="dashboard-body">
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Dashboard App Layout -->
+  <div class="dashboard-wrapper">
+
+    <!-- Sidebar Navigation -->
+    <aside class="dashboard-sidebar" id="adminSidebar">
+      <div class="dashboard-brand">
+        <a href="404.html" class="brand-logo">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+        <button class="sidebar-close-btn" id="adminSidebarCloseBtn" aria-label="Close Sidebar">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- Main Navigation Menu -->
+      <nav class="sidebar-menu">
+        <div class="sidebar-section-label">Store Operations</div>
+
+        <button class="sidebar-item active" data-target="panel-products">
+          <i class="fa-solid fa-boxes-stacked"></i>
+          <span>Product Inventory</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-orders">
+          <i class="fa-solid fa-cart-flatbed"></i>
+          <span>Order Management</span>
+          <span class="sidebar-badge">8 New</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-customers">
+          <i class="fa-solid fa-users"></i>
+          <span>Consumers &amp; VIPs</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-sales">
+          <i class="fa-solid fa-chart-line"></i>
+          <span>Sales &amp; Financials</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-settings">
+          <i class="fa-solid fa-gears"></i>
+          <span>Store Settings</span>
+        </button>
+
+        <div class="sidebar-section-label" style="margin-top: 14px;">Supply &amp; Logistics</div>
+
+        <button class="sidebar-item" data-target="panel-admin-farms">
+          <i class="fa-solid fa-tractor"></i>
+          <span>Partner Farms</span>
+          <span class="sidebar-badge">42 Belts</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-admin-fleet">
+          <i class="fa-solid fa-truck-ramp-box"></i>
+          <span>Cold Fleet Dispatch</span>
+          <span class="sidebar-badge" style="background: rgba(40, 167, 69, 0.25); color: #5cdb80;">14 Vans</span>
+        </button>
+
+        <button class="sidebar-item" data-target="panel-admin-audits">
+          <i class="fa-solid fa-clipboard-check"></i>
+          <span>Quality &amp; Lab Audits</span>
+        </button>
+      </nav>
+
+      <!-- Live Operational Health Widget -->
+      <div class="sidebar-widget-card">
+        <div class="sidebar-widget-header">
+          <span><i class="fa-solid fa-server"></i> Network Node #01</span>
+          <span style="color: #5cdb80; font-size: 0.75rem; font-weight: 700;">99.98% Live</span>
+        </div>
+        <div class="sidebar-progress-bar">
+          <div class="sidebar-progress-fill" style="width: 99%;"></div>
+        </div>
+        <div class="sidebar-eco-box">
+          <div class="sidebar-eco-item">
+            <i class="fa-solid fa-bolt" style="color: var(--accent);"></i>
+            <span>Latency: <strong>42 ms</strong> (Mumbai DC)</span>
+          </div>
+          <div class="sidebar-eco-item">
+            <i class="fa-solid fa-weight-hanging" style="color: var(--accent);"></i>
+            <span>Today's Harvest: <strong>4.8 Tons</strong></span>
+          </div>
+        </div>
+        <a href="404.html" class="sidebar-widget-btn"
+          style="text-decoration: none; display: flex; align-items: center; justify-content: center; gap: 8px;">
+          <i class="fa-solid fa-file-excel"></i> Export Daily Dispatch
+        </a>
+      </div>
+
+      <div class="sidebar-footer">
+        <a href="404.html" class="sidebar-item logout-item">
+          <i class="fa-solid fa-right-from-bracket"></i>
+          <span>Logout System</span>
+        </a>
+      </div>
+    </aside>
+
+    <!-- Main Content Area -->
+    <main class="dashboard-main">
+
+      <!-- Top Bar -->
+      <header class="dashboard-topbar">
+        <div class="topbar-left">
+          <button class="mobile-sidebar-toggle" aria-label="Toggle Sidebar">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <div class="topbar-heading">
+            <h2 class="topbar-page-title font-serif">Admin Console</h2>
+            <div class="topbar-breadcrumb">Store Operations &bull; Live Agriculture Network</div>
+          </div>
+        </div>
+
+        <a href="404.html" class="topbar-mobile-logo" aria-label="Stackly Home">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+
+        <div class="topbar-actions">
+          <a href="404.html" class="action-btn" title="System Notifications">
+            <i class="fa-solid fa-bell"></i>
+            <span class="action-badge">4</span>
+          </a>
+          <!-- Right Side Top Corner User Profile Card -->
+          <a href="404.html" class="topbar-user-card" style="text-decoration: none; cursor: pointer;">
+            <div class="topbar-user-icon">
+              <i class="fa-solid fa-user-shield"></i>
+            </div>
+            <div class="topbar-user-info">
+              <h4 class="user-display-full-name">Venkatesh Rao</h4>
+              <div class="topbar-user-meta">
+                <span class="user-display-email topbar-user-email">admin@stackly.org</span>
+                <span class="role-badge"><i class="fa-solid fa-shield-halved"></i> Super Admin</span>
+              </div>
+            </div>
+          </a>
+        </div>
+      </header>
+
+      <!-- Content Container -->
+      <div class="dashboard-content">
+
+        <!-- 1. PRODUCT MANAGEMENT PANEL (Default View) -->
+        <div class="dashboard-view-panel" id="panel-products">
+
+          <!-- Welcome Overview Section -->
+          <div class="dashboard-overview-banner">
+            <div class="overview-banner-content">
+              <div class="overview-badge"><i class="fa-solid fa-shield-halved"></i> Operations Console</div>
+              <h1 class="overview-title font-serif">Welcome, <span class="user-display-first-name">Venkatesh</span>!</h1>
+              <p class="overview-subtitle">Store Operations Console &bull; Live Agriculture Network</p>
+            </div>
+            <div class="overview-banner-action">
+              <a href="404.html" class="btn btn-outline">
+                <i class="fa-solid fa-house"></i> View Live Store
+              </a>
+            </div>
+          </div>
+
+          <!-- KPI Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-leaf"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="520" data-suffix="+">520+</div>
+                <div class="kpi-label">Active Organic Products</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-arrow-trend-up"></i> +14 this week</div>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="8450" data-suffix="">8,450</div>
+                <div class="kpi-label">Total Completed Orders</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-arrow-trend-up"></i> +18.4% growth</div>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-users"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="15800" data-suffix="">15,800</div>
+                <div class="kpi-label">Active Healthy Consumers</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-arrow-trend-up"></i> +420 new subscribers</div>
+              </div>
+            </div>
+
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="2480000" data-prefix="₹">₹24,80,000</div>
+                <div class="kpi-label">August Monthly Revenue</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-arrow-trend-up"></i> +22.5% vs July</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Charts Grid -->
+          <div class="charts-grid">
+            <div class="chart-box">
+              <div class="chart-header">
+                <div>
+                  <h3 class="font-serif">Monthly Harvest Revenue Flow</h3>
+                  <div class="chart-subtitle">Revenue in Lakhs (INR) Across 2026 Season</div>
+                </div>
+                <span class="badge-organic"><i class="fa-solid fa-circle-check"></i> Real-time</span>
+              </div>
+              <canvas id="monthlySalesCanvas" class="chart-canvas" height="240"></canvas>
+            </div>
+
+            <div class="chart-box">
+              <div class="chart-header">
+                <div>
+                  <h3 class="font-serif">Category Volume Share</h3>
+                  <div class="chart-subtitle">Order Breakdown by Category</div>
+                </div>
+                <span class="badge-organic badge-gold"><i class="fa-solid fa-chart-pie"></i> 100% Organic</span>
+              </div>
+              <canvas id="categoryDoughnutCanvas" class="chart-canvas" height="240"></canvas>
+            </div>
+          </div>
+
+          <!-- Product Inventory Data Table (8 Products) -->
+          <div style="margin-top: 32px;">
+            <div
+              style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; flex-wrap: wrap; gap: 12px;">
+              <h3 class="font-serif" style="font-size: 1.4rem; color: var(--primary);"><i
+                  class="fa-solid fa-boxes-stacked"></i> Live Product Inventory (8 Items)</h3>
+              <a href="404.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-plus"></i> Add New SKU
+              </a>
+            </div>
+
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Product Details</th>
+                    <th>Category</th>
+                    <th>Farm Origin</th>
+                    <th>Unit Price</th>
+                    <th>Stock Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Organic Hass Avocado</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-AVO-01</small></td>
+                    <td><span class="badge-organic">Fruits</span></td>
+                    <td>Sahyadri Valley Farm</td>
+                    <td><strong>$4.99 / pc</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 142 in Stock</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Raw Wildflower Forest Honey</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-HNY-04</small></td>
+                    <td><span class="badge-organic badge-gold">Honey</span></td>
+                    <td>Nilgiri Apiaries</td>
+                    <td><strong>$12.50 / jar</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 85 in Stock</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Extra Virgin Olive Oil</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-OIL-09</small></td>
+                    <td><span class="badge-organic">Oils</span></td>
+                    <td>Jodhpur Cold Press</td>
+                    <td><strong>$18.50 / 500ml</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 64 in Stock</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Fresh Farm Strawberries</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-STR-02</small></td>
+                    <td><span class="badge-organic">Berries</span></td>
+                    <td>Ooty Farm Estate</td>
+                    <td><strong>$6.49 / 500g</strong></td>
+                    <td><span class="status-pill warning"><i class="fa-solid fa-triangle-exclamation"></i> Low (12
+                        left)</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Restock</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Organic Brown Basmati Rice</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-RIC-10</small></td>
+                    <td><span class="badge-organic">Grains</span></td>
+                    <td>Bundelkhand Grains</td>
+                    <td><strong>$7.99 / 2kg</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 320 in Stock</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Raw Organic Chia Seeds</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-CHI-11</small></td>
+                    <td><span class="badge-organic">Superfoods</span></td>
+                    <td>Sahyadri Valley</td>
+                    <td><strong>$8.99 / 250g</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 98 in Stock</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Himalayan Loose Green Tea</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-TEA-07</small></td>
+                    <td><span class="badge-organic">Beverages</span></td>
+                    <td>Shimla Highlands</td>
+                    <td><strong>$11.20 / 100g</strong></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> 110 in Stock</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Edit</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Artisanal California Almonds</strong><br><small style="color: var(--text-muted);">SKU:
+                        STK-ALM-12</small></td>
+                    <td><span class="badge-organic">Dry Fruits</span></td>
+                    <td>Nashik Valley Groves</td>
+                    <td><strong>$14.99 / 500g</strong></td>
+                    <td><span class="status-pill warning"><i class="fa-solid fa-triangle-exclamation"></i> Low (15
+                        left)</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm">Restock</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- 2. ORDER MANAGEMENT PANEL -->
+        <div class="dashboard-view-panel" id="panel-orders" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-cart-flatbed"></i> Customer Orders Management</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">Review, dispatch, and track real-time dawn
+                harvest deliveries.</p>
+            </div>
+            <div style="display: flex; gap: 10px;">
+              <a href="404.html" class="btn btn-outline btn-sm">
+                <i class="fa-solid fa-filter"></i> Filter
+              </a>
+              <a href="404.html" class="btn btn-primary btn-sm">
+                <i class="fa-solid fa-download"></i> Export CSV
+              </a>
+            </div>
+          </div>
+
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Order ID</th>
+                  <th>Customer Name</th>
+                  <th>Delivery Route</th>
+                  <th>Items &amp; Basket</th>
+                  <th>Amount</th>
+                  <th>Harvest Status</th>
+                  <th>Actions</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>#GH-9842</strong></td>
+                  <td>Priya Sharma</td>
+                  <td>Bandra West &bull; Route 01</td>
+                  <td>Avocados, Strawberries, Honey</td>
+                  <td><strong>$38.48</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-truck-fast"></i> Out for Delivery</span>
+                  </td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Invoice</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#GH-9841</strong></td>
+                  <td>Vikram Singhania</td>
+                  <td>Juhu &bull; Route 02</td>
+                  <td>Family Veggie Crate (Weekly 8kg)</td>
+                  <td><strong>$28.99</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Harvest Packed</span>
+                  </td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Invoice</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#GH-9840</strong></td>
+                  <td>Meera Deshmukh</td>
+                  <td>Worli &bull; Route 03</td>
+                  <td>Olive Oil, Chia Seeds, Green Tea</td>
+                  <td><strong>$35.80</strong></td>
+                  <td><span class="status-pill warning"><i class="fa-solid fa-clock"></i> Dawn Picking</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Invoice</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#GH-9839</strong></td>
+                  <td>Anil Kumar</td>
+                  <td>BKC Complex &bull; Route 04</td>
+                  <td>Brown Basmati, Carrots, Almonds</td>
+                  <td><strong>$23.39</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-box"></i> Dispatched</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Invoice</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#GH-9838</strong></td>
+                  <td>Rohan Kapoor</td>
+                  <td>Lower Parel &bull; Route 03</td>
+                  <td>Solo Veggie Crate (4kg Box)</td>
+                  <td><strong>$18.99</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-truck-fast"></i> Out for Delivery</span>
+                  </td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Invoice</a></td>
+                </tr>
+                <tr>
+                  <td><strong>#GH-9837</strong></td>
+                  <td>Kavita Rao</td>
+                  <td>Khar West &bull; Route 01</td>
+                  <td>Strawberries (1kg), Olive Oil (500ml)</td>
+                  <td><strong>$24.99</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Delivered</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Invoice</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 3. CUSTOMER MANAGEMENT PANEL -->
+        <div class="dashboard-view-panel" id="panel-customers" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i class="fa-solid fa-users"></i>
+                Registered Customer Directory</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">Manage active subscriptions, loyalty tier points,
+                and customer satisfaction.</p>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-user-plus"></i> Add Consumer
+            </a>
+          </div>
+
+          <div class="dashboard-table-wrap">
+            <table class="dashboard-table">
+              <thead>
+                <tr>
+                  <th>Customer</th>
+                  <th>Subscription Tier</th>
+                  <th>Joined Date</th>
+                  <th>Total Orders</th>
+                  <th>Loyalty Points</th>
+                  <th>Status</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>Priya Sharma</strong><br><small
+                      style="color:var(--text-muted);">priya.sharma@example.com</small></td>
+                  <td><span class="badge-organic badge-gold"><i class="fa-solid fa-crown"></i> Weekly VIP Gold</span>
+                  </td>
+                  <td>Jan 12, 2025</td>
+                  <td>48 Orders</td>
+                  <td><strong>1,450 Pts</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Vikram Singhania</strong><br><small
+                      style="color:var(--text-muted);">vikram.s@example.com</small></td>
+                  <td><span class="badge-organic"><i class="fa-solid fa-carrot"></i> Family Crate</span></td>
+                  <td>Mar 04, 2025</td>
+                  <td>22 Orders</td>
+                  <td><strong>890 Pts</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Meera Deshmukh</strong><br><small
+                      style="color:var(--text-muted);">meera.d@example.com</small></td>
+                  <td><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Standard Member</span></td>
+                  <td>Jun 18, 2025</td>
+                  <td>12 Orders</td>
+                  <td><strong>420 Pts</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Anil Kumar</strong><br><small
+                      style="color:var(--text-muted);">anil.kumar@example.com</small></td>
+                  <td><span class="badge-organic badge-gold"><i class="fa-solid fa-crown"></i> Platinum
+                      Subscriber</span></td>
+                  <td>Feb 10, 2025</td>
+                  <td>36 Orders</td>
+                  <td><strong>2,100 Pts</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Manage</a></td>
+                </tr>
+                <tr>
+                  <td><strong>Rohan Kapoor</strong><br><small
+                      style="color:var(--text-muted);">rohan.k@example.com</small></td>
+                  <td><span class="badge-organic"><i class="fa-solid fa-carrot"></i> Solo Crate</span></td>
+                  <td>Apr 22, 2025</td>
+                  <td>16 Orders</td>
+                  <td><strong>650 Pts</strong></td>
+                  <td><span class="status-pill success"><i class="fa-solid fa-check"></i> Active</span></td>
+                  <td><a href="404.html" class="btn btn-outline btn-sm">Manage</a></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- 4. SALES & REPORTS PANEL -->
+        <div class="dashboard-view-panel" id="panel-sales" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-chart-line"></i> Financial Analytics &amp; Sourcing Reports</h3>
+              <p style="color: var(--text-muted); font-size: 0.95rem;">Review revenue growth, regional sales
+                distribution, and export audit sheets.</p>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-file-pdf"></i> Download Annual Report
+            </a>
+          </div>
+
+          <div class="guarantee-grid" style="margin-bottom: 28px;">
+            <div class="guarantee-card">
+              <div class="guarantee-icon"><i class="fa-solid fa-indian-rupee-sign"></i></div>
+              <h4 class="font-serif">₹2.48 Crore</h4>
+              <p>Gross Annual Sourcing Volume</p>
+            </div>
+            <div class="guarantee-card">
+              <div class="guarantee-icon"><i class="fa-solid fa-arrow-trend-up"></i></div>
+              <h4 class="font-serif">94.8%</h4>
+              <p>Customer Retention Rate</p>
+            </div>
+            <div class="guarantee-card">
+              <div class="guarantee-icon"><i class="fa-solid fa-hand-holding-dollar"></i></div>
+              <h4 class="font-serif">₹62.5 Lakh</h4>
+              <p>Direct Farmer Payouts (68%)</p>
+            </div>
+            <div class="guarantee-card">
+              <div class="guarantee-icon"><i class="fa-solid fa-percent"></i></div>
+              <h4 class="font-serif">0.3%</h4>
+              <p>Lowest Return Rate in Sector</p>
+            </div>
+          </div>
+
+          <!-- Monthly Financial Ledger Table -->
+          <div style="margin-top: 32px;">
+            <h4 class="font-serif" style="font-size: 1.25rem; color: var(--primary); margin-bottom: 16px;">
+              <i class="fa-solid fa-file-invoice-dollar"></i> 2026 Monthly Harvest Financial Flow
+            </h4>
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Month</th>
+                    <th>Gross Sales</th>
+                    <th>Farmer Direct Payout</th>
+                    <th>Cold Logistics Cost</th>
+                    <th>Net Profit</th>
+                    <th>Growth</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>August 2026 (Live)</strong></td>
+                    <td>₹24,80,000</td>
+                    <td>₹16,86,400</td>
+                    <td>₹2,48,000</td>
+                    <td><strong>₹5,45,600</strong></td>
+                    <td><span class="status-pill success">+22.5%</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>July 2026</strong></td>
+                    <td>₹20,24,000</td>
+                    <td>₹13,76,320</td>
+                    <td>₹2,10,000</td>
+                    <td><strong>₹4,37,680</strong></td>
+                    <td><span class="status-pill success">+18.0%</span></td>
+                  </tr>
+                  <tr>
+                    <td><strong>June 2026</strong></td>
+                    <td>₹17,15,000</td>
+                    <td>₹11,66,200</td>
+                    <td>₹1,85,000</td>
+                    <td><strong>₹3,63,800</strong></td>
+                    <td><span class="status-pill success">+14.2%</span></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. STORE SETTINGS PANEL -->
+        <div class="dashboard-view-panel" id="panel-settings" style="display: none;">
+          <div style="margin-bottom: 20px;">
+            <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i class="fa-solid fa-gears"></i>
+              Marketplace Configuration</h3>
+            <p style="color: var(--text-muted); font-size: 0.95rem;">Configure farm hubs, delivery windows, payment
+              gateways, and security policies.</p>
+          </div>
+
+          <div class="contact-form-card" style="max-width: 850px;">
+            <form id="adminSettingsForm" novalidate>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Store Brand Name</label>
+                  <input type="text" class="form-control" id="adminStoreName" value="Stackly Organic Foods" required>
+                  <div class="auth-error-text" id="errAdminStoreName" style="display: none;">Please enter a valid store brand name.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Support Helpline</label>
+                  <input type="text" class="form-control" id="adminHelpline" value="+91 800 555 0199" required>
+                  <div class="auth-error-text" id="errAdminHelpline" style="display: none;">Please enter a valid support helpline.</div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Default Dawn Delivery Window</label>
+                  <input type="text" class="form-control" id="adminDeliveryWindow" value="6:00 AM - 9:30 AM" required>
+                  <div class="auth-error-text" id="errAdminWindow" style="display: none;">Please enter a delivery window.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Minimum Order for Free Delivery</label>
+                  <input type="text" class="form-control" id="adminMinOrder" value="$25.00" required>
+                  <div class="auth-error-text" id="errAdminMinOrder" style="display: none;">Please enter minimum order amount.</div>
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">GSTIN / FSSAI License ID</label>
+                  <input type="text" class="form-control" id="adminGstin" value="27AABCS1429B1Z8 - FSSAI #10019022009842" required>
+                  <div class="auth-error-text" id="errAdminGstin" style="display: none;">Please enter valid GSTIN / FSSAI license ID.</div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Cold Van Dispatch Cutoff</label>
+                  <input type="text" class="form-control" id="adminCutoff" value="5:00 AM Daily Dawn" required>
+                  <div class="auth-error-text" id="errAdminCutoff" style="display: none;">Please specify van dispatch cutoff time.</div>
+                </div>
+              </div>
+
+              <div class="form-group">
+                <label class="form-label">Organic Guarantee Policy Notice</label>
+                <textarea class="form-control" id="adminPolicy" rows="3" required>100% chemical-free produce with unconditional 24-hour refund and replacement guarantee.</textarea>
+                <div class="auth-error-text" id="errAdminPolicy" style="display: none;">Please enter the organic guarantee policy statement.</div>
+              </div>
+
+              <button type="submit" class="btn btn-primary">
+                <i class="fa-solid fa-floppy-disk"></i> Save Configuration
+              </button>
+            </form>
+          </div>
+        </div>
+
+        <!-- 6. PARTNER FARMS PANEL -->
+        <div class="dashboard-view-panel" id="panel-admin-farms" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-tractor"></i> Partner Farm Belts &amp; Yield Network</h3>
+              <div style="color: var(--text-muted);">42 certified regional organic farms connected to Stackly
+                distribution hub.</div>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-plus"></i> Onboard New Farm
+            </a>
+          </div>
+
+          <!-- Farm KPI Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-tractor"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="42" data-suffix=" Farms">42 Farms</div>
+                <div class="kpi-label">Active Grower Belts</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-arrow-trend-up"></i> +3 this quarter</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-weight-hanging"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="4800" data-suffix=" kg">4,800 kg</div>
+                <div class="kpi-label">Today's Total Harvest</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-circle-check"></i> 100% On-Demand</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-seedling"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="98" data-suffix="%">98%</div>
+                <div class="kpi-label">Soil Quality Index</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-shield-halved"></i> Grade A Organic</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-map-location-dot"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value counter-val" data-target="14" data-suffix=" Belts">14 Belts</div>
+                <div class="kpi-label">Agronomic Zones</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-bolt"></i> &lt; 4 hr Transit</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Partner Farms Table (6 Regional Partner Farms) -->
+          <div style="margin-top: 32px;">
+            <h4 class="font-serif" style="font-size: 1.25rem; color: var(--primary); margin-bottom: 16px;">
+              <i class="fa-solid fa-list-check"></i> Connected Regional Farm Manifest (6 Hubs)
+            </h4>
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Farm Name &amp; Belt</th>
+                    <th>Lead Agronomist</th>
+                    <th>Crop Focus</th>
+                    <th>Daily Capacity</th>
+                    <th>QC Rating</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>Sahyadri Valley Organics</strong><br><small style="color: var(--text-muted);">Nashik,
+                        Maharashtra</small></td>
+                    <td>Ramesh Patil</td>
+                    <td>Avocados, Baby Greens</td>
+                    <td>1,200 kg</td>
+                    <td><span class="role-badge"
+                        style="background: rgba(40,167,69,0.15)!important; color:#1e7e34!important;">Grade A+</span>
+                    </td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Nilgiri Apiary &amp; Herbs</strong><br><small style="color: var(--text-muted);">Ooty,
+                        Tamil Nadu</small></td>
+                    <td>Dr. S. Sundaram</td>
+                    <td>Raw Honey, Herbs</td>
+                    <td>450 kg</td>
+                    <td><span class="role-badge"
+                        style="background: rgba(40,167,69,0.15)!important; color:#1e7e34!important;">Grade A+</span>
+                    </td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Shimla Apple Highlands</strong><br><small style="color: var(--text-muted);">Kotgarh,
+                        Himachal</small></td>
+                    <td>Vikram Chauhan</td>
+                    <td>Apples, Walnuts</td>
+                    <td>2,100 kg</td>
+                    <td><span class="role-badge"
+                        style="background: rgba(40,167,69,0.15)!important; color:#1e7e34!important;">Grade A</span></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Harvesting</span>
+                    </td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Wayanad Spices &amp; Palm</strong><br><small style="color: var(--text-muted);">Kalpetta,
+                        Kerala</small></td>
+                    <td>Mathew Varghese</td>
+                    <td>Spices, Coconut Oil</td>
+                    <td>800 kg</td>
+                    <td><span class="role-badge"
+                        style="background: rgba(40,167,69,0.15)!important; color:#1e7e34!important;">Grade A+</span>
+                    </td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Bundelkhand Organic Grains</strong><br><small style="color: var(--text-muted);">Jhansi,
+                        MP</small></td>
+                    <td>Ramswaroop Yadav</td>
+                    <td>Basmati Rice, Desi Pulses</td>
+                    <td>3,400 kg</td>
+                    <td><span class="role-badge"
+                        style="background: rgba(40,167,69,0.15)!important; color:#1e7e34!important;">Grade A</span></td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>Jodhpur Cold Press Mills</strong><br><small style="color: var(--text-muted);">Marwar,
+                        Rajasthan</small></td>
+                    <td>Gopal Choudhary</td>
+                    <td>Mustard &amp; Olive Oils</td>
+                    <td>650 kg</td>
+                    <td><span class="role-badge"
+                        style="background: rgba(40,167,69,0.15)!important; color:#1e7e34!important;">Grade A+</span>
+                    </td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Active</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-eye"></i> View</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. COLD FLEET DISPATCH PANEL -->
+        <div class="dashboard-view-panel" id="panel-admin-fleet" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-truck-ramp-box"></i> Cold-Chain Electric Fleet Dispatch</h3>
+              <div style="color: var(--text-muted);">Live telemetry and temperature monitoring for 14 electric morning
+                vans.</div>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-plus"></i> Dispatch Extra Van
+            </a>
+          </div>
+
+          <!-- Fleet KPI Grid -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-truck-fast"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">14 / 14</div>
+                <div class="kpi-label">Active Electric Vans</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-bolt"></i> 100% Electric EV</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value" style="color: #1e7e34;">2.4 &deg;C</div>
+                <div class="kpi-label">Average Cargo Temp</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-snowflake"></i> Target: 2-4&deg;C</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-box-check"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">128 / 136</div>
+                <div class="kpi-label">Dawn Drops Done</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-circle-check"></i> 94.1% Complete</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-stopwatch"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">18.2 min</div>
+                <div class="kpi-label">Avg Drop Interval</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-arrow-trend-up"></i> On-Time Rate 99.4%</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Fleet Dispatch Live Tracking Table (6 Vans) -->
+          <div style="margin-top: 32px;">
+            <h4 class="font-serif" style="font-size: 1.25rem; color: var(--primary); margin-bottom: 16px;">
+              <i class="fa-solid fa-satellite-dish"></i> Live Fleet Dispatch Status (Mumbai Zones)
+            </h4>
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Van ID</th>
+                    <th>Driver Name</th>
+                    <th>Delivery Zone</th>
+                    <th>Cargo Temp</th>
+                    <th>Drops Left</th>
+                    <th>Battery</th>
+                    <th>Route Status</th>
+                    <th>Live GPS</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>EV-VAN-01</strong></td>
+                    <td>Amit Verma</td>
+                    <td>Bandra West &bull; Khar</td>
+                    <td><span style="font-weight: 700; color: #1e7e34;"><i class="fa-solid fa-snowflake"></i> 2.1
+                        &deg;C</span></td>
+                    <td>2 / 18</td>
+                    <td>82%</td>
+                    <td><span class="status-pill warning"><i class="fa-solid fa-truck"></i> Delivering</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-location-dot"></i> Ping</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>EV-VAN-02</strong></td>
+                    <td>Kunal Shinde</td>
+                    <td>Juhu &bull; Vile Parle</td>
+                    <td><span style="font-weight: 700; color: #1e7e34;"><i class="fa-solid fa-snowflake"></i> 2.5
+                        &deg;C</span></td>
+                    <td>0 / 16</td>
+                    <td>74%</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Completed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-location-dot"></i> Ping</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>EV-VAN-03</strong></td>
+                    <td>Deepak Joshi</td>
+                    <td>Worli &bull; Lower Parel</td>
+                    <td><span style="font-weight: 700; color: #1e7e34;"><i class="fa-solid fa-snowflake"></i> 2.8
+                        &deg;C</span></td>
+                    <td>4 / 20</td>
+                    <td>68%</td>
+                    <td><span class="status-pill warning"><i class="fa-solid fa-truck"></i> Delivering</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-location-dot"></i> Ping</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>EV-VAN-04</strong></td>
+                    <td>Sunil Gaikwad</td>
+                    <td>BKC &bull; Kurla Complex</td>
+                    <td><span style="font-weight: 700; color: #1e7e34;"><i class="fa-solid fa-snowflake"></i> 2.0
+                        &deg;C</span></td>
+                    <td>1 / 14</td>
+                    <td>88%</td>
+                    <td><span class="status-pill warning"><i class="fa-solid fa-truck"></i> Delivering</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-location-dot"></i> Ping</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>EV-VAN-05</strong></td>
+                    <td>Rajesh Nair</td>
+                    <td>Powai &bull; Hiranandani</td>
+                    <td><span style="font-weight: 700; color: #1e7e34;"><i class="fa-solid fa-snowflake"></i> 2.3
+                        &deg;C</span></td>
+                    <td>0 / 18</td>
+                    <td>62%</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Completed</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-location-dot"></i> Ping</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>EV-VAN-06</strong></td>
+                    <td>Vikas More</td>
+                    <td>South Bombay &bull; Malabar</td>
+                    <td><span style="font-weight: 700; color: #1e7e34;"><i class="fa-solid fa-snowflake"></i> 2.4
+                        &deg;C</span></td>
+                    <td>3 / 15</td>
+                    <td>70%</td>
+                    <td><span class="status-pill warning"><i class="fa-solid fa-truck"></i> Delivering</span></td>
+                    <td><a href="404.html" class="btn btn-outline btn-sm"><i class="fa-solid fa-location-dot"></i> Ping</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. QUALITY & LAB AUDITS PANEL -->
+        <div class="dashboard-view-panel" id="panel-admin-audits" style="display: none;">
+          <div
+            style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 24px; flex-wrap: wrap; gap: 12px;">
+            <div>
+              <h3 class="font-serif" style="font-size: 1.6rem; color: var(--primary);"><i
+                  class="fa-solid fa-clipboard-check"></i> Quality Assurance &amp; Chemical Screening Audits</h3>
+              <div style="color: var(--text-muted);">Standardized chemical residue screening and NPOP purity
+                certifications.</div>
+            </div>
+            <a href="404.html" class="btn btn-primary btn-sm">
+              <i class="fa-solid fa-file-circle-plus"></i> Record Audit Entry
+            </a>
+          </div>
+
+          <!-- QC Summary KPI Cards -->
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-flask-vial"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">18 Batches</div>
+                <div class="kpi-label">Audited Today</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-check"></i> 100% Sampled</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-shield-virus"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value" style="color: #1e7e34;">0 Failed</div>
+                <div class="kpi-label">Residue Violations</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-shield-halved"></i> 100% Clean Soil</div>
+              </div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-icon"><i class="fa-solid fa-stamp"></i></div>
+              <div class="kpi-info">
+                <div class="kpi-value">NPOP / USDA</div>
+                <div class="kpi-label">Certification Status</div>
+                <div class="kpi-change positive"><i class="fa-solid fa-circle-check"></i> Audit Valid 2026</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Batch Inspection Manifest (6 Batches) -->
+          <div style="margin-top: 32px;">
+            <h4 class="font-serif" style="font-size: 1.25rem; color: var(--primary); margin-bottom: 16px;">
+              <i class="fa-solid fa-file-signature"></i> Today's Batch Clearance Certificates (6 Batches)
+            </h4>
+            <div class="dashboard-table-wrap">
+              <table class="dashboard-table">
+                <thead>
+                  <tr>
+                    <th>Batch #</th>
+                    <th>Produce Category</th>
+                    <th>Source Farm</th>
+                    <th>Chemical Screen</th>
+                    <th>Certified Inspector</th>
+                    <th>Clearance</th>
+                    <th>Certificate</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><strong>#QC-9842</strong></td>
+                    <td>Avocados &amp; Spinach</td>
+                    <td>Sahyadri Valley</td>
+                    <td><span style="color: #1e7e34; font-weight: 700;">0.00 PPM (Clean)</span></td>
+                    <td>Dr. Ananya Roy</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Cleared</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#QC-9841</strong></td>
+                    <td>Raw Wildflower Honey</td>
+                    <td>Nilgiri Apiary</td>
+                    <td><span style="color: #1e7e34; font-weight: 700;">0% Added Sugar</span></td>
+                    <td>P. Narayanan</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Cleared</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#QC-9840</strong></td>
+                    <td>Extra Virgin Olive Oil</td>
+                    <td>Rajasthan Belt</td>
+                    <td><span style="color: #1e7e34; font-weight: 700;">Acidity &lt; 0.3%</span></td>
+                    <td>Dr. Ananya Roy</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Cleared</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#QC-9839</strong></td>
+                    <td>Organic Basmati Rice</td>
+                    <td>Bundelkhand Grains</td>
+                    <td><span style="color: #1e7e34; font-weight: 700;">Zero Heavy Metals</span></td>
+                    <td>V. Shastry</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Cleared</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#QC-9838</strong></td>
+                    <td>Fresh Farm Strawberries</td>
+                    <td>Ooty Farm Estate</td>
+                    <td><span style="color: #1e7e34; font-weight: 700;">0.00 PPM Fungicide</span></td>
+                    <td>Dr. Ananya Roy</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Cleared</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                  <tr>
+                    <td><strong>#QC-9837</strong></td>
+                    <td>Malabar Black Pepper &amp; Spices</td>
+                    <td>Wayanad Palm Estate</td>
+                    <td><span style="color: #1e7e34; font-weight: 700;">100% Piperine Pure</span></td>
+                    <td>P. Narayanan</td>
+                    <td><span class="status-pill success"><i class="fa-solid fa-circle-check"></i> Cleared</span></td>
+                    <td><a href="javascript:void(0)" class="btn btn-outline btn-sm"><i class="fa-solid fa-file-pdf"></i> PDF</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+</body>
+
+</html>
+

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Organic Categories  Stackly</title>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/Categories.css?v=37">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Global Header & Sticky Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="Shop.html" class="nav-link">Shop</a></li>
+          <li><a href="Categories.html" class="nav-link active">Categories</a></li>
+          <li><a href="Products.html" class="nav-link">Products</a></li>
+          <li><a href="About.html" class="nav-link">About</a></li>
+          <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="Login.html" class="btn btn-primary btn-sm nav-login-btn">
+            <i class="fa-solid fa-user"></i>
+            <span>Login</span>
+          </a>
+          <button class="hamburger-btn" id="mobileToggleBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo01.webp" alt="Stackly">
+      </a>
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link"><span>Home</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Shop.html" class="mobile-nav-link"><span>Shop</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Categories.html" class="mobile-nav-link active"><span>Categories</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Products.html" class="mobile-nav-link"><span>Products</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="About.html" class="mobile-nav-link"><span>About</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Contact.html" class="mobile-nav-link"><span>Contact</span><i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="Login.html" class="btn btn-primary" style="width: 100%;">
+        <i class="fa-solid fa-user"></i> Login to Account
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> Your Basket</h3>
+      <button class="action-btn" id="cartCloseBtn" aria-label="Close Basket">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-val" id="cartSubtotalValue">$22.48</span>
+      </div>
+      <a href="404.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">
+        <i class="fa-solid fa-truck-fast"></i> Proceed to Checkout
+      </a>
+      <a href="404.html" class="btn btn-outline" style="width: 100%;">
+        Continue Shopping
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input" id="globalSearchInput" placeholder="Search organic fruits, veggies, grains, oils...">
+        <button class="action-btn" id="searchCloseBtn" aria-label="Close Search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-modal-results" id="searchResultsList"></div>
+    </div>
+  </div>
+
+  <!-- 1. Big Size Page Hero Banner -->
+  <section class="page-hero hero-categories">
+    <div class="container">
+      <span class="section-tag" data-aos="fade-down"><i class="fa-solid fa-layer-group"></i> 100% Certified Collections</span>
+      <h1 class="page-hero-title font-serif" data-aos="fade-up" data-aos-delay="100">Explore Our Organic World</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+        Discover nature's finest harvest organized into carefully curated collections of clean, nourishing foods.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Categories Showcase (10 Categories) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="categories-showcase-grid">
+
+        <!-- 1. Fruits -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/fruits.webp" alt="Organic Fruits">
+            <span class="category-item-count-badge">24 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-apple-whole"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Organic Fruits</h3>
+            <p class="category-featured-desc">Sun-ripened orchard apples, berries, and citrus harvested at peak nutritional maturity.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Avocados</span>
+                <span class="cat-tag">Berries</span>
+                <span class="cat-tag">Apples</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Vegetables -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/vegetables.webp" alt="Fresh Vegetables">
+            <span class="category-item-count-badge">36 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-carrot"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Fresh Vegetables</h3>
+            <p class="category-featured-desc">Crisp leafy greens, crunchy roots, and nutrient-dense farm vegetables free from chemicals.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Spinach</span>
+                <span class="cat-tag">Carrots</span>
+                <span class="cat-tag">Broccoli</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Grains -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/grains.webp" alt="Organic Grains">
+            <span class="category-item-count-badge">18 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-wheat-awn"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Organic Grains</h3>
+            <p class="category-featured-desc">Ancient unpolished grains, organic brown basmati rice, quinoa, and high-fiber millets.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Brown Rice</span>
+                <span class="cat-tag">Quinoa</span>
+                <span class="cat-tag">Chia</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Dairy -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/dairy.webp" alt="Dairy & Eggs">
+            <span class="category-item-count-badge">14 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-bottle-droplet"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Dairy &amp; Eggs</h3>
+            <p class="category-featured-desc">Grass-fed wholesome milk, farm artisanal butter, organic paneer, and pasture-raised eggs.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">A2 Milk</span>
+                <span class="cat-tag">Desi Ghee</span>
+                <span class="cat-tag">Free-range</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Snacks -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/snacks.webp" alt="Natural Snacks">
+            <span class="category-item-count-badge">22 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-box"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Natural Snacks</h3>
+            <p class="category-featured-desc">Slow-roasted almonds, walnuts, sun-dried figs, and clean-label nutrient bars.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Almonds</span>
+                <span class="cat-tag">Walnuts</span>
+                <span class="cat-tag">Trail Mix</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Honey -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/honey.webp" alt="Honey & Spreads">
+            <span class="category-item-count-badge">12 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-droplet"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Honey &amp; Spreads</h3>
+            <p class="category-featured-desc">Unprocessed raw forest wildflower honey, natural peanut butters, and fruit preserves.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Wildflower</span>
+                <span class="cat-tag">Acacia</span>
+                <span class="cat-tag">Almond Butter</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Oils -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/oils.webp" alt="Cold-Pressed Oils">
+            <span class="category-item-count-badge">16 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-bottle-droplet"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Cold-Pressed Oils</h3>
+            <p class="category-featured-desc">Wood-pressed mustard, virgin coconut, extra virgin olive, and sesame oils.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Olive Oil</span>
+                <span class="cat-tag">Coconut Oil</span>
+                <span class="cat-tag">Mustard</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Beverages -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/beverages.webp" alt="Organic Beverages">
+            <span class="category-item-count-badge">19 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-leaf"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Organic Beverages</h3>
+            <p class="category-featured-desc">Artisanal kombucha, whole leaf green tea, cold-pressed citrus juice, and herbal tonics.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Green Tea</span>
+                <span class="cat-tag">Kombucha</span>
+                <span class="cat-tag">Herbal</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Herbs -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/herbs.webp" alt="Fresh Herbs">
+            <span class="category-item-count-badge">15 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Fresh Herbs</h3>
+            <p class="category-featured-desc">Aromatic basil, rosemary, mint, oregano, and coriander freshly snipped at dawn.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Basil</span>
+                <span class="cat-tag">Rosemary</span>
+                <span class="cat-tag">Mint</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Natural Pantry -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/pantry.webp" alt="Natural Pantry">
+            <span class="category-item-count-badge">28 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-basket-shopping"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Natural Pantry</h3>
+            <p class="category-featured-desc">Organic whole spices, pulses, pink Himalayan salt, and unrefined coconut sugars.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Spices</span>
+                <span class="cat-tag">Pulses</span>
+                <span class="cat-tag">Pink Salt</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Superfoods & Seeds -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/chia-seeds.webp" alt="Superfoods &amp; Seeds">
+            <span class="category-item-count-badge">16 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-spa"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Superfoods &amp; Seeds</h3>
+            <p class="category-featured-desc">Nutrient-dense chia seeds, organic flax seeds, spirulina powder, and antioxidant cacao nibs.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Chia Seeds</span>
+                <span class="cat-tag">Flax Seeds</span>
+                <span class="cat-tag">Cacao</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Artisanal Dry Fruits -->
+        <div class="category-featured-card">
+          <div class="category-featured-thumb">
+            <img src="assets/almonds.webp" alt="Artisanal Dry Fruits">
+            <span class="category-item-count-badge">20 Products</span>
+          </div>
+          <div class="category-featured-body">
+            <div class="category-featured-icon">
+              <i class="fa-solid fa-jar"></i>
+            </div>
+            <h3 class="category-featured-title font-serif">Artisanal Dry Fruits</h3>
+            <p class="category-featured-desc">Sun-dried mountain figs, California raw almonds, seedless black raisins, and royal organic cashews.</p>
+            <div class="category-featured-footer">
+              <div class="category-popular-tags">
+                <span class="cat-tag">Almonds</span>
+                <span class="cat-tag">Dried Figs</span>
+                <span class="cat-tag">Cashews</span>
+              </div>
+              <a href="404.html" class="btn btn-primary btn-sm">Explore <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Regional Direct Sourcing Matrix -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-location-dot"></i> Geographical Origin</span>
+        <h2 class="section-title font-serif">Direct From India's Premier Organic Belts</h2>
+        <p class="section-desc">Each category is cultivated in its optimal micro-climate and native soil conditions.</p>
+      </div>
+
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-apple-whole"></i></div>
+          <h4 class="font-serif">Nashik &amp; Himachal</h4>
+          <p>Orchard apples, table grapes, citrus groves, and raw mountain wildflower apiaries.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+          <h4 class="font-serif">Punjab &amp; Rajasthan</h4>
+          <p>Heritage brown basmati, heirloom wheat varieties, unpolished pulses, and mustard seeds.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-droplet"></i></div>
+          <h4 class="font-serif">Kerala &amp; Coorg</h4>
+          <p>Virgin coconut oil, cold-pressed sesame, shade-grown whole leaf tea, and black pepper.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-carrot"></i></div>
+          <h4 class="font-serif">Sahyadri Foothills</h4>
+          <p>Year-round chemical-free baby spinach, heirloom carrots, broccoli, and crisp salad herbs.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Seasonal Calendar & Nutrition Guide -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="category-guide-box">
+        <div class="category-guide-content">
+          <span class="section-tag"><i class="fa-solid fa-seedling"></i> Seasonal Calendar</span>
+          <h3 class="font-serif">How to Shop Seasonally for Maximum Nutrition</h3>
+          <p>
+            Eating in rhythm with nature ensures your produce contains higher levels of vitamins, phytonutrients, and natural flavor while supporting regenerative farming cycles.
+          </p>
+          <div class="category-guide-list">
+            <div class="category-guide-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Spring / Summer: Leafy greens, berries, mangoes &amp; cucumbers</span>
+            </div>
+            <div class="category-guide-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Monsoon / Autumn: Root carrots, ancient millets &amp; wild honey</span>
+            </div>
+            <div class="category-guide-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Winter: Brassicas, citrus fruits, cold-pressed mustard &amp; dry fruits</span>
+            </div>
+          </div>
+        </div>
+        <div>
+          <img src="assets/about-story.webp" alt="Seasonal Organic Produce" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md);">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. 4-Pillar Organic Category Certification Protocol -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-shield-halved"></i> Rigorous Protocols</span>
+        <h2 class="section-title font-serif">Category Purity Standards</h2>
+        <p class="section-desc">Every product line satisfies our strict laboratory analysis before reaching your basket.</p>
+      </div>
+
+      <div class="process-workflow-grid">
+        <div class="process-step-box">
+          <span class="process-time-badge">Fresh Produce</span>
+          <div class="process-step-icon"><i class="fa-solid fa-carrot"></i></div>
+          <h4 class="font-serif">Zero Synthetic Residue</h4>
+          <p>Screened against 240+ agricultural pesticides and chemical ripening compounds.</p>
+        </div>
+
+        <div class="process-step-box">
+          <span class="process-time-badge">Grains &amp; Staples</span>
+          <div class="process-step-icon"><i class="fa-solid fa-wheat-awn"></i></div>
+          <h4 class="font-serif">Non-GMO Verified</h4>
+          <p>Cultivated exclusively with open-pollinated, heirloom indigenous seed varieties.</p>
+        </div>
+
+        <div class="process-step-box">
+          <span class="process-time-badge">Oils &amp; Honey</span>
+          <div class="process-step-icon"><i class="fa-solid fa-bottle-droplet"></i></div>
+          <h4 class="font-serif">100% Wood-Pressed</h4>
+          <p>Extracted below 45&deg;C without heat refining, deodorizers, or chemical solvents.</p>
+        </div>
+
+        <div class="process-step-box">
+          <span class="process-time-badge">Dairy &amp; Eggs</span>
+          <div class="process-step-icon"><i class="fa-solid fa-egg"></i></div>
+          <h4 class="font-serif">Pasture Raised</h4>
+          <p>Free from synthetic antibiotics, artificial hormones, or industrial caged farming.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Curated Pantry Starter Bundles -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-box"></i> Starter Packs</span>
+        <h2 class="section-title font-serif">Curated Category Starter Bundles</h2>
+        <p class="section-desc">Everything you need to switch your home pantry into a 100% organic sanctuary.</p>
+      </div>
+
+      <div class="bundles-grid">
+        <div class="bundle-card">
+          <h3 class="bundle-title font-serif">Organic Pantry Starter</h3>
+          <p class="bundle-desc">Brown basmati rice, cold-pressed coconut oil, chia seeds, and Himalayan pink salt.</p>
+          <div class="bundle-price">$34.99 <span>bundle</span></div>
+          <div class="bundle-features">
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 2 kg Organic Brown Rice</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 500ml Cold-Pressed Coconut Oil</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 250g Black Chia Seeds</div>
+          </div>
+          <a href="404.html" class="btn btn-outline" style="width: 100%;">View in Shop</a>
+        </div>
+
+        <div class="bundle-card featured">
+          <span class="bundle-popular-badge"><i class="fa-solid fa-star"></i> Bestseller</span>
+          <h3 class="bundle-title font-serif">Breakfast Wellness Pack</h3>
+          <p class="bundle-desc">Raw wildflower forest honey, California raw almonds, and whole leaf green tea.</p>
+          <div class="bundle-price">$29.50 <span>bundle</span></div>
+          <div class="bundle-features">
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 500g Raw Wildflower Honey</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 400g Raw Almonds</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 100g Whole Leaf Green Tea</div>
+          </div>
+          <a href="404.html" class="btn btn-accent" style="width: 100%;">Add to Basket</a>
+        </div>
+
+        <div class="bundle-card">
+          <h3 class="bundle-title font-serif">Mediterranean Oil Duo</h3>
+          <p class="bundle-desc">Extra virgin cold-pressed olive oil paired with wood-pressed virgin mustard oil.</p>
+          <div class="bundle-price">$32.00 <span>bundle</span></div>
+          <div class="bundle-features">
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 750ml Extra Virgin Olive Oil</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 500ml Wood-Pressed Mustard Oil</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> UV Protective Glass Bottles</div>
+          </div>
+          <a href="404.html" class="btn btn-outline" style="width: 100%;">View in Shop</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-tag">
+          <i class="fa-solid fa-basket-shopping"></i> Fresh Harvest Awaits
+        </span>
+        <h2 class="section-title font-serif">Bring Nature to Your Table</h2>
+        <p>Choose fresh, certified organic and responsibly sourced food for a healthier, more vibrant everyday lifestyle.</p>
+        <div class="cta-buttons">
+          <a href="404.html" class="btn btn-accent btn-lg">
+            <i class="fa-solid fa-cart-shopping"></i> Shop All Categories
+          </a>
+          <a href="404.html" class="btn btn-outline-white btn-lg">
+            <i class="fa-solid fa-envelope"></i> Contact Our Team
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo01.webp" alt="Stackly">
+          </a>
+          <p class="footer-desc">
+            Your trusted organic grocery marketplace delivering farm-fresh produce, cold-pressed oils, pure honey, and wholesome grains with zero chemical additives.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="social-link" title="X (Twitter)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="Shop.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Shop</a></li>
+            <li><a href="Categories.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Categories</a></li>
+            <li><a href="Products.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+            <li><a href="About.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="Contact.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop Categories</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Fruits</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Fresh Vegetables</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Grains</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Dairy &amp; Eggs</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Natural Snacks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Delivery Information</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Returns &amp; Refunds</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. Fresh From Nature. Good For You.</p>
+        <p>100% Frontend Only &bull; Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
+
+
+

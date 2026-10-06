@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Stackly - Products Catalog CSS (Products.css)
+   ========================================================================== */
+
+.products-filter-bar {
+  background: var(--secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 20px 24px;
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 36px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+@media (max-width: 768px) {
+  .products-filter-bar {
+    padding: 18px 16px;
+    gap: 16px;
+  }
+}
+
+.filter-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 640px) {
+  .filter-top-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+  }
+}
+
+.search-field-wrap {
+  flex: 1;
+  min-width: 240px;
+  position: relative;
+}
+
+@media (max-width: 640px) {
+  .search-field-wrap {
+    min-width: 100%;
+    width: 100%;
+  }
+}
+
+.search-field-wrap input {
+  width: 100%;
+  padding: 12px 18px 12px 42px;
+  border-radius: var(--radius-full);
+  border: 1.5px solid var(--border-light);
+  background: var(--bg-surface-subtle);
+  font-size: 0.95rem;
+  color: var(--primary);
+  min-height: 44px;
+  transition: all var(--transition-fast);
+}
+
+.search-field-wrap input:focus {
+  border-color: var(--primary);
+  background: var(--secondary);
+}
+
+.search-field-wrap i {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--accent);
+}
+
+.filter-controls-group {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+@media (max-width: 640px) {
+  .filter-controls-group {
+    width: 100%;
+  }
+  .filter-controls-group .sort-select {
+    width: 100%;
+    min-height: 44px;
+  }
+}
+
+.filter-pills-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  width: 100%;
+  padding: 4px 0;
+}
+
+@media (max-width: 576px) {
+  .filter-pills-row {
+    gap: 8px;
+  }
+}
+
+.filter-pill {
+  padding: 8px 18px;
+  border-radius: var(--radius-full);
+  background: var(--bg-surface-subtle);
+  border: 1.5px solid var(--border-light);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--primary);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  min-height: 38px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-fast);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.filter-pill:hover,
+.filter-pill.active {
+  background: var(--primary);
+  color: var(--secondary);
+  border-color: var(--primary);
+}
+
+/* Products Catalog Grid */
+.products-catalog-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-bottom: 50px;
+}
+
+@media (max-width: 1200px) {
+  .products-catalog-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 860px) {
+  .products-catalog-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 18px;
+  }
+}
+
+@media (max-width: 540px) {
+  .products-catalog-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+}
+
+/* No Results Box */
+.no-products-found {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 80px 20px;
+  background: var(--secondary);
+  border-radius: var(--radius-lg);
+  border: 1px dashed var(--border-light);
+  display: none;
+}
+
+.no-products-found i {
+  font-size: 3.5rem;
+  color: var(--accent);
+  margin-bottom: 16px;
+}
+
+.no-products-found h4 {
+  font-size: 1.4rem;
+  margin-bottom: 8px;
+}
+
+.no-products-found p {
+  color: var(--text-muted);
+}

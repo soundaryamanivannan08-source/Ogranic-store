@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us  Stackly Organic Food</title>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/Contact.css?v=37">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Global Header & Sticky Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="Shop.html" class="nav-link">Shop</a></li>
+          <li><a href="Categories.html" class="nav-link">Categories</a></li>
+          <li><a href="Products.html" class="nav-link">Products</a></li>
+          <li><a href="About.html" class="nav-link">About</a></li>
+          <li><a href="Contact.html" class="nav-link active">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="Login.html" class="btn btn-primary btn-sm nav-login-btn">
+            <i class="fa-solid fa-user"></i>
+            <span>Login</span>
+          </a>
+          <button class="hamburger-btn" id="mobileToggleBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo01.webp" alt="Stackly">
+      </a>
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link"><span>Home</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Shop.html" class="mobile-nav-link"><span>Shop</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Categories.html" class="mobile-nav-link"><span>Categories</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Products.html" class="mobile-nav-link"><span>Products</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="About.html" class="mobile-nav-link"><span>About</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Contact.html" class="mobile-nav-link active"><span>Contact</span><i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="Login.html" class="btn btn-primary" style="width: 100%;">
+        <i class="fa-solid fa-user"></i> Login to Account
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> Your Basket</h3>
+      <button class="action-btn" id="cartCloseBtn" aria-label="Close Basket">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-val" id="cartSubtotalValue">$22.48</span>
+      </div>
+      <a href="404.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">
+        <i class="fa-solid fa-truck-fast"></i> Proceed to Checkout
+      </a>
+      <a href="404.html" class="btn btn-outline" style="width: 100%;">
+        Continue Shopping
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input" id="globalSearchInput" placeholder="Search organic fruits, veggies, grains, oils...">
+        <button class="action-btn" id="searchCloseBtn" aria-label="Close Search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-modal-results" id="searchResultsList"></div>
+    </div>
+  </div>
+
+  <!-- 1. Big Size Page Hero Banner -->
+  <section class="page-hero hero-contact">
+    <div class="container">
+      <span class="section-tag" data-aos="fade-down" data-aos-duration="1000"><i class="fa-solid fa-headset"></i> Dedicated Support &amp; Tours</span>
+      <h1 class="page-hero-title font-serif" data-aos="zoom-in" data-aos-duration="1200" data-aos-delay="200">Let's Talk Fresh Food</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+        Have questions about our certified organic harvest, custom subscriptions, farm tours, or delivery? We're here to help.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Contact Information Cards -->
+  <section class="section-padding" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="contact-info-grid">
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-phone"></i>
+          </div>
+          <h4 class="font-serif">Customer Care Helpline</h4>
+          <p>Available Mon &ndash; Sat from 7:00 AM to 8:00 PM for all harvest inquiries.</p>
+          <a href="tel:+918005550199" class="contact-card-link">+91 800 555 0199</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-envelope"></i>
+          </div>
+          <h4 class="font-serif">Direct Email Inquiries</h4>
+          <p>Send our agricultural team any questions regarding certifications or custom crates.</p>
+          <a href="mailto:care@Stackly.org" class="contact-card-link">care@Stackly.org</a>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon">
+            <i class="fa-solid fa-location-dot"></i>
+          </div>
+          <h4 class="font-serif">Central Farm Office</h4>
+          <p>Stackly Bio Valley, Plot 42, Sahyadri Agro Belt, Maharashtra 422003, India.</p>
+          <a href="404.html" class="contact-card-link">View On Maps <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Interactive Form & Farm Tour Box -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="contact-form-layout">
+        
+        <!-- Contact Form -->
+        <div class="contact-form-card">
+          <div class="contact-form-header">
+            <span class="section-tag"><i class="fa-solid fa-paper-plane"></i> Quick Message</span>
+            <h3 class="font-serif">Send Us a Direct Message</h3>
+            <p>Fill out the form below and our team will get back to you within 4 hours.</p>
+          </div>
+
+          <form id="contactForm" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactName" class="form-label">Full Name *</label>
+                <input type="text" id="contactName" class="form-control" placeholder="e.g. Rahul Sharma" required>
+                <span class="form-error" id="errContactName"><i class="fa-solid fa-circle-exclamation"></i> Please enter your name</span>
+              </div>
+              <div class="form-group">
+                <label for="contactEmail" class="form-label">Email Address *</label>
+                <input type="email" id="contactEmail" class="form-control" placeholder="e.g. rahul@example.com" required>
+                <span class="form-error" id="errContactEmail"><i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email</span>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="contactPhone" class="form-label">Phone Number (Optional)</label>
+                <input type="tel" id="contactPhone" class="form-control" placeholder="e.g. +91 98765 43210">
+              </div>
+              <div class="form-group">
+                <label for="contactSubject" class="form-label">Subject *</label>
+                <select id="contactSubject" class="form-control" required>
+                  <option value="">Select an Inquiry Type</option>
+                  <option value="order">Order Delivery &amp; Tracking</option>
+                  <option value="subscription">Weekly Box Subscription</option>
+                  <option value="certification">Organic Certification &amp; Lab Reports</option>
+                  <option value="farm-tour">Schedule Farm Tour</option>
+                  <option value="partnership">Farmer Partnership</option>
+                </select>
+                <span class="form-error" id="errContactSubject"><i class="fa-solid fa-circle-exclamation"></i> Please select an inquiry type</span>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="contactMessage" class="form-label">Your Message *</label>
+              <textarea id="contactMessage" class="form-control" rows="5" placeholder="Tell us how we can help you..." required></textarea>
+              <span class="form-error" id="errContactMessage"><i class="fa-solid fa-circle-exclamation"></i> Please enter your message (min 10 characters)</span>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg" style="width: 100%;">
+              <i class="fa-solid fa-paper-plane"></i> Send Harvest Message
+            </button>
+          </form>
+        </div>
+
+        <!-- Location & Farm Tour Info Box -->
+        <div class="contact-location-card">
+          <div class="location-card-header">
+            <span class="section-tag"><i class="fa-solid fa-tractor"></i> Visit Us</span>
+            <h3 class="font-serif">Experience Our Farm</h3>
+            <p>
+              We organize guided educational farm visits every weekend. Walk through our living compost yards, sample fresh fruits straight from trees, and understand real organic agriculture.
+            </p>
+          </div>
+
+          <div class="location-details-list">
+            <div class="loc-detail-item">
+              <div class="loc-detail-icon">
+                <i class="fa-solid fa-calendar-days"></i>
+              </div>
+              <div class="loc-detail-info">
+                <strong>Weekend Farm Tours</strong>
+                <span>Saturday &amp; Sunday &bull; 9:00 AM - 1:00 PM</span>
+              </div>
+            </div>
+
+            <div class="loc-detail-item">
+              <div class="loc-detail-icon">
+                <i class="fa-solid fa-truck-fast"></i>
+              </div>
+              <div class="loc-detail-info">
+                <strong>Morning Delivery Window</strong>
+                <span>Daily Dawn Dispatch &bull; 6:00 AM - 9:30 AM</span>
+              </div>
+            </div>
+
+            <div class="loc-detail-item">
+              <div class="loc-detail-icon">
+                <i class="fa-solid fa-leaf"></i>
+              </div>
+              <div class="loc-detail-info">
+                <strong>Direct Farm Pickup</strong>
+                <span>Available at Sahyadri Eco Hub Gate 2</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="farm-image-preview">
+            <img src="assets/farm.webp" alt="Stackly Organic Valley Farm">
+            <div class="farm-image-badge">
+              <i class="fa-solid fa-seedling"></i>
+              <span>100% Certified Organic Farm</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Regional Distribution Hubs -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-network-wired"></i> Delivery Reach</span>
+        <h2 class="section-title font-serif">Regional Cold-Chain Dispatch Hubs</h2>
+        <p class="section-desc">Serving tier-1 metro clusters with dedicated 100% electric delivery fleets.</p>
+      </div>
+
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-city"></i></div>
+          <h4 class="font-serif">Mumbai &amp; Pune Hub</h4>
+          <p>Daily 6:00 AM doorstep drop covering South Mumbai, Thane, Navi Mumbai, and Pune West.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-city"></i></div>
+          <h4 class="font-serif">Bengaluru &amp; Mysuru</h4>
+          <p>Direct morning harvest runs servicing Indiranagar, Whitefield, Koramangala, and HSR Layout.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-city"></i></div>
+          <h4 class="font-serif">Delhi NCR Hub</h4>
+          <p>Equipped with sub-zero insulated vehicles across South Delhi, Gurugram, and Noida.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-city"></i></div>
+          <h4 class="font-serif">Hyderabad Hub</h4>
+          <p>Fast-track dawn delivery connecting Jubilee Hills, Gachibowli, Madhapur, and Banjara Hills.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Interactive FAQ Accordion -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-circle-question"></i> Common Questions</span>
+        <h2 class="section-title font-serif">Frequently Asked Questions</h2>
+        <p class="section-desc">Everything you need to know about our organic certifications, delivery schedules, and guarantees.</p>
+      </div>
+
+      <div class="faq-accordion-container">
+        
+        <!-- FAQ 1 -->
+        <div class="faq-accordion-item open">
+          <button class="faq-accordion-header" aria-expanded="true">
+            <span>How do you guarantee that your produce is 100% organic?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-accordion-body">
+            <p>
+              Every partner farm is certified under National Programme for Organic Production (NPOP) and USDA Organic regulations. Additionally, we conduct periodic multi-point laboratory residue tests screening for over 240 synthetic pesticides and artificial fertilizers.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false">
+            <span>What time do daily morning deliveries take place?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-accordion-body">
+            <p>
+              Our produce is harvested at 5:30 AM and delivered in insulated biodegradable totes between 6:30 AM and 9:30 AM the next morning to ensure crispness and maximum nutrient retention.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false">
+            <span>Can I customize items in my weekly subscription box?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-accordion-body">
+            <p>
+              Yes! You can log into your Customer Dashboard 24 hours before your scheduled delivery day to swap out items, add seasonal specials, or adjust quantities according to your household preferences.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false">
+            <span>What happens if produce arrives damaged or unsatisfactory?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-accordion-body">
+            <p>
+              We operate on an unconditional 100% Freshness Guarantee. Simply take a quick photo and message us on WhatsApp or submit a support ticket via your dashboard for an instant refund or replacement.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false">
+            <span>Do you use plastic for packing and shipping produce?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-accordion-body">
+            <p>
+              No. We strictly enforce a Zero Single-Use Plastic Policy. All produce is bundled using breathable unbleached kraft paper, reusable cotton bags, and 100% compostable cornstarch liners.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="faq-accordion-item">
+          <button class="faq-accordion-header" aria-expanded="false">
+            <span>How can I schedule a weekend visit to your organic farms?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </button>
+          <div class="faq-accordion-body">
+            <p>
+              Select "Schedule Farm Tour" in our contact form or contact customer care at least 48 hours in advance. Weekend educational farm walks are completely free for our registered subscribers.
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Service Commitment & Guarantee -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-heart"></i> Our Promise</span>
+        <h2 class="section-title font-serif">The Stackly Support Guarantee</h2>
+        <p class="section-desc">We treat every customer interaction with absolute care, transparency, and respect.</p>
+      </div>
+
+      <div class="guarantee-grid">
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-headset"></i></div>
+          <h4 class="font-serif">Dedicated Human Support</h4>
+          <p>No automated chatbots. Speak with trained wellness advisors who understand organic farming.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <h4 class="font-serif">4-Hour Resolution</h4>
+          <p>Every feedback ticket or inquiry is responded to and resolved within 4 business hours.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-receipt"></i></div>
+          <h4 class="font-serif">Transparent Pricing</h4>
+          <p>Zero hidden packing or service fees. Direct honest farm pricing with complete breakdown.</p>
+        </div>
+
+        <div class="guarantee-card">
+          <div class="guarantee-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h4 class="font-serif">Eco Loyalty Rewards</h4>
+          <p>Earn green reward points on every order that can be redeemed for free organic goods.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Glassmorphism Farm Dispatch Newsletter -->
+  <section class="newsletter-section">
+    <div class="container">
+      <div class="newsletter-card">
+        <div class="newsletter-content">
+          <span class="newsletter-badge">
+            <i class="fa-solid fa-envelope-open-text"></i> Farm Journal
+          </span>
+          <h3 class="font-serif">Join Our Weekly Harvest Circle</h3>
+          <p>Subscribe for seasonal crop updates, organic recipes, and exclusive subscriber flash discounts.</p>
+          <form class="newsletter-form" id="newsletterForm" novalidate>
+            <div class="newsletter-input-group">
+              <input type="email" id="newsletterEmail" class="newsletter-input" placeholder="Enter your email address..." required>
+              <button type="submit" class="btn btn-accent">
+                <i class="fa-solid fa-paper-plane"></i> Subscribe
+              </button>
+            </div>
+            <span class="form-error" id="errNewsletterEmail" style="color: var(--accent); margin-top: 8px; display: none;">
+              <i class="fa-solid fa-circle-exclamation"></i> Please enter a valid email address
+            </span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo01.webp" alt="Stackly">
+          </a>
+          <p class="footer-desc">
+            Your trusted organic grocery marketplace delivering farm-fresh produce, cold-pressed oils, pure honey, and wholesome grains with zero chemical additives.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="social-link" title="X (Twitter)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="Shop.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Shop</a></li>
+            <li><a href="Categories.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Categories</a></li>
+            <li><a href="Products.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+            <li><a href="About.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="Contact.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop Categories</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Fruits</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Fresh Vegetables</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Grains</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Dairy &amp; Eggs</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Natural Snacks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Delivery Information</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Returns &amp; Refunds</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. Fresh From Nature. Good For You.</p>
+        <p>100% Frontend Only &bull; Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
+
+
+

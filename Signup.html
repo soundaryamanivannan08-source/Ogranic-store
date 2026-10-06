@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Create Account  Stackly Organic Food</title>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/Signup.css?v=37">
+</head>
+<body class="auth-page-body">
+
+  <!-- Floating Leaf Accents -->
+  <i class="fa-solid fa-leaf floating-leaf" style="top: 8%; left: 6%; font-size: 2.2rem;"></i>
+  <i class="fa-solid fa-seedling floating-leaf" style="bottom: 10%; left: 8%; font-size: 1.8rem; animation-delay: 2.5s;"></i>
+  <i class="fa-solid fa-leaf floating-leaf" style="top: 12%; right: 8%; font-size: 2.4rem; animation-delay: 4.5s;"></i>
+  <i class="fa-solid fa-seedling floating-leaf" style="bottom: 14%; right: 10%; font-size: 2rem; animation-delay: 1.8s;"></i>
+
+  <!-- Back to Home Link -->
+  <a href="index.html" class="back-to-home-link">
+    <i class="fa-solid fa-arrow-left"></i>
+    <span>Back to Home</span>
+  </a>
+
+  <!-- Auth Card -->
+  <div class="auth-card signup-card">
+    <div class="auth-header">
+      <div class="auth-logo">
+        <a href="index.html">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+      </div>
+      <h2 class="auth-title font-serif">Join Stackly</h2>
+      <p class="auth-subtitle">Create an account to start receiving fresh organic farm harvests</p>
+    </div>
+
+    <!-- Role Switcher -->
+    <div class="role-toggle-group">
+      <button type="button" class="role-tab-btn active" data-role="customer">
+        <i class="fa-solid fa-user"></i> Customer
+      </button>
+      <button type="button" class="role-tab-btn" data-role="admin">
+        <i class="fa-solid fa-shield-halved"></i> Store Partner / Admin
+      </button>
+    </div>
+
+    <!-- Signup Form -->
+    <form id="signupForm" novalidate>
+      
+      <!-- Full Name -->
+      <div class="auth-input-group">
+        <i class="fa-solid fa-user"></i>
+        <input type="text" class="auth-input" id="signupName" placeholder="Full Name" required>
+        <div class="auth-error-text" id="errSignupName" style="display: none;">Please enter your full name.</div>
+      </div>
+
+      <!-- Email -->
+      <div class="auth-input-group">
+        <i class="fa-solid fa-envelope"></i>
+        <input type="email" class="auth-input" id="signupEmail" placeholder="Email Address" required>
+        <div class="auth-error-text" id="errSignupEmail" style="display: none;">Please enter a valid email address.</div>
+      </div>
+
+      <!-- Password & Confirm Password Grid -->
+      <div class="signup-grid">
+        <div class="auth-input-group password-group">
+          <i class="fa-solid fa-lock input-left-icon"></i>
+          <input type="password" class="auth-input" id="signupPassword" placeholder="Create Password" required>
+          <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+          <div class="auth-error-text" id="errSignupPass" style="display: none;">Must be at least 6 chars.</div>
+        </div>
+
+        <div class="auth-input-group password-group">
+          <i class="fa-solid fa-shield-halved input-left-icon"></i>
+          <input type="password" class="auth-input" id="signupConfirmPassword" placeholder="Confirm Password" required>
+          <button type="button" class="password-toggle-btn" aria-label="Toggle password visibility">
+            <i class="fa-regular fa-eye"></i>
+          </button>
+          <div class="auth-error-text" id="errSignupConfirm" style="display: none;">Passwords must match.</div>
+        </div>
+      </div>
+
+      <!-- Terms & Conditions -->
+      <div class="terms-agreement">
+        <input type="checkbox" id="agreeTerms" checked required>
+        <label for="agreeTerms">
+          I agree to the <a href="404.html">Terms of Service</a> and <a href="404.html">Privacy Policy</a>.
+        </label>
+      </div>
+
+      <!-- Submit -->
+      <button type="submit" class="btn btn-primary auth-submit-btn">
+        <i class="fa-solid fa-user-plus"></i> Create Account
+      </button>
+
+    </form>
+
+    <!-- Footer Links -->
+    <div class="auth-footer">
+      Already have an account? <a href="Login.html">Login Here</a>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+</body>
+</html>
+
+
+

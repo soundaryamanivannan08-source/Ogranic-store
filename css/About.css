@@ -1,0 +1,280 @@
+/* ==========================================================================
+   Stackly - About Page CSS (About.css)
+   ========================================================================== */
+
+/* Story Section */
+.about-story-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+
+.about-story-media {
+  position: relative;
+}
+
+.about-story-image {
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+  border: 2px solid var(--border-light);
+}
+
+.about-story-image img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+}
+
+.about-story-badge {
+  position: absolute;
+  bottom: -20px;
+  right: -20px;
+  background: var(--accent);
+  color: var(--secondary);
+  padding: 24px;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-gold);
+  text-align: center;
+  border: 3px solid var(--secondary);
+}
+
+.about-story-badge h3 {
+  font-size: 2.2rem;
+  color: var(--secondary);
+  line-height: 1;
+}
+
+.about-story-badge p {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.about-story-content h2 {
+  font-size: clamp(2rem, 3.5vw, 2.8rem);
+  margin-bottom: 20px;
+}
+
+.about-story-content p {
+  font-size: 1.05rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  margin-bottom: 20px;
+}
+
+@media (max-width: 991px) {
+  .about-story-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+  .about-story-badge {
+    bottom: 10px;
+    right: 10px;
+    padding: 10px 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-story-img img {
+    height: 280px;
+    object-fit: cover;
+  }
+}
+
+/* Farmers Grid */
+.farmers-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.farmer-card {
+  background: var(--secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all var(--transition-normal);
+  text-align: center;
+}
+
+.farmer-card:hover {
+  transform: translateY(-8px);
+  border-color: var(--accent);
+  box-shadow: var(--shadow-md);
+}
+
+.farmer-thumb {
+  height: 260px;
+  overflow: hidden;
+}
+
+.farmer-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.farmer-card:hover .farmer-thumb img {
+  transform: scale(1.08);
+}
+
+.farmer-info {
+  padding: 24px;
+}
+
+.farmer-info h4 {
+  font-size: 1.3rem;
+  color: var(--primary);
+  margin-bottom: 4px;
+}
+
+.farmer-role {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--accent);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 12px;
+}
+
+.farmer-bio {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+@media (max-width: 1024px) {
+  .farmers-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .farmers-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .farmer-info {
+    padding: 20px 16px;
+  }
+}
+
+/* Farming Values / Pillars */
+.pillars-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 28px;
+}
+
+.pillar-card {
+  background: var(--secondary);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border-light);
+  padding: 36px 28px;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-sm);
+}
+
+.pillar-card:hover {
+  border-color: var(--accent);
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+}
+
+.pillar-icon {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: var(--primary-light);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  transition: all var(--transition-fast);
+}
+
+.pillar-card:hover .pillar-icon {
+  background: var(--primary);
+  color: var(--secondary);
+  transform: rotate(10deg);
+}
+
+.pillar-card h4 {
+  font-size: 1.3rem;
+  margin-bottom: 12px;
+}
+
+.pillar-card p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+@media (max-width: 1024px) {
+  .pillars-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .pillars-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .pillar-card {
+    padding: 24px 20px;
+  }
+}
+
+/* Mission & Vision Split */
+.mission-vision-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 32px;
+}
+
+.mv-card {
+  background: linear-gradient(135deg, rgba(36, 92, 58, 0.05) 0%, rgba(231, 169, 59, 0.08) 100%);
+  border: 1.5px solid var(--border-light);
+  border-radius: var(--radius-xl);
+  padding: 44px 36px;
+  position: relative;
+  overflow: hidden;
+}
+
+.mv-card h3 {
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  margin-bottom: 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mv-card h3 i {
+  color: var(--accent);
+}
+
+.mv-card p {
+  font-size: 1rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+@media (max-width: 768px) {
+  .mission-vision-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .mv-card {
+    padding: 28px 20px;
+  }
+}

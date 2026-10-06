@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Stackly  Fresh From Nature. Good For You.</title>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/index.css?v=37">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Global Header & Sticky Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <!-- Brand Logo -->
+        <a href="index.html" class="brand-logo">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+
+        <!-- Center Nav Links -->
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link active">Home</a></li>
+          <li><a href="Shop.html" class="nav-link">Shop</a></li>
+          <li><a href="Categories.html" class="nav-link">Categories</a></li>
+          <li><a href="Products.html" class="nav-link">Products</a></li>
+          <li><a href="About.html" class="nav-link">About</a></li>
+          <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <!-- Right Nav Actions -->
+        <div class="nav-actions">
+          <a href="Login.html" class="btn btn-primary btn-sm nav-login-btn">
+            <i class="fa-solid fa-user"></i>
+            <span>Login</span>
+          </a>
+          <button class="hamburger-btn" id="mobileToggleBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo01.webp" alt="Stackly">
+      </a>
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link active"><span>Home</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Shop.html" class="mobile-nav-link"><span>Shop</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Categories.html" class="mobile-nav-link"><span>Categories</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Products.html" class="mobile-nav-link"><span>Products</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="About.html" class="mobile-nav-link"><span>About</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Contact.html" class="mobile-nav-link"><span>Contact</span><i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="Login.html" class="btn btn-primary" style="width: 100%;">
+        <i class="fa-solid fa-user"></i> Login to Account
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> Your Basket</h3>
+      <button class="action-btn" id="cartCloseBtn" aria-label="Close Basket">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItemsList">
+      <!-- Injected via JavaScript -->
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-val" id="cartSubtotalValue">$22.48</span>
+      </div>
+      <a href="404.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">
+        <i class="fa-solid fa-truck-fast"></i> Proceed to Checkout
+      </a>
+      <a href="404.html" class="btn btn-outline" style="width: 100%;">
+        Continue Shopping
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input" id="globalSearchInput" placeholder="Search organic fruits, veggies, grains, oils...">
+        <button class="action-btn" id="searchCloseBtn" aria-label="Close Search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-modal-results" id="searchResultsList">
+        <!-- Injected via JavaScript -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="quickview-modal" id="quickviewModal">
+    <div class="quickview-dialog">
+      <button class="quickview-close" id="quickviewCloseBtn" aria-label="Close Quick View">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="quickview-grid">
+        <div class="quickview-media">
+          <img src="assets/avocado.webp" alt="Product" id="qvImage">
+        </div>
+        <div class="quickview-content">
+          <span class="quickview-category" id="qvCategory">Organic Produce</span>
+          <h3 class="quickview-title" id="qvTitle">Organic Hass Avocado</h3>
+          <div class="quickview-rating" id="qvRating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="quickview-price" id="qvPrice">$4.99</div>
+          <p class="quickview-desc" id="qvDesc">Rich, buttery texture packed with heart-healthy monounsaturated fats and essential nutrients sourced from certified organic orchards.</p>
+          <div class="quickview-stock">
+            <i class="fa-solid fa-circle-check"></i> In Stock &bull; Fresh Farm Harvest
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 10px;">
+            <button class="btn btn-primary product-add-btn" id="qvAddBtn">
+              <i class="fa-solid fa-cart-shopping"></i> Add to Basket
+            </button>
+            <a href="404.html" class="btn btn-outline">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Hero Section -->
+  <section class="hero-section">
+    <i class="fa-solid fa-leaf floating-leaf" style="top: 15%; left: 8%; font-size: 2rem;"></i>
+    <i class="fa-solid fa-seedling floating-leaf" style="bottom: 20%; left: 12%; font-size: 1.6rem; animation-delay: 2s;"></i>
+    <i class="fa-solid fa-leaf floating-leaf" style="top: 25%; right: 10%; font-size: 2.2rem; animation-delay: 4s;"></i>
+
+    <div class="container">
+      <div class="hero-grid">
+        <div class="hero-content">
+          <div class="hero-badge">
+            <i class="fa-solid fa-seedling"></i>
+            <span>100% Certified Organic Foods</span>
+          </div>
+          <h1 class="hero-title font-serif">
+            Fresh Food. <span>Naturally Better.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Discover fresh, certified organic food sourced directly from trusted local farms and delivered straight to your doorstep with guaranteed purity.
+          </p>
+          <div class="hero-cta-group">
+            <a href="404.html" class="btn btn-primary btn-lg">
+              <i class="fa-solid fa-basket-shopping"></i> Shop Organic Foods
+            </a>
+            <a href="404.html" class="btn btn-outline btn-lg">
+              <i class="fa-solid fa-arrow-right"></i> Explore Categories
+            </a>
+          </div>
+          <div class="hero-trust-bar">
+            <div class="trust-item">
+              <i class="fa-solid fa-shield-halved"></i>
+              <span>Chemical Free</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-truck-fast"></i>
+              <span>Same-Day Harvest</span>
+            </div>
+            <div class="trust-item">
+              <i class="fa-solid fa-recycle"></i>
+              <span>Eco Packaging</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-visual">
+          <div class="hero-image-wrap">
+            <img src="assets/hero-organic-food.webp" alt="Fresh Organic Vegetables and Farm Produce">
+          </div>
+
+          <!-- Floating Hero Badges -->
+          <div class="floating-card floating-card-1">
+            <div class="floating-card-icon">
+              <i class="fa-solid fa-apple-whole"></i>
+            </div>
+            <div class="floating-card-text">
+              <h5>100% Farm Fresh</h5>
+              <p>Harvested at sunrise</p>
+            </div>
+          </div>
+
+          <div class="floating-card floating-card-2">
+            <div class="floating-card-icon gold">
+              <i class="fa-solid fa-circle-check"></i>
+            </div>
+            <div class="floating-card-text">
+              <h5>Certified Organic</h5>
+              <p>Zero synthetic additives</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Trust Statistics Section -->
+  <section class="stats-section">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <div class="stat-number counter-val" data-target="500" data-suffix="+">0+</div>
+          <div class="stat-label">Organic Products</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fa-solid fa-users"></i>
+          </div>
+          <div class="stat-number counter-val" data-target="120" data-suffix="+">0+</div>
+          <div class="stat-label">Trusted Farmers</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fa-solid fa-heart"></i>
+          </div>
+          <div class="stat-number counter-val" data-target="15" data-suffix="K+">0K+</div>
+          <div class="stat-label">Happy Customers</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon">
+            <i class="fa-solid fa-shield-halved"></i>
+          </div>
+          <div class="stat-number counter-val" data-target="100" data-suffix="%">0%</div>
+          <div class="stat-label">Organic Certified</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Popular Organic Categories -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-leaf"></i> Fresh Selections
+        </span>
+        <h2 class="section-title font-serif">Popular Organic Categories</h2>
+        <p class="section-desc">Hand-picked, chemical-free wholesome foods cultivated sustainably to nourish your family.</p>
+      </div>
+
+      <div class="categories-grid">
+        <!-- 1. Fruits -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/fruits.webp" alt="Organic Fruits">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-apple-whole"></i>
+          </div>
+          <h3 class="category-card-title">Organic Fruits</h3>
+          <p class="category-card-desc">Crisp, sweet, and sun-ripened orchard delights.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 2. Vegetables -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/vegetables.webp" alt="Fresh Vegetables">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-carrot"></i>
+          </div>
+          <h3 class="category-card-title">Fresh Vegetables</h3>
+          <p class="category-card-desc">Nutrient-dense greens and roots freshly pulled.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 3. Grains -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/grains.webp" alt="Organic Grains">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-wheat-awn"></i>
+          </div>
+          <h3 class="category-card-title">Organic Grains</h3>
+          <p class="category-card-desc">Unpolished ancient grains, quinoa, and rice.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 4. Dairy -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/dairy.webp" alt="Dairy & Eggs">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-bottle-droplet"></i>
+          </div>
+          <h3 class="category-card-title">Dairy &amp; Eggs</h3>
+          <p class="category-card-desc">Pasture-raised, hormone-free wholesome dairy.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 5. Snacks -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/snacks.webp" alt="Natural Snacks">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-box"></i>
+          </div>
+          <h3 class="category-card-title">Natural Snacks</h3>
+          <p class="category-card-desc">Clean-ingredient roasted nuts and dried fruits.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 6. Honey -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/honey.webp" alt="Honey & Spreads">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-droplet"></i>
+          </div>
+          <h3 class="category-card-title">Honey &amp; Spreads</h3>
+          <p class="category-card-desc">Raw, unpasteurized honey and natural nut butters.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 7. Oils -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/oils.webp" alt="Cold-Pressed Oils">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-bottle-droplet"></i>
+          </div>
+          <h3 class="category-card-title">Cold-Pressed Oils</h3>
+          <p class="category-card-desc">Extra virgin unrefined cooking and wellness oils.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+
+        <!-- 8. Beverages -->
+        <a href="404.html" class="category-card">
+          <div class="category-card-thumb">
+            <img src="assets/beverages.webp" alt="Organic Beverages">
+          </div>
+          <div class="category-card-icon">
+            <i class="fa-solid fa-leaf"></i>
+          </div>
+          <h3 class="category-card-title">Organic Beverages</h3>
+          <p class="category-card-desc">Herbal infusions, artisanal kombucha, and green teas.</p>
+          <span class="category-card-arrow"><i class="fa-solid fa-arrow-right"></i></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4. Featured Organic Products -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-star"></i> Handpicked Harvest
+        </span>
+        <h2 class="section-title font-serif">Featured Organic Products</h2>
+        <p class="section-desc">Sourced fresh this morning from certified organic cooperative farms.</p>
+      </div>
+
+      <div class="products-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge-organic"><i class="fa-solid fa-leaf"></i> 100% Organic</span>
+          </div>
+          <button class="product-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="product-thumb">
+            <img src="assets/avocado.webp" alt="Organic Hass Avocado">
+            <button class="product-quickview-trigger" data-id="1">
+              <i class="fa-solid fa-eye"></i> Quick View
+            </button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Fruits</span>
+            <h4 class="product-title">Organic Hass Avocado</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(4.9)</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$4.99</span>
+              <button class="product-add-btn" data-id="1" data-name="Organic Hass Avocado" data-price="4.99" data-image="assets/avocado.webp" data-category="Fruits" title="Add to Basket">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge-organic"><i class="fa-solid fa-leaf"></i> Farm Fresh</span>
+          </div>
+          <button class="product-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="product-thumb">
+            <img src="assets/strawberries.webp" alt="Fresh Strawberries">
+            <button class="product-quickview-trigger" data-id="2">
+              <i class="fa-solid fa-eye"></i> Quick View
+            </button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Fruits</span>
+            <h4 class="product-title">Fresh Farm Strawberries</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(5.0)</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$6.49</span>
+              <button class="product-add-btn" data-id="2" data-name="Fresh Farm Strawberries" data-price="6.49" data-image="assets/strawberries.webp" data-category="Fruits" title="Add to Basket">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge-organic"><i class="fa-solid fa-leaf"></i> Pesticide Free</span>
+          </div>
+          <button class="product-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="product-thumb">
+            <img src="assets/spinach.webp" alt="Farm Fresh Baby Spinach">
+            <button class="product-quickview-trigger" data-id="3">
+              <i class="fa-solid fa-eye"></i> Quick View
+            </button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Vegetables</span>
+            <h4 class="product-title">Farm Fresh Baby Spinach</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(4.8)</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$3.99</span>
+              <button class="product-add-btn" data-id="3" data-name="Farm Fresh Baby Spinach" data-price="3.99" data-image="assets/spinach.webp" data-category="Vegetables" title="Add to Basket">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge-organic"><i class="fa-solid fa-leaf"></i> 100% Pure Raw</span>
+          </div>
+          <button class="product-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="product-thumb">
+            <img src="assets/honey-jar.webp" alt="Raw Wildflower Honey">
+            <button class="product-quickview-trigger" data-id="4">
+              <i class="fa-solid fa-eye"></i> Quick View
+            </button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Honey</span>
+            <h4 class="product-title">Raw Wildflower Honey</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(5.0)</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$12.50</span>
+              <button class="product-add-btn" data-id="4" data-name="Raw Wildflower Honey" data-price="12.50" data-image="assets/honey-jar.webp" data-category="Honey" title="Add to Basket">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge-organic"><i class="fa-solid fa-leaf"></i> Cold-Pressed</span>
+          </div>
+          <button class="product-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="product-thumb">
+            <img src="assets/coconut-oil.webp" alt="Virgin Coconut Oil">
+            <button class="product-quickview-trigger" data-id="5">
+              <i class="fa-solid fa-eye"></i> Quick View
+            </button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Oils</span>
+            <h4 class="product-title">Virgin Coconut Oil</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <span>(4.9)</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$14.99</span>
+              <button class="product-add-btn" data-id="5" data-name="Virgin Coconut Oil" data-price="14.99" data-image="assets/coconut-oil.webp" data-category="Oils" title="Add to Basket">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="product-badge-wrap">
+            <span class="badge-organic"><i class="fa-solid fa-leaf"></i> Whole Grain</span>
+          </div>
+          <button class="product-wishlist-btn" title="Add to Wishlist">
+            <i class="fa-regular fa-heart"></i>
+          </button>
+          <div class="product-thumb">
+            <img src="assets/brown-rice.webp" alt="Organic Brown Basmati Rice">
+            <button class="product-quickview-trigger" data-id="6">
+              <i class="fa-solid fa-eye"></i> Quick View
+            </button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Grains</span>
+            <h4 class="product-title">Organic Brown Basmati Rice</h4>
+            <div class="product-rating">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star-half-stroke"></i>
+              <span>(4.7)</span>
+            </div>
+            <div class="product-footer">
+              <span class="product-price">$8.99</span>
+              <button class="product-add-btn" data-id="6" data-name="Organic Brown Basmati Rice" data-price="8.99" data-image="assets/brown-rice.webp" data-category="Grains" title="Add to Basket">
+                <i class="fa-solid fa-cart-plus"></i>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div style="text-align: center; margin-top: 40px;">
+        <a href="404.html" class="btn btn-primary btn-lg">
+          <i class="fa-solid fa-cart-shopping"></i> View All Organic Products
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Why Choose Stackly -->
+  <section class="why-section section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-shield-halved"></i> Our Promise
+        </span>
+        <h2 class="section-title font-serif">Why Conscious Families Trust Stackly</h2>
+        <p class="section-desc">We bridge the gap between conscientious local farmers and health-focused homes with transparent organic standards.</p>
+      </div>
+
+      <div class="why-grid">
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-seedling"></i>
+          </div>
+          <h3 class="why-title">100% Certified Organic</h3>
+          <p class="why-desc">Zero chemical pesticides, no synthetic GMOs, and strict seasonal soil enrichment practices.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+          <h3 class="why-title">Dawn Harvest Delivery</h3>
+          <p class="why-desc">Harvested fresh at sunrise and safely delivered to your doorstep within 24 hours.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-handshake"></i>
+          </div>
+          <h3 class="why-title">Direct Fair-Trade Farmers</h3>
+          <p class="why-desc">We work directly with certified organic growers, ensuring fair wages and regenerative soils.</p>
+        </div>
+
+        <div class="why-card">
+          <div class="why-icon">
+            <i class="fa-solid fa-recycle"></i>
+          </div>
+          <h3 class="why-title">Fast Delivery</h3>
+          <p class="why-desc">Temperature-controlled eco fleet ensuring optimal crispness upon doorstep arrival.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. How It Works Timeline -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-arrows-spin"></i> Effortless Process
+        </span>
+        <h2 class="section-title font-serif">How It Works</h2>
+        <p class="section-desc">From our organic soil to your nourishing meals in four simple steps.</p>
+      </div>
+
+      <div class="timeline-wrap">
+        <!-- Step 1 -->
+        <div class="timeline-step">
+          <div class="timeline-content">
+            <span class="timeline-number">STEP 01</span>
+            <h4>Browse Our Harvest</h4>
+            <p>Explore hundreds of certified organic seasonal vegetables, fruits, staples, and cold-pressed oils.</p>
+          </div>
+          <div class="timeline-node">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </div>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="timeline-step">
+          <div class="timeline-content">
+            <span class="timeline-number">STEP 02</span>
+            <h4>Choose Your Produce</h4>
+            <p>Select customized produce baskets or single items hand-picked by our agricultural partners.</p>
+          </div>
+          <div class="timeline-node">
+            <i class="fa-solid fa-basket-shopping"></i>
+          </div>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="timeline-step">
+          <div class="timeline-content">
+            <span class="timeline-number">STEP 03</span>
+            <h4>Order With Ease</h4>
+            <p>Confirm your cart with transparent checkout and convenient contactless delivery scheduling.</p>
+          </div>
+          <div class="timeline-node">
+            <i class="fa-solid fa-cart-shopping"></i>
+          </div>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="timeline-step">
+          <div class="timeline-content">
+            <span class="timeline-number">STEP 04</span>
+            <h4>Delivered Fresh</h4>
+            <p>Receive zero-chemical, crisp farm harvest at your doorstep ready for wholesome family meals.</p>
+          </div>
+          <div class="timeline-node">
+            <i class="fa-solid fa-truck-fast"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Farm to Table Section -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="farm-split-grid">
+        <div class="farm-image-box">
+          <img src="assets/farm.webp" alt="Lush Organic Farm">
+          <div class="farm-badge-overlay">
+            <div class="farm-badge-icon">
+              <i class="fa-solid fa-seedling"></i>
+            </div>
+            <div>
+              <h5 style="color: var(--primary); font-size: 1.05rem;">Certified Organic Soil</h5>
+              <p style="color: var(--text-muted); font-size: 0.85rem; margin: 0;">100% free from chemical fertilizers</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="farm-content-box">
+          <span class="section-tag">
+            <i class="fa-solid fa-leaf"></i> Sustainable Agriculture
+          </span>
+          <h2 class="section-title font-serif">From Our Farms to Your Table</h2>
+          <p class="section-desc">
+            We partner exclusively with regenerative farmers who nurture the soil with natural compost, crop rotation, and pure groundwater irrigation.
+          </p>
+
+          <div class="farm-features-list">
+            <div class="farm-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Farm Fresh Harvest</span>
+            </div>
+            <div class="farm-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Naturally Cultivated</span>
+            </div>
+            <div class="farm-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Carefully Selected</span>
+            </div>
+            <div class="farm-feature-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <span>Multi-Point Tested</span>
+            </div>
+          </div>
+
+          <a href="404.html" class="btn btn-primary">
+            <i class="fa-solid fa-arrow-right"></i> Learn Our Farming Story
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 8. Organic Promise Section -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-shield-halved"></i> Certified Quality
+        </span>
+        <h2 class="section-title font-serif">Good for You. Good for Nature.</h2>
+        <p class="section-desc">Our unwavering commitment to sustainability, wellness, and transparent ethical sourcing.</p>
+      </div>
+
+      <div class="promise-grid">
+        <div class="promise-card">
+          <div class="promise-icon"><i class="fa-solid fa-leaf"></i></div>
+          <h5>100% Organic</h5>
+          <p>Zero GMOs or chemicals</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><i class="fa-solid fa-seedling"></i></div>
+          <h5>Natural Cultivation</h5>
+          <p>Enriched living soil</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <h5>Quality Certified</h5>
+          <p>Rigorous laboratory testing</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><i class="fa-solid fa-recycle"></i></div>
+          <h5>Zero Plastic</h5>
+          <p>Biodegradable packaging</p>
+        </div>
+        <div class="promise-card">
+          <div class="promise-icon"><i class="fa-solid fa-circle-check"></i></div>
+          <h5>Direct Sourcing</h5>
+          <p>Fair farmer wages</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 9. Customer Stories -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-heart"></i> Testimonials
+        </span>
+        <h2 class="section-title font-serif">What Our Customers Say</h2>
+        <p class="section-desc">Hear from thousands of families who have switched to clean, wholesome organic living.</p>
+      </div>
+
+      <div class="testimonials-grid">
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-quote">â€œFresh, high-quality organic products delivered right to my doorstep. The crispness of the vegetables and aroma of raw honey is truly unmatched!â€</p>
+          <div class="testimonial-author">
+            <img src="assets/avatar-1.webp" alt="Priya Sharma">
+            <div class="author-info">
+              <h5>Priya Sharma</h5>
+              <p>Organic Food Enthusiast &bull; Mumbai</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-quote">â€œStackly has made eating clean effortless for my family. The produce stays fresh all week long and the eco packaging is a great plus.â€</p>
+          <div class="testimonial-author">
+            <img src="assets/avatar-2.webp" alt="Marcus Vance">
+            <div class="author-info">
+              <h5>Marcus Vance</h5>
+              <p>Fitness Coach &bull; Bangalore</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-stars">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <p class="testimonial-quote">â€œThe cold-pressed oils and ancient grains have elevated our daily cooking. You can taste the genuine purity and care in every single item.â€</p>
+          <div class="testimonial-author">
+            <img src="assets/avatar-3.webp" alt="Elena Rostova">
+            <div class="author-info">
+              <h5>Elena Rostova</h5>
+              <p>Culinary Nutritionist &bull; Delhi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 10. Latest Organic Insights (Blog) -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag">
+          <i class="fa-solid fa-newspaper"></i> Farm Journal
+        </span>
+        <h2 class="section-title font-serif">Latest Organic Insights</h2>
+        <p class="section-desc">Tips, recipes, and knowledge to empower your healthy lifestyle journey.</p>
+      </div>
+
+      <div class="blog-grid">
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="assets/blog-1.webp" alt="Benefits of Eating Organic">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-cat">Nutrition</span>
+              <span class="blog-date">Aug 18, 2026</span>
+            </div>
+            <h3 class="blog-title">Benefits of Eating 100% Organic Food</h3>
+            <p class="blog-desc">Explore how eliminating synthetic pesticides improves gut microbiome health and vital energy levels.</p>
+            <a href="404.html" class="blog-read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="assets/blog-2.webp" alt="Seasonal Fruits You Should Try">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-cat">Seasonal Guide</span>
+              <span class="blog-date">Aug 14, 2026</span>
+            </div>
+            <h3 class="blog-title">Seasonal Fruits You Should Try This Month</h3>
+            <p class="blog-desc">Why seasonal harvest contains higher antioxidant concentrations and peak natural sweetness.</p>
+            <a href="404.html" class="blog-read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+
+        <div class="blog-card">
+          <div class="blog-thumb">
+            <img src="assets/blog-3.webp" alt="How Sustainable Farming Helps Nature">
+          </div>
+          <div class="blog-content">
+            <div class="blog-meta">
+              <span class="blog-cat">Eco Living</span>
+              <span class="blog-date">Aug 10, 2026</span>
+            </div>
+            <h3 class="blog-title">How Sustainable Farming Helps Nature</h3>
+            <p class="blog-desc">Understanding soil carbon sequestration and biodiversity preservation through regenerative methods.</p>
+            <a href="404.html" class="blog-read-more">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 11. Final CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-tag">
+          <i class="fa-solid fa-seedling"></i> Join The Movement
+        </span>
+        <h2 class="section-title font-serif">Bring Nature to Your Table</h2>
+        <p>Choose fresh, certified organic and responsibly sourced food for a healthier, more vibrant everyday lifestyle.</p>
+        <div class="cta-buttons">
+          <a href="404.html" class="btn btn-accent btn-lg">
+            <i class="fa-solid fa-cart-shopping"></i> Shop Now
+          </a>
+          <a href="404.html" class="btn btn-outline-white btn-lg">
+            <i class="fa-solid fa-magnifying-glass"></i> Explore Products
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <!-- Brand Section -->
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo01.webp" alt="Stackly">
+          </a>
+          <p class="footer-desc">
+            Your trusted organic grocery marketplace delivering farm-fresh produce, cold-pressed oils, pure honey, and wholesome grains with zero chemical additives.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="social-link" title="X (Twitter)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="Shop.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Shop</a></li>
+            <li><a href="Categories.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Categories</a></li>
+            <li><a href="Products.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+            <li><a href="About.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="Contact.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <!-- Shop Categories -->
+        <div class="footer-col">
+          <h4>Shop Categories</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Fruits</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Fresh Vegetables</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Grains</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Dairy &amp; Eggs</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Natural Snacks</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Support -->
+        <div class="footer-col">
+          <h4>Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Delivery Information</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Returns &amp; Refunds</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. Fresh From Nature. Good For You.</p>
+        <p>100% Frontend Only &bull; Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- GSAP & ScrollTrigger CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+</body>
+</html>
+
+
+

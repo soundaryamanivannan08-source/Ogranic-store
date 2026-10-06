@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>All Organic Products  Stackly</title>
+  
+  <!-- Font Awesome Icons CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+  <link rel="stylesheet" href="css/style.css?v=37">
+  <link rel="stylesheet" href="css/Products.css?v=37">
+</head>
+<body>
+
+  <!-- Drawer Overlay -->
+  <div class="drawer-overlay" id="drawerOverlay"></div>
+
+  <!-- Global Header & Sticky Navbar -->
+  <header class="site-header">
+    <div class="container">
+      <nav class="navbar">
+        <a href="index.html" class="brand-logo">
+          <img src="assets/logo01.webp" alt="Stackly">
+        </a>
+
+        <ul class="nav-menu">
+          <li><a href="index.html" class="nav-link">Home</a></li>
+          <li><a href="Shop.html" class="nav-link">Shop</a></li>
+          <li><a href="Categories.html" class="nav-link">Categories</a></li>
+          <li><a href="Products.html" class="nav-link active">Products</a></li>
+          <li><a href="About.html" class="nav-link">About</a></li>
+          <li><a href="Contact.html" class="nav-link">Contact</a></li>
+        </ul>
+
+        <div class="nav-actions">
+          <a href="Login.html" class="btn btn-primary btn-sm nav-login-btn">
+            <i class="fa-solid fa-user"></i>
+            <span>Login</span>
+          </a>
+          <button class="hamburger-btn" id="mobileToggleBtn" aria-label="Toggle Menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Nav Drawer -->
+  <aside class="mobile-nav-drawer" id="mobileNavDrawer">
+    <div class="mobile-drawer-header">
+      <a href="index.html" class="brand-logo">
+        <img src="assets/logo01.webp" alt="Stackly">
+      </a>
+      <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close Menu">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <ul class="mobile-nav-list">
+      <li><a href="index.html" class="mobile-nav-link"><span>Home</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Shop.html" class="mobile-nav-link"><span>Shop</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Categories.html" class="mobile-nav-link"><span>Categories</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Products.html" class="mobile-nav-link active"><span>Products</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="About.html" class="mobile-nav-link"><span>About</span><i class="fa-solid fa-chevron-right"></i></a></li>
+      <li><a href="Contact.html" class="mobile-nav-link"><span>Contact</span><i class="fa-solid fa-chevron-right"></i></a></li>
+    </ul>
+    <div class="mobile-drawer-footer">
+      <a href="Login.html" class="btn btn-primary" style="width: 100%;">
+        <i class="fa-solid fa-user"></i> Login to Account
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Cart Drawer -->
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-header">
+      <h3><i class="fa-solid fa-basket-shopping"></i> Your Basket</h3>
+      <button class="action-btn" id="cartCloseBtn" aria-label="Close Basket">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+    </div>
+    <div class="cart-items" id="cartItemsList"></div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <span class="cart-subtotal-val" id="cartSubtotalValue">$22.48</span>
+      </div>
+      <a href="404.html" class="btn btn-primary" style="width: 100%; margin-bottom: 10px;">
+        <i class="fa-solid fa-truck-fast"></i> Proceed to Checkout
+      </a>
+      <a href="404.html" class="btn btn-outline" style="width: 100%;">
+        Continue Shopping
+      </a>
+    </div>
+  </aside>
+
+  <!-- Global Search Modal -->
+  <div class="search-modal" id="searchModal">
+    <div class="search-modal-content">
+      <div class="search-modal-header">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input type="text" class="search-input" id="globalSearchInput" placeholder="Search organic fruits, veggies, grains, oils...">
+        <button class="action-btn" id="searchCloseBtn" aria-label="Close Search">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+      <div class="search-modal-results" id="searchResultsList"></div>
+    </div>
+  </div>
+
+  <!-- Quick View Modal -->
+  <div class="quickview-modal" id="quickviewModal">
+    <div class="quickview-dialog">
+      <button class="quickview-close" id="quickviewCloseBtn" aria-label="Close Quick View">
+        <i class="fa-solid fa-xmark"></i>
+      </button>
+      <div class="quickview-grid">
+        <div class="quickview-media">
+          <img src="assets/avocado.webp" alt="Product" id="qvImage">
+        </div>
+        <div class="quickview-content">
+          <span class="quickview-category" id="qvCategory">Organic Produce</span>
+          <h3 class="quickview-title" id="qvTitle">Organic Hass Avocado</h3>
+          <div class="quickview-rating" id="qvRating"></div>
+          <div class="quickview-price" id="qvPrice">$4.99</div>
+          <p class="quickview-desc" id="qvDesc">Rich, buttery texture packed with heart-healthy monounsaturated fats and essential nutrients.</p>
+          <div class="quickview-stock">
+            <i class="fa-solid fa-circle-check"></i> In Stock &bull; Fresh Farm Harvest
+          </div>
+          <div style="display: flex; gap: 12px; margin-top: 10px;">
+            <button class="btn btn-primary product-add-btn" id="qvAddBtn">
+              <i class="fa-solid fa-cart-shopping"></i> Add to Basket
+            </button>
+            <a href="404.html" class="btn btn-outline">
+              <i class="fa-solid fa-bag-shopping"></i> Buy Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1. Big Size Page Hero Banner -->
+  <section class="page-hero hero-products">
+    <div class="container">
+      <span class="section-tag" data-aos="fade-down"><i class="fa-solid fa-seedling"></i> Harvested at Dawn</span>
+      <h1 class="page-hero-title font-serif" data-aos="fade-up" data-aos-delay="100">Fresh Picks for Every Kitchen</h1>
+      <p class="page-hero-subtitle" data-aos="fade-up" data-aos-delay="200">
+        Browse certified pesticide-free groceries, cold-pressed essentials, and superfoods cultivated with natural care.
+      </p>
+    </div>
+  </section>
+
+  <!-- 2. Flash Harvest Deals Spotlight -->
+  <section class="section-padding" style="padding-bottom: 0;">
+    <div class="container">
+      <div class="flash-deals-header">
+        <div class="flash-title-wrap">
+          <i class="fa-solid fa-bolt"></i>
+          <div>
+            <h3 style="font-size: 1.25rem; color: var(--primary); margin-bottom: 2px;">Flash Harvest Deals</h3>
+            <p style="font-size: 0.85rem; color: var(--text-muted); margin: 0;">Special discounts on fresh seasonal arrivals &bull; Limited stock</p>
+          </div>
+        </div>
+        <div class="flash-timer-box">
+          <span>Offer Ends In:</span>
+          <span class="timer-unit" id="flashTimerHours">14</span> :
+          <span class="timer-unit" id="flashTimerMins">42</span> :
+          <span class="timer-unit" id="flashTimerSecs">19</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 3. Interactive Filter Bar & Products Catalog -->
+  <section class="section-padding">
+    <div class="container">
+      
+
+
+      <!-- Results Notice -->
+      <div style="margin-bottom: 24px; font-weight: 600; color: var(--text-muted);">
+        Showing <span id="catalogResultsCount" style="color: var(--primary); font-weight: 700;">12</span> verified organic products
+      </div>
+
+      <!-- Products Grid (4 columns) -->
+      <div class="products-catalog-grid">
+        
+        <!-- 1. Avocado -->
+        <div class="product-card product-card-item" data-category="fruits" data-name="organic hass avocado" data-price="4.99" data-rating="4.9">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Organic</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/avocado.webp" alt="Organic Hass Avocado">
+            <button class="product-quickview-trigger" data-id="1"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Fruits</span>
+            <h4 class="product-title">Organic Hass Avocado</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(4.9)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$4.99</span>
+              <button class="product-add-btn" data-id="1" data-name="Organic Hass Avocado" data-price="4.99" data-image="assets/avocado.webp" data-category="Fruits"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 2. Strawberries -->
+        <div class="product-card product-card-item" data-category="fruits" data-name="fresh farm strawberries" data-price="6.49" data-rating="5.0">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Farm Fresh</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/strawberries.webp" alt="Fresh Strawberries">
+            <button class="product-quickview-trigger" data-id="2"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Fruits</span>
+            <h4 class="product-title">Fresh Farm Strawberries</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(5.0)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$6.49</span>
+              <button class="product-add-btn" data-id="2" data-name="Fresh Farm Strawberries" data-price="6.49" data-image="assets/strawberries.webp" data-category="Fruits"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Spinach -->
+        <div class="product-card product-card-item" data-category="vegetables" data-name="farm fresh baby spinach" data-price="3.99" data-rating="4.8">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Crisp Green</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/spinach.webp" alt="Farm Fresh Baby Spinach">
+            <button class="product-quickview-trigger" data-id="3"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Vegetables</span>
+            <h4 class="product-title">Farm Fresh Baby Spinach</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(4.8)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$3.99</span>
+              <button class="product-add-btn" data-id="3" data-name="Farm Fresh Baby Spinach" data-price="3.99" data-image="assets/spinach.webp" data-category="Vegetables"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 4. Honey -->
+        <div class="product-card product-card-item" data-category="honey" data-name="raw wildflower honey" data-price="12.50" data-rating="5.0">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> 100% Raw</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/honey-jar.webp" alt="Raw Wildflower Honey">
+            <button class="product-quickview-trigger" data-id="4"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Honey</span>
+            <h4 class="product-title">Raw Wildflower Honey</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(5.0)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$12.50</span>
+              <button class="product-add-btn" data-id="4" data-name="Raw Wildflower Honey" data-price="12.50" data-image="assets/honey-jar.webp" data-category="Honey"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 5. Coconut Oil -->
+        <div class="product-card product-card-item" data-category="oils" data-name="cold-pressed virgin coconut oil" data-price="14.99" data-rating="4.9">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Cold-Pressed</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/coconut-oil.webp" alt="Virgin Coconut Oil">
+            <button class="product-quickview-trigger" data-id="5"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Oils</span>
+            <h4 class="product-title">Virgin Coconut Oil</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(4.9)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$14.99</span>
+              <button class="product-add-btn" data-id="5" data-name="Virgin Coconut Oil" data-price="14.99" data-image="assets/coconut-oil.webp" data-category="Oils"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. Brown Rice -->
+        <div class="product-card product-card-item" data-category="grains" data-name="organic brown basmati rice" data-price="8.99" data-rating="4.7">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Ancient Grain</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/brown-rice.webp" alt="Organic Brown Basmati Rice">
+            <button class="product-quickview-trigger" data-id="6"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Grains</span>
+            <h4 class="product-title">Organic Brown Basmati Rice</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(4.7)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$8.99</span>
+              <button class="product-add-btn" data-id="6" data-name="Organic Brown Basmati Rice" data-price="8.99" data-image="assets/brown-rice.webp" data-category="Grains"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 7. Almonds -->
+        <div class="product-card product-card-item" data-category="snacks" data-name="raw california almonds" data-price="11.20" data-rating="4.9">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Raw &amp; Pure</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/almonds.webp" alt="Raw California Almonds">
+            <button class="product-quickview-trigger" data-id="7"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Snacks</span>
+            <h4 class="product-title">Raw California Almonds</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(4.9)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$11.20</span>
+              <button class="product-add-btn" data-id="7" data-name="Raw California Almonds" data-price="11.20" data-image="assets/almonds.webp" data-category="Snacks"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 8. Green Tea -->
+        <div class="product-card product-card-item" data-category="beverages" data-name="whole leaf organic green tea" data-price="9.50" data-rating="4.8">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Antioxidant</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/green-tea.webp" alt="Whole Leaf Organic Green Tea">
+            <button class="product-quickview-trigger" data-id="8"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Beverages</span>
+            <h4 class="product-title">Whole Leaf Green Tea</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(4.8)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$9.50</span>
+              <button class="product-add-btn" data-id="8" data-name="Whole Leaf Green Tea" data-price="9.50" data-image="assets/green-tea.webp" data-category="Beverages"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 9. Olive Oil -->
+        <div class="product-card product-card-item" data-category="oils" data-name="extra virgin cold-pressed olive oil" data-price="18.50" data-rating="5.0">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Extra Virgin</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/olive-oil.webp" alt="Extra Virgin Olive Oil">
+            <button class="product-quickview-trigger" data-id="9"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Oils</span>
+            <h4 class="product-title">Extra Virgin Olive Oil</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(5.0)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$18.50</span>
+              <button class="product-add-btn" data-id="9" data-name="Extra Virgin Olive Oil" data-price="18.50" data-image="assets/olive-oil.webp" data-category="Oils"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 10. Chia Seeds -->
+        <div class="product-card product-card-item" data-category="grains" data-name="organic black chia seeds" data-price="7.80" data-rating="4.9">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Superfood</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/chia-seeds.webp" alt="Organic Black Chia Seeds">
+            <button class="product-quickview-trigger" data-id="10"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Grains</span>
+            <h4 class="product-title">Organic Chia Seeds</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(4.9)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$7.80</span>
+              <button class="product-add-btn" data-id="10" data-name="Organic Chia Seeds" data-price="7.80" data-image="assets/chia-seeds.webp" data-category="Grains"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 11. Apples -->
+        <div class="product-card product-card-item" data-category="fruits" data-name="crisp royal gala apples" data-price="5.40" data-rating="4.8">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Orchard Sweet</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/apples.webp" alt="Royal Gala Apples">
+            <button class="product-quickview-trigger" data-id="11"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Fruits</span>
+            <h4 class="product-title">Royal Gala Apples</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><span>(4.8)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$5.40</span>
+              <button class="product-add-btn" data-id="11" data-name="Royal Gala Apples" data-price="5.40" data-image="assets/apples.webp" data-category="Fruits"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 12. Carrots -->
+        <div class="product-card product-card-item" data-category="vegetables" data-name="organic crunchy farm carrots" data-price="3.20" data-rating="4.7">
+          <div class="product-badge-wrap"><span class="badge-organic"><i class="fa-solid fa-leaf"></i> Farm Root</span></div>
+          <button class="product-wishlist-btn" title="Add to Wishlist"><i class="fa-regular fa-heart"></i></button>
+          <div class="product-thumb">
+            <img src="assets/carrots.webp" alt="Crunchy Carrots">
+            <button class="product-quickview-trigger" data-id="12"><i class="fa-solid fa-eye"></i> Quick View</button>
+          </div>
+          <div class="product-details">
+            <span class="product-category">Vegetables</span>
+            <h4 class="product-title">Crunchy Farm Carrots</h4>
+            <div class="product-rating"><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star"></i><i class="fa-solid fa-star-half-stroke"></i><span>(4.7)</span></div>
+            <div class="product-footer">
+              <span class="product-price">$3.20</span>
+              <button class="product-add-btn" data-id="12" data-name="Crunchy Farm Carrots" data-price="3.20" data-image="assets/carrots.webp" data-category="Vegetables"><i class="fa-solid fa-cart-plus"></i></button>
+            </div>
+          </div>
+        </div>
+
+        <!-- No Products Notice -->
+        <div class="no-products-found" id="noProductsNotice">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <h4 class="font-serif">No organic products matched your criteria</h4>
+          <p>Try searching for a different item or clear the category filters.</p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- 4. Interactive Storage & Nutrition Guide Tabs -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag" data-aos="fade-down"><i class="fa-solid fa-lightbulb"></i> Kitchen Wisdom</span>
+        <h2 class="section-title font-serif" data-aos="fade-up" data-aos-delay="100">How to Preserve Natural Harvest Freshness</h2>
+        <p class="section-desc" data-aos="fade-up" data-aos-delay="200">Practical tips from our agricultural team to keep your organic foods crisp and nutrient-packed.</p>
+      </div>
+
+      <div class="storage-guide-container" data-aos="fade-up" data-aos-duration="1000">
+        <div class="storage-tabs-nav">
+          <button class="storage-tab-btn active" data-tab="tab-greens">Leafy Greens &amp; Veggies</button>
+          <button class="storage-tab-btn" data-tab="tab-fruits">Orchard Fruits &amp; Berries</button>
+          <button class="storage-tab-btn" data-tab="tab-honey">Raw Honey &amp; Spreads</button>
+          <button class="storage-tab-btn" data-tab="tab-oils">Cold-Pressed Oils</button>
+        </div>
+
+        <!-- Tab 1: Greens -->
+        <div class="storage-tab-pane" id="tab-greens">
+          <div class="storage-tips-list">
+            <h3 class="font-serif" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Leafy Greens Preservation Protocol</h3>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Wrap in damp unbleached cloth:</strong> Place spinach and herbs in breathable cloth before refrigerating to prevent wilting.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Do not pre-wash:</strong> Moisture on leaves accelerates oxidation; wash only right before cooking or preparing salads.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Crispness restoration:</strong> Immerse limp celery or carrots in ice-cold water for 15 minutes to restore natural cell turgidity.</div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/spinach.webp" alt="Fresh Spinach Storage" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-height: 280px; width: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <!-- Tab 2: Fruits -->
+        <div class="storage-tab-pane" id="tab-fruits" style="display: none;">
+          <div class="storage-tips-list">
+            <h3 class="font-serif" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Orchard Fruit Care Guide</h3>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Avocados:</strong> Store hard avocados at room temperature; move to refrigerator crisper drawer once slightly yielding.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Berries:</strong> Keep strawberries in their ventilated wooden/cardboard box and avoid stacking heavy items on top.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Bananas &amp; Apples:</strong> Store bananas separately as natural ethylene emissions ripen neighboring fruits faster.</div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/strawberries.webp" alt="Strawberries Care" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-height: 280px; width: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <!-- Tab 3: Honey -->
+        <div class="storage-tab-pane" id="tab-honey" style="display: none;">
+          <div class="storage-tips-list">
+            <h3 class="font-serif" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Raw Unfiltered Honey Stewardship</h3>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Never refrigerate:</strong> Cold temperatures accelerate harmless natural honey crystallization; store in a dry pantry.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Gentle warm bath:</strong> If honey crystallizes, place glass jar in warm water (under 45&deg;C) to preserve active live enzymes.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Dry wooden spoon:</strong> Avoid introducing water droplets inside the jar to keep antibacterial properties active.</div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/honey-jar.webp" alt="Raw Honey Care" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-height: 280px; width: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+        <!-- Tab 4: Oils -->
+        <div class="storage-tab-pane" id="tab-oils" style="display: none;">
+          <div class="storage-tips-list">
+            <h3 class="font-serif" style="color: var(--primary); font-size: 1.5rem; margin-bottom: 8px;">Cold-Pressed Oil Potency Protection</h3>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Shield from direct sunlight:</strong> UV rays degrade sensitive polyphenol antioxidants; keep bottles in a dark pantry.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Tightly seal cap:</strong> Prevent oxidation by ensuring bottles are hermetically capped after each cooking use.</div>
+            </div>
+            <div class="storage-tip-item">
+              <i class="fa-solid fa-circle-check"></i>
+              <div><strong>Virgin coconut oil:</strong> Natural solidifying below 24&deg;C is a pure quality hallmark and does not affect quality.</div>
+            </div>
+          </div>
+          <div>
+            <img src="assets/olive-oil.webp" alt="Olive Oil Storage" style="border-radius: var(--radius-lg); box-shadow: var(--shadow-md); max-height: 280px; width: 100%; object-fit: cover;">
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- 5. Quality Assurance Metrics Counter -->
+  <section class="section-padding">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-vial"></i> Scientific Rigor</span>
+        <h2 class="section-title font-serif">Laboratory Verified Organic Purity</h2>
+        <p class="section-desc">Our multi-point quality assurance benchmarks verified on every batch.</p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-shield-halved"></i></div>
+          <div class="stat-number counter-val" data-target="240" data-suffix="+">240+</div>
+          <div class="stat-label">Pesticides Screened</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-ban"></i></div>
+          <div class="stat-number counter-val" data-target="0" data-suffix="%">0%</div>
+          <div class="stat-label">Chemical Preservatives</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-clock-rotate-left"></i></div>
+          <div class="stat-number counter-val" data-target="24" data-suffix="h">24h</div>
+          <div class="stat-label">Harvest-to-Door Window</div>
+        </div>
+
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fa-solid fa-seedling"></i></div>
+          <div class="stat-number counter-val" data-target="100" data-suffix="%">100%</div>
+          <div class="stat-label">Soil Certified Regenerative</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6. Recommended Harvest Combos -->
+  <section class="section-padding" style="background: var(--bg-surface-subtle);">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-tag"><i class="fa-solid fa-bag-shopping"></i> Smart Pairings</span>
+        <h2 class="section-title font-serif">Customer Recommended Harvest Combos</h2>
+        <p class="section-desc">Frequently paired together by our wellness community for maximum balanced nutrition.</p>
+      </div>
+
+      <div class="bundles-grid">
+        <div class="bundle-card">
+          <h3 class="bundle-title font-serif">Superfood Smoothie Duo</h3>
+          <p class="bundle-desc">Organic Hass Avocados paired with Black Chia Seeds and raw wildflower honey.</p>
+          <div class="bundle-price">$24.00 <span>combo</span></div>
+          <div class="bundle-features">
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 4x Organic Avocados</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 250g Black Chia Seeds</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 250g Raw Wildflower Honey</div>
+          </div>
+          <a href="404.html" class="btn btn-outline" style="width: 100%;">Add Combo</a>
+        </div>
+
+        <div class="bundle-card featured">
+          <span class="bundle-popular-badge"><i class="fa-solid fa-star"></i> High Fiber</span>
+          <h3 class="bundle-title font-serif">Ancient Grain &amp; Olive Pack</h3>
+          <p class="bundle-desc">Organic brown basmati rice combined with extra virgin cold-pressed olive oil.</p>
+          <div class="bundle-price">$26.50 <span>combo</span></div>
+          <div class="bundle-features">
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 2 kg Brown Basmati Rice</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 750ml Extra Virgin Olive Oil</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> Certified Low Glycemic</div>
+          </div>
+          <a href="404.html" class="btn btn-accent" style="width: 100%;">Add Combo</a>
+        </div>
+
+        <div class="bundle-card">
+          <h3 class="bundle-title font-serif">Daily Green Detox Pair</h3>
+          <p class="bundle-desc">Farm fresh baby spinach with high elevation whole leaf organic green tea.</p>
+          <div class="bundle-price">$12.99 <span>combo</span></div>
+          <div class="bundle-features">
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 500g Fresh Baby Spinach</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> 100g Whole Leaf Green Tea</div>
+            <div class="bundle-feature-item"><i class="fa-solid fa-circle-check"></i> Rich in Natural Chlorophyll</div>
+          </div>
+          <a href="404.html" class="btn btn-outline" style="width: 100%;">Add Combo</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7. Final CTA -->
+  <section class="final-cta-section">
+    <div class="container">
+      <div class="cta-box">
+        <span class="section-tag">
+          <i class="fa-solid fa-basket-shopping"></i> Wholesome Nutrition
+        </span>
+        <h2 class="section-title font-serif">Bring Nature to Your Table</h2>
+        <p>Choose fresh, certified organic and responsibly sourced food for a healthier, more vibrant everyday lifestyle.</p>
+        <div class="cta-buttons">
+          <a href="404.html" class="btn btn-accent btn-lg">
+            <i class="fa-solid fa-cart-shopping"></i> Shop Organic Foods
+          </a>
+          <a href="404.html" class="btn btn-outline-white btn-lg">
+            <i class="fa-solid fa-envelope"></i> Contact Our Team
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="index.html" class="footer-logo">
+            <img src="assets/logo01.webp" alt="Stackly">
+          </a>
+          <p class="footer-desc">
+            Your trusted organic grocery marketplace delivering farm-fresh produce, cold-pressed oils, pure honey, and wholesome grains with zero chemical additives.
+          </p>
+          <div class="footer-socials">
+            <a href="404.html" class="social-link" title="Facebook" aria-label="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="404.html" class="social-link" title="Instagram" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+            <a href="404.html" class="social-link" title="LinkedIn" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="404.html" class="social-link" title="X (Twitter)" aria-label="X"><i class="fa-brands fa-x-twitter"></i></a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Quick Links</h4>
+          <ul class="footer-links">
+            <li><a href="index.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+            <li><a href="Shop.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Shop</a></li>
+            <li><a href="Categories.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Categories</a></li>
+            <li><a href="Products.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Products</a></li>
+            <li><a href="About.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+            <li><a href="Contact.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Contact Us</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Shop Categories</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Fruits</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Fresh Vegetables</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Organic Grains</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Dairy &amp; Eggs</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Natural Snacks</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Customer Support</h4>
+          <ul class="footer-links">
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Help Center</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Delivery Information</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Returns &amp; Refunds</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Privacy Policy</a></li>
+            <li><a href="404.html" class="footer-link"><i class="fa-solid fa-chevron-right"></i> Terms &amp; Conditions</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; 2026 Stackly. All rights reserved. Fresh From Nature. Good For You.</p>
+        <p>100% Frontend Only &bull; Hosted on GitHub Pages</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Central JavaScript -->
+  <script src="js/main.js?v=37"></script>
+
+  <!-- AOS Animation Script -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 800,
+      once: true
+    });
+  </script>
+</body>
+</html>
+
+
+

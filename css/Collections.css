@@ -1,0 +1,191 @@
+/* ==========================================================================
+   LIVORA LUXURY FURNITURE - COLLECTIONS PAGE STYLESHEET (Collections.css)
+   ========================================================================== */
+
+.collections-hero-section {
+  position: relative;
+  background-color: var(--espresso-dark);
+  color: var(--secondary);
+  padding: calc(var(--nav-height) + 3.5rem) 0 4rem;
+  text-align: center;
+  overflow: hidden;
+}
+
+.collections-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: 0.28;
+}
+
+.collections-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* Curated Collection Showcase Blocks */
+.collection-showcase-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+  padding: 4rem 0 6rem;
+}
+
+.collection-showcase-item {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  align-items: center;
+  gap: clamp(2.5rem, 5vw, 5rem);
+}
+
+.collection-showcase-item.reverse {
+  grid-template-columns: 0.85fr 1.15fr;
+}
+
+.collection-showcase-item.reverse .collection-media {
+  order: 2;
+}
+
+.collection-showcase-item.reverse .collection-details {
+  order: 1;
+}
+
+.collection-media {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.collection-media img {
+  width: 100%;
+  height: 480px;
+  object-fit: cover;
+  transition: transform var(--transition-slow);
+}
+
+.collection-showcase-item:hover .collection-media img {
+  transform: scale(1.05);
+}
+
+.collection-tag-badge {
+  position: absolute;
+  top: 1.5rem;
+  left: 1.5rem;
+  background-color: var(--primary);
+  color: var(--secondary);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--accent);
+}
+
+.collection-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.collection-designer-note {
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 0.6rem;
+}
+
+.collection-name {
+  font-family: var(--font-display);
+  font-size: clamp(1.8rem, 3.2vw, 2.5rem);
+  margin-bottom: 1.2rem;
+  line-height: 1.2;
+}
+
+.collection-story {
+  color: var(--espresso-muted);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 1.8rem;
+}
+
+.collection-swatches {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.swatch-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--espresso-light);
+}
+
+.swatch-circle {
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--secondary);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.15);
+}
+
+/* Lookbook Moodboard Grid */
+.lookbook-section {
+  background-color: var(--bg-warm);
+  padding: 5rem 0;
+  border-top: 1px solid var(--border-light);
+}
+
+.lookbook-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+.lookbook-card {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  height: 340px;
+}
+
+.lookbook-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--transition-smooth);
+}
+
+.lookbook-card:hover img {
+  transform: scale(1.08);
+}
+
+@media (max-width: 1024px) {
+  .collection-showcase-item,
+  .collection-showcase-item.reverse {
+    grid-template-columns: 1fr;
+  }
+  .collection-showcase-item.reverse .collection-media {
+    order: 1;
+  }
+  .collection-showcase-item.reverse .collection-details {
+    order: 2;
+  }
+  .collection-media img {
+    height: 380px;
+  }
+  .lookbook-grid {
+    grid-template-columns: 1fr;
+  }
+}

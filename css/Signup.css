@@ -1,0 +1,50 @@
+/* ==========================================================================
+   Stackly - Signup Page CSS (Signup.css)
+   ========================================================================== */
+
+@import url('Login.css');
+
+.auth-card.signup-card {
+  max-width: 520px;
+}
+
+.signup-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.signup-grid-full {
+  grid-column: 1 / -1;
+}
+
+@media (max-width: 540px) {
+  .signup-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.terms-agreement {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin-bottom: 16px;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+
+.terms-agreement input {
+  accent-color: var(--primary);
+  margin-top: 2px;
+  width: 15px;
+  height: 15px;
+}
+
+.terms-agreement a {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.terms-agreement a:hover {
+  color: var(--accent);
+}
