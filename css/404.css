@@ -7,8 +7,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background: linear-gradient(135deg, rgba(36, 92, 58, 0.08) 0%, rgba(231, 169, 59, 0.12) 100%),
-              radial-gradient(circle at 50% 50%, rgba(36, 92, 58, 0.04) 0%, transparent 60%);
+  background: linear-gradient(135deg, rgba(116, 53, 142, 0.08) 0%, rgba(134, 66, 163, 0.12) 100%),
+              radial-gradient(circle at 50% 50%, rgba(116, 53, 142, 0.04) 0%, transparent 60%);
   padding: 40px 20px;
   position: relative;
   overflow: hidden;
@@ -42,7 +42,7 @@
   color: var(--primary);
   line-height: 1;
   letter-spacing: -0.04em;
-  text-shadow: 0 10px 30px rgba(36, 92, 58, 0.15);
+  text-shadow: 0 10px 30px rgba(116, 53, 142, 0.15);
 }
 
 .error-code span {
@@ -112,7 +112,7 @@
 .blob-1 {
   width: 320px;
   height: 320px;
-  background: rgba(36, 92, 58, 0.15);
+  background: rgba(116, 53, 142, 0.15);
   top: 10%;
   left: 5%;
   animation: blobFloat 10s ease-in-out infinite alternate;
@@ -121,7 +121,7 @@
 .blob-2 {
   width: 280px;
   height: 280px;
-  background: rgba(231, 169, 59, 0.15);
+  background: rgba(134, 66, 163, 0.15);
   bottom: 10%;
   right: 5%;
   animation: blobFloat 12s ease-in-out infinite alternate-reverse;

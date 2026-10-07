@@ -1,7 +1,19 @@
+/* Global Preloader Removal */
+window.addEventListener('load', () => {
+  const preloader = document.getElementById('global-preloader');
+  if (preloader) {
+    setTimeout(() => {
+      preloader.classList.add('fade-out');
+      setTimeout(() => {
+        preloader.style.display = 'none';
+      }, 500);
+    }, 3000);
+  }
+});
 /**
  * Stackly - Single Centralized JavaScript Engine
  * Brand: Stackly | Tagline: Fresh From Nature. Good For You.
- * Strict Theme: Primary (#245C3A), Secondary (#FFFFFF), Accent (#E7A93B)
+ * Strict Theme: Primary (#74358E), Secondary (#FFFFFF), Accent (#8642A3)
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -903,7 +915,7 @@ function renderSalesChart() {
   const h = rect.height - padBottom - 20;
 
   // Grid Lines
-  ctx.strokeStyle = 'rgba(36, 92, 58, 0.08)';
+  ctx.strokeStyle = 'rgba(116, 53, 142, 0.08)';
   ctx.lineWidth = 1;
   for (let i = 0; i <= 4; i++) {
     const y = 10 + (h / 4) * i;
@@ -915,8 +927,8 @@ function renderSalesChart() {
 
   // Gradient area
   const gradient = ctx.createLinearGradient(0, 0, 0, h);
-  gradient.addColorStop(0, 'rgba(36, 92, 58, 0.35)');
-  gradient.addColorStop(1, 'rgba(36, 92, 58, 0.0)');
+  gradient.addColorStop(0, 'rgba(116, 53, 142, 0.35)');
+  gradient.addColorStop(1, 'rgba(116, 53, 142, 0.0)');
 
   const points = values.map((val, idx) => {
     const x = padLeft + (w / (values.length - 1)) * idx;
@@ -941,7 +953,7 @@ function renderSalesChart() {
   for (let i = 1; i < points.length; i++) {
     ctx.lineTo(points[i].x, points[i].y);
   }
-  ctx.strokeStyle = '#245C3A';
+  ctx.strokeStyle = '#74358E';
   ctx.lineWidth = 3.5;
   ctx.stroke();
 
@@ -949,13 +961,13 @@ function renderSalesChart() {
   points.forEach((p, idx) => {
     ctx.beginPath();
     ctx.arc(p.x, p.y, 5, 0, Math.PI * 2);
-    ctx.fillStyle = '#E7A93B';
+    ctx.fillStyle = '#8642A3';
     ctx.fill();
     ctx.strokeStyle = '#FFFFFF';
     ctx.lineWidth = 2;
     ctx.stroke();
 
-    ctx.fillStyle = 'rgba(36, 92, 58, 0.7)';
+    ctx.fillStyle = 'rgba(116, 53, 142, 0.7)';
     ctx.font = '600 11px Plus Jakarta Sans, sans-serif';
     ctx.textAlign = 'center';
     ctx.fillText(months[idx], p.x, rect.height - 10);
@@ -974,10 +986,10 @@ function renderCategoryChart() {
   ctx.scale(dpr, dpr);
 
   const data = [
-    { label: 'Fruits', val: 35, color: '#245C3A' },
-    { label: 'Vegetables', val: 25, color: '#E7A93B' },
-    { label: 'Honey & Oils', val: 20, color: '#173d26' },
-    { label: 'Grains', val: 20, color: 'rgba(231, 169, 59, 0.6)' }
+    { label: 'Fruits', val: 35, color: '#74358E' },
+    { label: 'Vegetables', val: 25, color: '#8642A3' },
+    { label: 'Honey & Oils', val: 20, color: '#522168' },
+    { label: 'Grains', val: 20, color: 'rgba(134, 66, 163, 0.6)' }
   ];
 
   const total = data.reduce((s, d) => s + d.val, 0);
@@ -1003,13 +1015,13 @@ function renderCategoryChart() {
   });
 
   // Center Text
-  ctx.fillStyle = '#245C3A';
+  ctx.fillStyle = '#74358E';
   ctx.font = '700 16px Plus Jakarta Sans, sans-serif';
   ctx.textAlign = 'center';
   ctx.textBaseline = 'middle';
   ctx.fillText('100%', cx, cy - 8);
   ctx.font = '600 11px Plus Jakarta Sans, sans-serif';
-  ctx.fillStyle = '#E7A93B';
+  ctx.fillStyle = '#8642A3';
   ctx.fillText('Organic', cx, cy + 12);
 }
 
@@ -1145,4 +1157,6 @@ setTimeout(() => {
     el.readOnly = false;
   });
 }, 500);
+
+
 

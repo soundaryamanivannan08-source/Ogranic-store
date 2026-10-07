@@ -116,7 +116,7 @@
   background: var(--accent);
   color: var(--secondary);
   transform: rotate(15deg) scale(1.1);
-  box-shadow: 0 6px 20px rgba(231, 169, 59, 0.4);
+  box-shadow: 0 6px 20px rgba(134, 66, 163, 0.4);
 }
 
 .category-featured-title {

@@ -9,7 +9,7 @@
   display: flex;
   align-items: center;
   padding: 60px 0 80px;
-  background: linear-gradient(135deg, rgba(36, 92, 58, 0.04) 0%, rgba(231, 169, 59, 0.06) 100%);
+  background: linear-gradient(135deg, rgba(116, 53, 142, 0.04) 0%, rgba(134, 66, 163, 0.06) 100%);
   overflow: hidden;
 }
 
@@ -438,7 +438,7 @@
   background: var(--accent);
   color: var(--secondary);
   transform: rotate(15deg) scale(1.1);
-  box-shadow: 0 6px 18px rgba(231, 169, 59, 0.4);
+  box-shadow: 0 6px 18px rgba(134, 66, 163, 0.4);
 }
 
 .category-card-title {

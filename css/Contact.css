@@ -108,9 +108,9 @@
 .contact-form-card {
   background: var(--secondary);
   border-radius: var(--radius-xl);
-  border: 1.5px solid rgba(36, 92, 58, 0.12);
+  border: 1.5px solid rgba(116, 53, 142, 0.12);
   padding: 44px 40px;
-  box-shadow: 0 12px 36px rgba(36, 92, 58, 0.07);
+  box-shadow: 0 12px 36px rgba(116, 53, 142, 0.07);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -118,8 +118,8 @@
 }
 
 .contact-form-card:hover {
-  box-shadow: 0 18px 48px rgba(36, 92, 58, 0.11);
-  border-color: rgba(36, 92, 58, 0.22);
+  box-shadow: 0 18px 48px rgba(116, 53, 142, 0.11);
+  border-color: rgba(116, 53, 142, 0.22);
 }
 
 .contact-form-header {
@@ -176,28 +176,28 @@
   width: 100%;
   padding: 13px 18px;
   border-radius: var(--radius-md);
-  border: 1.5px solid rgba(36, 92, 58, 0.14);
+  border: 1.5px solid rgba(116, 53, 142, 0.14);
   background: var(--bg-surface-subtle);
   font-size: 0.92rem;
   color: var(--primary);
   font-family: inherit;
   transition: all var(--transition-fast);
-  box-shadow: inset 0 1px 3px rgba(36, 92, 58, 0.03);
+  box-shadow: inset 0 1px 3px rgba(116, 53, 142, 0.03);
 }
 
 .form-control::placeholder {
-  color: rgba(36, 92, 58, 0.45);
+  color: rgba(116, 53, 142, 0.45);
 }
 
 .form-control:hover {
-  border-color: rgba(36, 92, 58, 0.3);
+  border-color: rgba(116, 53, 142, 0.3);
   background: #ffffff;
 }
 
 .form-control:focus {
   border-color: var(--primary);
   background: #ffffff;
-  box-shadow: 0 0 0 3.5px rgba(36, 92, 58, 0.12);
+  box-shadow: 0 0 0 3.5px rgba(116, 53, 142, 0.12);
   outline: none;
 }
 
@@ -239,9 +239,9 @@ textarea.form-control {
 .contact-location-card {
   background: linear-gradient(160deg, #ffffff 0%, #f4f8f5 100%);
   border-radius: var(--radius-xl);
-  border: 1.5px solid rgba(36, 92, 58, 0.12);
+  border: 1.5px solid rgba(116, 53, 142, 0.12);
   padding: 40px 36px;
-  box-shadow: 0 12px 36px rgba(36, 92, 58, 0.07);
+  box-shadow: 0 12px 36px rgba(116, 53, 142, 0.07);
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -251,8 +251,8 @@ textarea.form-control {
 }
 
 .contact-location-card:hover {
-  box-shadow: 0 18px 48px rgba(36, 92, 58, 0.11);
-  border-color: rgba(231, 169, 59, 0.45);
+  box-shadow: 0 18px 48px rgba(116, 53, 142, 0.11);
+  border-color: rgba(134, 66, 163, 0.45);
 }
 
 .location-card-header {
@@ -289,15 +289,15 @@ textarea.form-control {
   padding: 14px 18px;
   background: #ffffff;
   border-radius: var(--radius-md);
-  border: 1px solid rgba(36, 92, 58, 0.08);
-  box-shadow: 0 2px 8px rgba(36, 92, 58, 0.04);
+  border: 1px solid rgba(116, 53, 142, 0.08);
+  box-shadow: 0 2px 8px rgba(116, 53, 142, 0.04);
   transition: all var(--transition-fast);
 }
 
 .loc-detail-item:hover {
   transform: translateX(4px);
   border-color: var(--accent);
-  box-shadow: 0 6px 18px rgba(36, 92, 58, 0.08);
+  box-shadow: 0 6px 18px rgba(116, 53, 142, 0.08);
 }
 
 .loc-detail-icon {
@@ -339,7 +339,7 @@ textarea.form-control {
   position: relative;
   border-radius: var(--radius-lg);
   overflow: hidden;
-  border: 2px solid rgba(36, 92, 58, 0.1);
+  border: 2px solid rgba(116, 53, 142, 0.1);
   box-shadow: var(--shadow-sm);
   height: 190px;
 }
@@ -370,7 +370,7 @@ textarea.form-control {
   display: flex;
   align-items: center;
   gap: 8px;
-  border: 1px solid rgba(231, 169, 59, 0.5);
+  border: 1px solid rgba(134, 66, 163, 0.5);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -517,14 +517,14 @@ textarea.form-control {
 }
 
 .newsletter-input::placeholder {
-  color: rgba(36, 92, 58, 0.55) !important;
+  color: rgba(116, 53, 142, 0.55) !important;
   font-weight: 500;
 }
 
 .newsletter-input:focus {
   border-color: var(--accent) !important;
   background: #ffffff !important;
-  box-shadow: 0 0 0 4px rgba(231, 169, 59, 0.35) !important;
+  box-shadow: 0 0 0 4px rgba(134, 66, 163, 0.35) !important;
   outline: none;
 }
 

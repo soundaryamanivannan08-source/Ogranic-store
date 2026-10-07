@@ -243,7 +243,7 @@
 }
 
 .mv-card {
-  background: linear-gradient(135deg, rgba(36, 92, 58, 0.05) 0%, rgba(231, 169, 59, 0.08) 100%);
+  background: linear-gradient(135deg, rgba(116, 53, 142, 0.05) 0%, rgba(134, 66, 163, 0.08) 100%);
   border: 1.5px solid var(--border-light);
   border-radius: var(--radius-xl);
   padding: 44px 36px;

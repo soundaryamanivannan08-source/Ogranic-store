@@ -2,9 +2,9 @@
    Stackly - Core CSS & Design System
    Brand: Stackly | Tagline: Fresh From Nature. Good For You.
    Color Palette:
-     - Primary: #245C3A (Deep Organic Green)
+     - Primary: #74358E (Deep Organic Green)
      - Secondary: #FFFFFF (Pure White)
-     - Accent: #E7A93B (Natural Harvest Gold)
+     - Accent: #8642A3 (Natural Harvest Gold)
    Typography:
      - Sans-serif: 'Plus Jakarta Sans', sans-serif
      - Serif Display: 'DM Serif Display', serif
@@ -14,40 +14,40 @@
 
 :root {
   /* Strict 3-Color Master Palette */
-  --primary: #245C3A;
+  --primary: #74358E;
   --secondary: #FFFFFF;
-  --accent: #E7A93B;
+  --accent: #8642A3;
 
   /* Derived Tints, Opacities, and Shades */
-  --primary-dark: #173d26;
-  --primary-deep: #0f2919;
-  --primary-light: rgba(36, 92, 58, 0.08);
-  --primary-10: rgba(36, 92, 58, 0.10);
-  --primary-20: rgba(36, 92, 58, 0.20);
-  --primary-40: rgba(36, 92, 58, 0.40);
-  --primary-80: rgba(36, 92, 58, 0.80);
+  --primary-dark: #522168;
+  --primary-deep: #39144C;
+  --primary-light: rgba(116, 53, 142, 0.08);
+  --primary-10: rgba(116, 53, 142, 0.10);
+  --primary-20: rgba(116, 53, 142, 0.20);
+  --primary-40: rgba(116, 53, 142, 0.40);
+  --primary-80: rgba(116, 53, 142, 0.80);
 
-  --accent-dark: #c98e27;
-  --accent-light: rgba(231, 169, 59, 0.12);
-  --accent-20: rgba(231, 169, 59, 0.20);
-  --accent-40: rgba(231, 169, 59, 0.40);
+  --accent-dark: #662D82;
+  --accent-light: rgba(134, 66, 163, 0.12);
+  --accent-20: rgba(134, 66, 163, 0.20);
+  --accent-40: rgba(134, 66, 163, 0.40);
 
-  --bg-page: #f8faf8;
+  --bg-page: #FAF5FF;
   --bg-surface: #ffffff;
-  --bg-surface-subtle: #f2f6f3;
-  --text-main: #183323;
-  --text-muted: rgba(36, 92, 58, 0.72);
-  --text-subtle: rgba(36, 92, 58, 0.50);
-  --border-light: rgba(36, 92, 58, 0.12);
-  --border-focus: #245C3A;
-  --border-accent: rgba(231, 169, 59, 0.40);
+  --bg-surface-subtle: #F3E8FF;
+  --text-main: #261330;
+  --text-muted: rgba(116, 53, 142, 0.72);
+  --text-subtle: rgba(116, 53, 142, 0.50);
+  --border-light: rgba(116, 53, 142, 0.12);
+  --border-focus: #74358E;
+  --border-accent: rgba(134, 66, 163, 0.40);
 
   /* Elevation Shadows */
-  --shadow-sm: 0 2px 8px rgba(36, 92, 58, 0.06);
-  --shadow-md: 0 8px 24px rgba(36, 92, 58, 0.09);
-  --shadow-lg: 0 16px 40px rgba(36, 92, 58, 0.12);
-  --shadow-gold: 0 8px 24px rgba(231, 169, 59, 0.25);
-  --shadow-green: 0 8px 24px rgba(36, 92, 58, 0.25);
+  --shadow-sm: 0 2px 8px rgba(116, 53, 142, 0.06);
+  --shadow-md: 0 8px 24px rgba(116, 53, 142, 0.09);
+  --shadow-lg: 0 16px 40px rgba(116, 53, 142, 0.12);
+  --shadow-gold: 0 8px 24px rgba(134, 66, 163, 0.25);
+  --shadow-green: 0 8px 24px rgba(116, 53, 142, 0.25);
 
   /* Layout & Sizing */
   --container-max: 1280px;
@@ -260,7 +260,7 @@ h1, h2, h3, h4, h5, h6 {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 14px;
-  box-shadow: 0 2px 10px rgba(36, 92, 58, 0.1);
+  box-shadow: 0 2px 10px rgba(116, 53, 142, 0.1);
 }
 
 .section-tag i {
@@ -464,7 +464,7 @@ a.btn {
   background-color: var(--primary);
   color: var(--secondary) !important;
   border: 1.5px solid var(--primary);
-  box-shadow: 0 4px 14px rgba(36, 92, 58, 0.22);
+  box-shadow: 0 4px 14px rgba(116, 53, 142, 0.22);
 }
 
 .btn-primary:hover {
@@ -478,14 +478,14 @@ a.btn {
   background-color: var(--accent);
   color: var(--secondary) !important;
   border: 1.5px solid var(--accent);
-  box-shadow: 0 4px 16px rgba(231, 169, 59, 0.35);
+  box-shadow: 0 4px 16px rgba(134, 66, 163, 0.35);
 }
 
 .btn-accent:hover {
   background-color: var(--accent-dark);
   border-color: var(--accent-dark);
   transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(231, 169, 59, 0.45);
+  box-shadow: 0 8px 24px rgba(134, 66, 163, 0.45);
 }
 
 .btn-outline {
@@ -548,7 +548,7 @@ a.btn {
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
-  box-shadow: 0 2px 8px rgba(36, 92, 58, 0.15);
+  box-shadow: 0 2px 8px rgba(116, 53, 142, 0.15);
 }
 
 .badge-organic i {
@@ -558,7 +558,7 @@ a.btn {
 .badge-gold {
   background: var(--accent);
   color: var(--secondary);
-  box-shadow: 0 2px 8px rgba(231, 169, 59, 0.25);
+  box-shadow: 0 2px 8px rgba(134, 66, 163, 0.25);
 }
 
 /* ==========================================================================
@@ -580,7 +580,7 @@ a.btn {
 
 .site-header.scrolled {
   background: rgba(255, 255, 255, 0.98);
-  box-shadow: 0 8px 20px rgba(36, 92, 58, 0.08);
+  box-shadow: 0 8px 20px rgba(116, 53, 142, 0.08);
   border-bottom-color: transparent;
 }
 
@@ -918,7 +918,7 @@ a.btn {
   max-width: min(420px, 100vw);
   height: 100vh;
   background: var(--secondary);
-  box-shadow: -10px 0 40px rgba(36, 92, 58, 0.2);
+  box-shadow: -10px 0 40px rgba(116, 53, 142, 0.2);
   z-index: 1200;
   display: flex;
   flex-direction: column;
@@ -1040,7 +1040,7 @@ a.btn {
 }
 
 .cart-item-remove {
-  color: rgba(36, 92, 58, 0.4);
+  color: rgba(116, 53, 142, 0.4);
   font-size: 0.9rem;
   transition: color var(--transition-fast);
   padding: 6px;
@@ -1457,7 +1457,7 @@ a.btn {
   bottom: -40px;
   left: 50%;
   transform: translateX(-50%);
-  background: rgba(36, 92, 58, 0.95);
+  background: rgba(116, 53, 142, 0.95);
   color: var(--secondary);
   padding: 6px 16px;
   border-radius: var(--radius-full);
@@ -1777,7 +1777,7 @@ a.btn {
   left: -50%;
   width: 200%;
   height: 200%;
-  background: radial-gradient(circle at center, rgba(231, 169, 59, 0.12) 0%, transparent 60%);
+  background: radial-gradient(circle at center, rgba(134, 66, 163, 0.12) 0%, transparent 60%);
   pointer-events: none;
 }
 
@@ -1832,7 +1832,7 @@ a.btn {
 
 /* Flash Deals & Countdown Header */
 .flash-deals-header {
-  background: linear-gradient(135deg, rgba(36, 92, 58, 0.08) 0%, rgba(231, 169, 59, 0.12) 100%);
+  background: linear-gradient(135deg, rgba(116, 53, 142, 0.08) 0%, rgba(134, 66, 163, 0.12) 100%);
   border: 1.5px solid var(--border-accent);
   border-radius: var(--radius-lg);
   padding: 20px 28px;
@@ -2319,7 +2319,7 @@ a.btn {
   font-size: 1.6rem;
   margin: 0 auto 20px auto;
   transition: all var(--transition-normal);
-  border: 2px solid rgba(36, 92, 58, 0.1);
+  border: 2px solid rgba(116, 53, 142, 0.1);
 }
 
 .stat-card:hover .stat-icon {
@@ -2436,7 +2436,7 @@ a.btn {
 .form-control:focus {
   border-color: var(--primary);
   background: var(--secondary);
-  box-shadow: 0 0 0 3px rgba(36, 92, 58, 0.12);
+  box-shadow: 0 0 0 3px rgba(116, 53, 142, 0.12);
 }
 
 .form-control.error {
@@ -2589,14 +2589,14 @@ a.btn {
 }
 
 .newsletter-input::placeholder {
-  color: rgba(36, 92, 58, 0.55) !important;
+  color: rgba(116, 53, 142, 0.55) !important;
   font-weight: 500;
 }
 
 .newsletter-input:focus {
   border-color: var(--accent) !important;
   background: #ffffff !important;
-  box-shadow: 0 0 0 4px rgba(231, 169, 59, 0.35) !important;
+  box-shadow: 0 0 0 4px rgba(134, 66, 163, 0.35) !important;
   outline: none;
 }
 
@@ -2801,3 +2801,63 @@ textarea.error,
   z-index: 10 !important;
 }
 
+
+/* ==========================================================================
+   Global Preloader Animation
+   ========================================================================== */
+#global-preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-surface);
+  z-index: 9999999;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+}
+
+#global-preloader.fade-out {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.preloader-logo {
+  max-width: 140px;
+  margin-bottom: 24px;
+  animation: pulseLogo 1.4s ease-in-out infinite alternate;
+}
+
+.preloader-track {
+  width: 180px;
+  height: 4px;
+  background: var(--primary-10);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  position: relative;
+}
+
+.preloader-bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 40%;
+  background: var(--primary);
+  border-radius: var(--radius-full);
+  animation: slideBar 1.5s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes pulseLogo {
+  0% { transform: scale(0.95); opacity: 0.85; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+@keyframes slideBar {
+  0% { left: -40%; }
+  100% { left: 100%; }
+}

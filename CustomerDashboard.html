@@ -16,6 +16,13 @@
 </head>
 
 <body class="dashboard-body">
+  <!-- Global Preloader -->
+  <div id="global-preloader">
+    <img src="assets/logo_09.webp" alt="Stackly Loading" class="preloader-logo">
+    <div class="preloader-track">
+      <div class="preloader-bar"></div>
+    </div>
+  </div>
 
   <!-- Drawer Overlay -->
   <div class="drawer-overlay" id="drawerOverlay"></div>
@@ -27,7 +34,7 @@
     <aside class="dashboard-sidebar" id="customerSidebar">
       <div class="dashboard-brand">
         <a href="CustomerDashboard.html" class="brand-logo">
-          <img src="assets/logo01.webp" alt="Stackly">
+          <img src="assets/logo_09.webp" alt="Stackly">
         </a>
         <button class="sidebar-close-btn" id="customerSidebarCloseBtn" aria-label="Close Sidebar">
           <i class="fa-solid fa-xmark"></i>
@@ -94,7 +101,7 @@
       </div>
 
       <div class="sidebar-footer">
-        <a href="404.html" class="sidebar-item logout-item">
+        <a href="Login.html" class="sidebar-item logout-item">
           <i class="fa-solid fa-right-from-bracket"></i>
           <span>Logout Portal</span>
         </a>
@@ -117,7 +124,7 @@
         </div>
 
         <a href="CustomerDashboard.html" class="topbar-mobile-logo" aria-label="Stackly Home">
-          <img src="assets/logo01.webp" alt="Stackly">
+          <img src="assets/logo_09.webp" alt="Stackly">
         </a>
 
         <div class="topbar-actions">
@@ -246,7 +253,7 @@
 
             <!-- Live Driver & Van Telemetry Card -->
             <div
-              style="margin-top: 24px; background: rgba(36, 92, 58, 0.04); border: 1px solid rgba(36, 92, 58, 0.12); border-radius: var(--radius-lg); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+              style="margin-top: 24px; background: rgba(116, 53, 142, 0.04); border: 1px solid rgba(116, 53, 142, 0.12); border-radius: var(--radius-lg); padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
               <div style="display: flex; align-items: center; gap: 14px;">
                 <div
                   style="width: 44px; height: 44px; border-radius: 50%; background: var(--primary); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.2rem;">
@@ -575,7 +582,7 @@
                 <div class="payment-chip"></div>
                 <div style="display: flex; align-items: center; gap: 8px;">
                   <span class="role-badge"
-                    style="background: rgba(231, 169, 59, 0.3) !important; color: #ffffff !important; border: none;"><i
+                    style="background: rgba(134, 66, 163, 0.3) !important; color: #ffffff !important; border: none;"><i
                       class="fa-solid fa-check"></i> Default</span>
                   <i class="fa-brands fa-cc-visa" style="font-size: 2rem; color: #ffffff;"></i>
                 </div>
@@ -611,7 +618,7 @@
                   <i class="fa-solid fa-circle-check"></i> Active &bull; Instant 1-Click Verification
                 </div>
               </div>
-              <div style="display: flex; gap: 8px; border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px;">
+              <div style="display: flex; gap: 8px; border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px;">
                 <a href="404.html" class="btn btn-outline btn-sm" style="flex: 1; text-align: center;">Manage UPI</a>
               </div>
             </div>
@@ -633,7 +640,7 @@
 
           <!-- Loyalty Discount Auto-Apply Notice -->
           <div
-            style="margin-top: 24px; background: linear-gradient(135deg, rgba(231, 169, 59, 0.12) 0%, rgba(36, 92, 58, 0.08) 100%); border: 1.5px solid rgba(231, 169, 59, 0.3); border-radius: var(--radius-lg); padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
+            style="margin-top: 24px; background: linear-gradient(135deg, rgba(134, 66, 163, 0.12) 0%, rgba(116, 53, 142, 0.08) 100%); border: 1.5px solid rgba(134, 66, 163, 0.3); border-radius: var(--radius-lg); padding: 18px 22px; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 14px;">
             <div style="display: flex; align-items: center; gap: 14px;">
               <div
                 style="width: 42px; height: 42px; border-radius: 50%; background: var(--accent); color: #ffffff; display: flex; align-items: center; justify-content: center; font-size: 1.15rem;">
@@ -767,19 +774,19 @@
                       Preferences</label>
                     <div style="display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px;">
                       <label
-                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(116, 53, 142,0.15); cursor: pointer;">
                         <input type="checkbox" id="prefOrganic" checked> 100% Certified Organic
                       </label>
                       <label
-                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(116, 53, 142,0.15); cursor: pointer;">
                         <input type="checkbox" id="prefGlutenFree" checked> Gluten-Free
                       </label>
                       <label
-                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(116, 53, 142,0.15); cursor: pointer;">
                         <input type="checkbox" id="prefVegan"> Vegan Only
                       </label>
                       <label
-                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(36,92,58,0.15); cursor: pointer;">
+                        style="display: inline-flex; align-items: center; gap: 6px; font-size: 0.84rem; background: var(--bg-surface-subtle); padding: 6px 12px; border-radius: var(--radius-full); border: 1px solid rgba(116, 53, 142,0.15); cursor: pointer;">
                         <input type="checkbox" id="prefOils" checked> Cold-Pressed Oils
                       </label>
                     </div>
@@ -830,7 +837,7 @@
                   <div class="address-item-header">
                     <span class="address-item-title"><i class="fa-solid fa-building"></i> Office</span>
                     <span class="role-badge"
-                      style="background: rgba(231,169,59,0.15)!important; color:#a46d14!important;">Secondary</span>
+                      style="background: rgba(134, 66, 163,0.15)!important; color:#a46d14!important;">Secondary</span>
                   </div>
                   <p style="font-size: 0.86rem; color: var(--text-muted); margin: 6px 0 0 0; line-height: 1.5;">
                     Level 8, One BKC, G-Block, Bandra Kurla Complex, Mumbai 400051
@@ -841,7 +848,7 @@
                 </div>
               </div>
 
-              <div style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 18px;">
+              <div style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 18px;">
                 <h4 class="font-serif" style="font-size: 1.2rem; color: var(--primary); margin-bottom: 12px;">
                   <i class="fa-solid fa-headset"></i> Farm Concierge Support
                 </h4>
@@ -880,7 +887,7 @@
           <!-- Subscription Summary Card -->
           <div class="order-tracker-card" style="margin-bottom: 28px;">
             <div
-              style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid rgba(36, 92, 58, 0.1); padding-bottom: 18px;">
+              style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 16px; border-bottom: 1px solid rgba(116, 53, 142, 0.1); padding-bottom: 18px;">
               <div>
                 <span class="badge-organic">Family Harvest Box (7–8 kg)</span>
                 <h3 class="font-serif" style="font-size: 1.4rem; color: var(--primary); margin-top: 6px;">Next Crate
@@ -906,7 +913,7 @@
               </h4>
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px;">
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/avocado.webp" alt="Avocados"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -915,7 +922,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/strawberries.webp" alt="Strawberries"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -924,7 +931,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/honey-jar.webp" alt="Wildflower Honey"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -933,7 +940,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/olive-oil.webp" alt="Olive Oil"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -942,7 +949,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/brown-rice.webp" alt="Brown Rice"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -951,7 +958,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/chia-seeds.webp" alt="Chia Seeds"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -960,7 +967,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/green-tea.webp" alt="Green Tea"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -969,7 +976,7 @@
                   </div>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36, 92, 58, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142, 0.1); border-radius: var(--radius-lg); padding: 14px; display: flex; align-items: center; gap: 12px;">
                   <img src="assets/almonds.webp" alt="Almonds"
                     style="width: 44px; height: 44px; border-radius: 8px; object-fit: cover;">
                   <div>
@@ -981,13 +988,13 @@
             </div>
 
             <!-- Crate Size Upgrade Options -->
-            <div style="margin-top: 28px; border-top: 1px solid rgba(36,92,58,0.1); padding-top: 20px;">
+            <div style="margin-top: 28px; border-top: 1px solid rgba(116, 53, 142,0.1); padding-top: 20px;">
               <h4 class="font-serif" style="font-size: 1.15rem; color: var(--primary); margin-bottom: 14px;">
                 <i class="fa-solid fa-layer-group"></i> Upgrade Subscription Size:
               </h4>
               <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px;">
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36,92,58,0.15); border-radius: var(--radius-lg); padding: 18px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142,0.15); border-radius: var(--radius-lg); padding: 18px;">
                   <div style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Solo Organic Crate (4 kg)
                   </div>
                   <div style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 4px 0;">$18.99 <small
@@ -997,7 +1004,7 @@
                   <button class="btn btn-outline btn-sm" style="width: 100%; display: block; text-align: center;">Switch Tier</button>
                 </div>
                 <div
-                  style="background: rgba(231,169,59,0.06); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 18px;">
+                  style="background: rgba(134, 66, 163,0.06); border: 2px solid var(--accent); border-radius: var(--radius-lg); padding: 18px;">
                   <div style="display: flex; justify-content: space-between; align-items: center;">
                     <div style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Family Harvest (8 kg)
                     </div>
@@ -1010,7 +1017,7 @@
                   <button class="btn btn-primary btn-sm" style="width: 100%;" disabled><i class="fa-solid fa-check"></i> Current Active Plan</button>
                 </div>
                 <div
-                  style="background: #ffffff; border: 1.5px solid rgba(36,92,58,0.15); border-radius: var(--radius-lg); padding: 18px;">
+                  style="background: #ffffff; border: 1.5px solid rgba(116, 53, 142,0.15); border-radius: var(--radius-lg); padding: 18px;">
                   <div style="font-weight: 700; color: var(--primary); font-size: 1.05rem;">Royal Feast Box (14 kg)
                   </div>
                   <div style="font-size: 1.25rem; font-weight: 800; color: var(--primary); margin: 4px 0;">$48.99 <small
@@ -1047,7 +1054,7 @@
                 </p>
               </div>
               <div
-                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
                 <span><i class="fa-solid fa-route" style="color: var(--accent);"></i> 140 km from Mumbai</span>
                 <span><i class="fa-solid fa-sun" style="color: var(--accent);"></i> 4:30 AM Dawn Pluck</span>
               </div>
@@ -1066,7 +1073,7 @@
                 </p>
               </div>
               <div
-                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
                 <span><i class="fa-solid fa-ban" style="color: var(--accent);"></i> Zero Antibiotics</span>
                 <span><i class="fa-solid fa-certificate" style="color: var(--accent);"></i> Grade A Raw</span>
               </div>
@@ -1086,7 +1093,7 @@
                 </p>
               </div>
               <div
-                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
                 <span><i class="fa-solid fa-water" style="color: var(--accent);"></i> Glacier Fed</span>
                 <span><i class="fa-solid fa-tree" style="color: var(--accent);"></i> Heritage Trees</span>
               </div>
@@ -1106,7 +1113,7 @@
                 </p>
               </div>
               <div
-                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
                 <span><i class="fa-solid fa-droplet" style="color: var(--accent);"></i> 100% Cold Process</span>
                 <span><i class="fa-solid fa-leaf" style="color: var(--accent);"></i> Single Origin</span>
               </div>
@@ -1126,7 +1133,7 @@
                 </p>
               </div>
               <div
-                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
                 <span><i class="fa-solid fa-sun" style="color: var(--accent);"></i> Sun Dried</span>
                 <span><i class="fa-solid fa-award" style="color: var(--accent);"></i> Zero Bleach</span>
               </div>
@@ -1146,7 +1153,7 @@
                 </p>
               </div>
               <div
-                style="border-top: 1px solid rgba(36, 92, 58, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
+                style="border-top: 1px solid rgba(116, 53, 142, 0.08); padding-top: 12px; display: flex; justify-content: space-between; font-size: 0.8rem; color: var(--primary);">
                 <span><i class="fa-solid fa-temperature-low" style="color: var(--accent);"></i> &lt; 35&deg;C
                   Press</span>
                 <span><i class="fa-solid fa-seedling" style="color: var(--accent);"></i> First Cold Extract</span>
@@ -1277,5 +1284,6 @@
 </body>
 
 </html>
+
 
 
