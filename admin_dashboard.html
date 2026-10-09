@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard - PureOrganic</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo"><img src="Assest/images/logo_04.webp" alt="PureOrganic Logo"></a>
+        <button class="sidebar-close" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="javascript:void(0)" class="nav-item active" onclick="showSection('dashboard', this)"><i class="fa-solid fa-chart-pie"></i> Dashboard</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('products', this)"><i class="fa-solid fa-box"></i> Products</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('orders', this)"><i class="fa-solid fa-clipboard-list"></i> Orders <span style="background: var(--danger); color: white; padding: 2px 8px; border-radius: 10px; font-size: 0.75rem; margin-left: auto;">18</span></a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('customers', this)"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg> Customers</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('settings', this)"><i class="fa-solid fa-gear"></i> Settings</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-profile">
+          <div class="avatar-initial">A</div>
+          <div class="sidebar-user-info">
+            <h4>Admin Panel</h4>
+            <p>admin@PureOrganic.com</p>
+          </div>
+        </div>
+        <a href="login.html" class="nav-item logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <button class="menu-toggle" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+        <div style="flex: 1;"><h2 class="page-title" style="margin-bottom: 0;">Dashboard</h2></div>
+        
+        <div class="header-right">
+          <div class="header-actions">
+            <button onclick="window.location.href='404.html'" class="header-icon-btn"><i class="fa-regular fa-bell"></i></button>
+            <button onclick="window.location.href='404.html'" class="header-icon-btn"><i class="fa-solid fa-gear"></i></button>
+          </div>
+          <div class="Admin-profile">
+            <div class="Admin-info" style="text-align: right;">
+              <h4>Admin Panel</h4>
+              <p>admin@PureOrganic.com</p>
+            </div>
+            <div class="avatar-initial">A</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- SECTION: Dashboard Overview -->
+      <section id="dashboard" class="content-section active">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <h1 class="page-title" style="margin-bottom: 0;">Dashboard Overview</h1>
+          <button class="btn-primary" onclick="showSection('products', document.querySelectorAll('.nav-item')[1])"><i class="fa-solid fa-plus"></i> Add New Product</button>
+        </div>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon green"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="1" x2="12" y2="23"></line><path d="M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path></svg></div>
+            <div class="stat-details">
+              <h3>$45,200</h3>
+              <p>Total Revenue</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon blue"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 11l3 3L22 4"></path><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"></path></svg></div>
+            <div class="stat-details">
+              <h3>3,240</h3>
+              <p>Completed Orders</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg></div>
+            <div class="stat-details">
+              <h3>1,204</h3>
+              <p>Active Customers</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path><line x1="12" y1="9" x2="12" y2="13"></line><line x1="12" y1="17" x2="12.01" y2="17"></line></svg></div>
+            <div class="stat-details">
+              <h3>5</h3>
+              <p>Low Stock Alerts</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Table -->
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Recent Customer Orders</h3>
+            <a href="404.html" onclick="window.location.href='404.html'" class="btn-view-all">Manage Orders</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-89012</td>
+                <td>Sarah Jenkins</td>
+                <td>Oct 24, 2023 - 14:30</td>
+                <td>$24.50</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status processing">Processing</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Update</button></td>
+              </tr>
+              <tr>
+                <td>#ORD-89010</td>
+                <td>Emily Torres</td>
+                <td>Oct 23, 2023 - 18:45</td>
+                <td>$12.99</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">Delivered</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">View</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Products -->
+      <section id="products" class="content-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 1rem;">
+          <h1 class="page-title" style="margin-bottom: 0;">Product Inventory</h1>
+          <button onclick="window.location.href='404.html'" class="btn-primary"><i class="fa-solid fa-plus"></i> Add New Product</button>
+        </div>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Category</th>
+                <th>Price</th>
+                <th>Stock</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><div style="display: flex; align-items: center; gap: 1rem;"><img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=50&fm=webp" style="border-radius: 6px; width:40px;"> Organic Bananas</div></td>
+                <td>Fruits</td>
+                <td>$2.99</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">145 in stock</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Edit</button></td>
+              </tr>
+              <tr>
+                <td><div style="display: flex; align-items: center; gap: 1rem;"><img src="https://images.unsplash.com/photo-1550583724-b2692b85b150?auto=format&fit=crop&w=400&q=50&fm=webp" style="border-radius: 6px; width:40px;"> Whole Milk</div></td>
+                <td>Dairy</td>
+                <td>$3.49</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status cancelled">2 in stock</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Edit</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Orders -->
+      <section id="orders" class="content-section">
+        <h1 class="page-title">Manage Orders</h1>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Customer Name</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-89012</td>
+                <td>Sarah Jenkins</td>
+                <td>Oct 24, 2023 - 14:30</td>
+                <td>$24.50</td>
+                <td>
+                  <select onclick="window.location.href='404.html'" onchange="window.location.href='404.html'" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer;">
+                    <option selected>Processing</option>
+                    <option>Shipped</option>
+                    <option>Delivered</option>
+                  </select>
+                </td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Save</button></td>
+              </tr>
+              <tr>
+                <td>#ORD-89011</td>
+                <td>Michael Roberts</td>
+                <td>Oct 24, 2023 - 12:15</td>
+                <td>$89.99</td>
+                <td>
+                  <select onclick="window.location.href='404.html'" onchange="window.location.href='404.html'" style="padding: 0.4rem; border-radius: 6px; border: 1px solid var(--border-color); cursor: pointer;">
+                    <option>Processing</option>
+                    <option selected>Shipped</option>
+                    <option>Delivered</option>
+                  </select>
+                </td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Save</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Customers -->
+      <section id="customers" class="content-section">
+        <h1 class="page-title">Customer List</h1>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Total Spent</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Sarah Jenkins</td>
+                <td>sarah@example.com</td>
+                <td>$1,245.50</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">Active</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">View Profile</button></td>
+              </tr>
+              <tr>
+                <td>Michael Roberts</td>
+                <td>mike.rob@example.com</td>
+                <td>$450.00</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">Active</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">View Profile</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Settings -->
+      <section id="settings" class="content-section">
+        <h1 class="page-title">Store Settings</h1>
+        <div class="table-container" style="max-width: 600px;">
+          <form action="404.html" onsubmit="window.location.href='404.html'; return false;">
+            <div class="form-group">
+              <label>Store Name</label>
+              <input type="text" value="PureOrganic Groceries">
+            </div>
+            <div class="form-group">
+              <label>Support Email</label>
+              <input type="email" value="info@PureOrganic.com">
+            </div>
+            <div class="form-group">
+              <label>Delivery Fee (Default)</label>
+              <input type="text" value="$5.00">
+            </div>
+            <button type="submit" onclick="window.location.href='404.html'" class="btn-primary">Update Settings</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // --- Dynamic User Profile Loading ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const email = localStorage.getItem('PureOrganic_email');
+      const role = localStorage.getItem('PureOrganic_role');
+
+      if (email) {
+        // Update initials
+        const initial = email.charAt(0).toUpperCase();
+        document.querySelectorAll('.avatar-initial').forEach(el => el.textContent = initial);
+
+        // Update emails
+        document.querySelectorAll('.sidebar-user-info p, .user-info p').forEach(el => el.textContent = email);
+      }
+
+      if (role) {
+        // Capitalize role (e.g. "user" -> "Customer", "admin" -> "Administrator")
+        let displayRole = role.charAt(0).toUpperCase() + role.slice(1);
+        if (role === 'admin') displayRole = 'Administrator';
+        
+        document.querySelectorAll('.sidebar-user-info h4, .user-info h4').forEach(el => el.textContent = displayRole);
+      }
+    });
+
+    // --- Sidebar & Navigation ---
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('openSidebar');
+    const closeBtn = document.getElementById('closeSidebar');
+
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      if (window.innerWidth <= 992) document.body.style.overflow = 'hidden';
+    });
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    function showSection(sectionId, element) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      
+      // Remove active class from all nav items
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => item.classList.remove('active'));
+      
+      // Show targeted section and set nav item as active
+      document.getElementById(sectionId).classList.add('active');
+      if(element) element.classList.add('active');
+
+      // Close sidebar on mobile after clicking
+      if (window.innerWidth <= 992) {
+        sidebar.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>User Dashboard - PureOrganic</title>
+  <link rel="stylesheet" href="dashboard.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="dashboard-layout">
+    
+    <!-- Sidebar -->
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-header">
+        <a href="index.html" class="logo"><img src="Assest/images/logo_04.webp" alt="PureOrganic Logo"></a>
+        <button class="sidebar-close" id="closeSidebar"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+      
+      <nav class="sidebar-nav">
+        <a href="javascript:void(0)" class="nav-item active" onclick="showSection('dashboard', this)"><i class="fa-solid fa-house"></i> Dashboard</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('orders', this)"><i class="fa-solid fa-box-open"></i> My Orders</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('wishlist', this)"><i class="fa-regular fa-heart"></i> Wishlist</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('addresses', this)"><i class="fa-solid fa-location-dot"></i> Saved Addresses</a>
+        <a href="javascript:void(0)" class="nav-item" onclick="showSection('settings', this)"><i class="fa-solid fa-user-gear"></i> Account Settings</a>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="sidebar-user-profile">
+          <div class="avatar-initial">S</div>
+          <div class="sidebar-user-info">
+            <h4>User</h4>
+            <p>sarah.jenkins@gmail.com</p>
+          </div>
+        </div>
+        <a href="login.html" class="nav-item logout"><i class="fa-solid fa-arrow-right-from-bracket"></i> Logout</a>
+      </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      
+      <!-- Top Header -->
+      <header class="top-header">
+        <button class="menu-toggle" id="openSidebar"><i class="fa-solid fa-bars"></i></button>
+        <div style="flex: 1;"><h2 class="page-title" style="margin-bottom: 0;">Dashboard</h2></div>
+        
+        <div class="header-right">
+          <div class="header-actions">
+            <button onclick="window.location.href='404.html'" class="header-icon-btn"><i class="fa-solid fa-heart"></i></button>
+            <button onclick="window.location.href='404.html'" class="header-icon-btn"><i class="fa-solid fa-bag-shopping"></i></button>
+          </div>
+          <div class="user-profile">
+            <div class="user-info" style="text-align: right;">
+              <h4>Customer</h4>
+              <p>sarah.jenkins@gmail.com</p>
+            </div>
+            <div class="avatar-initial">S</div>
+          </div>
+        </div>
+      </header>
+
+      <!-- SECTION: Dashboard Overview -->
+      <section id="dashboard" class="content-section active">
+        <h1 class="page-title">Welcome back! </h1>
+
+        <!-- Stats Grid -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon blue"><i class="fa-solid fa-box"></i></div>
+            <div class="stat-details">
+              <h3>12</h3>
+              <p>Total Orders</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon orange"><i class="fa-solid fa-truck-fast"></i></div>
+            <div class="stat-details">
+              <h3>2</h3>
+              <p>Pending Deliveries</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon red"><i class="fa-regular fa-heart"></i></div>
+            <div class="stat-details">
+              <h3>8</h3>
+              <p>Wishlist Items</p>
+            </div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon green"><i class="fa-solid fa-star"></i></div>
+            <div class="stat-details">
+              <h3>350</h3>
+              <p>Reward Points</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Orders Table -->
+        <div class="table-container">
+          <div class="table-header">
+            <h3>Recent Orders</h3>
+            <a href="javascript:void(0)" class="btn-view-all" onclick="showSection('orders', document.querySelectorAll('.nav-item')[1])">View All Orders</a>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Items</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-89012</td>
+                <td>Oct 24, 2023</td>
+                <td>Organic Bananas, Whole Milk + 3 more</td>
+                <td>$24.50</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status processing">Processing</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Track</button></td>
+              </tr>
+              <tr>
+                <td>#ORD-88745</td>
+                <td>Oct 18, 2023</td>
+                <td>Fresh Tomatoes, Spinach</td>
+                <td>$12.99</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">Delivered</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn">Reorder</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Orders -->
+      <section id="orders" class="content-section">
+        <h1 class="page-title">My Orders</h1>
+        <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <th>Order ID</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+                <th>Status</th>
+                <th>Invoice</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>#ORD-89012</td>
+                <td>Oct 24, 2023</td>
+                <td>$24.50</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status processing">Processing</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn"><i class="fa-solid fa-download"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td>#ORD-88745</td>
+                <td>Oct 18, 2023</td>
+                <td>$12.99</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">Delivered</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn"><i class="fa-solid fa-download"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td>#ORD-88532</td>
+                <td>Oct 10, 2023</td>
+                <td>$45.20</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status delivered">Delivered</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn"><i class="fa-solid fa-download"></i> PDF</button></td>
+              </tr>
+              <tr>
+                <td>#ORD-88120</td>
+                <td>Sep 28, 2023</td>
+                <td>$15.00</td>
+                <td><span onclick="window.location.href='404.html'" style="cursor: pointer;" class="status cancelled">Cancelled</span></td>
+                <td><button onclick="window.location.href='404.html'" class="action-btn"><i class="fa-solid fa-download"></i> PDF</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Wishlist -->
+      <section id="wishlist" class="content-section">
+        <h1 class="page-title">My Wishlist</h1>
+        <div class="table-container">
+          <p style="color: var(--gray-text); margin-bottom: 1rem;">You have 8 items in your wishlist.</p>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Stock Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Fresh Tomatoes</td>
+                <td>$1.99 / lb</td>
+                <td><span style="color: var(--success); font-weight: 600;">In Stock</span></td>
+                <td><button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 0.5rem 1rem;"><i class="fa-solid fa-cart-shopping"></i> Add</button></td>
+              </tr>
+              <tr>
+                <td>Whole Milk</td>
+                <td>$3.49 / gal</td>
+                <td><span style="color: var(--success); font-weight: 600;">In Stock</span></td>
+                <td><button onclick="window.location.href='404.html'" class="btn-primary" style="padding: 0.5rem 1rem;"><i class="fa-solid fa-cart-shopping"></i> Add</button></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <!-- SECTION: Addresses -->
+      <section id="addresses" class="content-section">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem;">
+          <h1 class="page-title" style="margin: 0;">Saved Addresses</h1>
+          <button onclick="window.location.href='404.html'" class="btn-primary"><i class="fa-solid fa-plus"></i> Add New</button>
+        </div>
+        <div class="stats-grid">
+          <div class="table-container" style="margin-bottom: 0;">
+            <div style="display: flex; justify-content: space-between;">
+              <h3 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-house"></i> Home</h3>
+              <span class="status delivered">Default</span>
+            </div>
+            <p style="color: var(--gray-text); line-height: 1.5; margin-bottom: 1rem;">MMR Complex,<br>Chinna Thirupathi, Salem,<br>Tamil Nadu 636008</p>
+            <button onclick="window.location.href='404.html'" class="action-btn">Edit</button> <button onclick="window.location.href='404.html'" class="action-btn" style="color: var(--danger);">Delete</button>
+          </div>
+          <div class="table-container" style="margin-bottom: 0;">
+            <h3 style="margin-bottom: 0.5rem;"><i class="fa-solid fa-building"></i> Office</h3>
+            <p style="color: var(--gray-text); line-height: 1.5; margin-bottom: 1rem;">45 Tech Park, Block B,<br>Coimbatore, Tamil Nadu<br>641035, India</p>
+            <button onclick="window.location.href='404.html'" class="action-btn">Edit</button> <button onclick="window.location.href='404.html'" class="action-btn" style="color: var(--danger);">Delete</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SECTION: Settings -->
+      <section id="settings" class="content-section">
+        <h1 class="page-title">Account Settings</h1>
+        <div class="table-container" style="max-width: 600px;">
+          <form action="404.html" onsubmit="window.location.href='404.html'; return false;">
+            <div class="form-group">
+              <label>Full Name</label>
+              <input type="text" value="Sarah Jenkins">
+            </div>
+            <div class="form-group">
+              <label>Email Address</label>
+              <input type="email" value="sarah.jenkins@example.com">
+            </div>
+            <div class="form-group">
+              <label>Phone Number</label>
+              <input type="tel" value="9876543210">
+            </div>
+            <button type="submit" onclick="window.location.href='404.html'" class="btn-primary">Save Changes</button>
+          </form>
+        </div>
+      </section>
+
+    </main>
+  </div>
+
+  <script>
+    // --- Dynamic User Profile Loading ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const email = localStorage.getItem('PureOrganic_email');
+      const role = localStorage.getItem('PureOrganic_role');
+
+      if (email) {
+        // Update initials
+        const initial = email.charAt(0).toUpperCase();
+        document.querySelectorAll('.avatar-initial').forEach(el => el.textContent = initial);
+
+        // Update emails
+        document.querySelectorAll('.sidebar-user-info p, .user-info p').forEach(el => el.textContent = email);
+        
+        // Update account settings form if it exists
+        const settingsEmail = document.querySelector('#settings input[type="email"]');
+        if (settingsEmail) settingsEmail.value = email;
+      }
+
+      if (role) {
+        // Capitalize role (e.g. "user" -> "Customer")
+        let displayRole = role.charAt(0).toUpperCase() + role.slice(1);
+        if (role === 'user') displayRole = 'User';
+        
+        document.querySelectorAll('.sidebar-user-info h4, .user-info h4').forEach(el => el.textContent = displayRole);
+      }
+    });
+
+    // --- Sidebar & Navigation ---
+    const sidebar = document.getElementById('sidebar');
+    const openBtn = document.getElementById('openSidebar');
+    const closeBtn = document.getElementById('closeSidebar');
+
+    openBtn.addEventListener('click', () => {
+      sidebar.classList.add('active');
+      if (window.innerWidth <= 992) document.body.style.overflow = 'hidden';
+    });
+    closeBtn.addEventListener('click', () => {
+      sidebar.classList.remove('active');
+      document.body.style.overflow = '';
+    });
+
+    function showSection(sectionId, element) {
+      // Hide all sections
+      const sections = document.querySelectorAll('.content-section');
+      sections.forEach(sec => sec.classList.remove('active'));
+      
+      // Remove active class from all nav items
+      const navItems = document.querySelectorAll('.nav-item');
+      navItems.forEach(item => item.classList.remove('active'));
+      
+      // Show targeted section and set nav item as active
+      document.getElementById(sectionId).classList.add('active');
+      if(element) element.classList.add('active');
+
+      // Close sidebar on mobile after clicking
+      if (window.innerWidth <= 992) {
+        sidebar.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+    }
+  </script>
+</body>
+</html>
+
+
+
+
+

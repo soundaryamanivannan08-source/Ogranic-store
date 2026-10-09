@@ -1,0 +1,128 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sign Up - PureOrganic</title>
+  <link rel="stylesheet" href="auth.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <div class="auth-container">
+    
+    <!-- Left Banner -->
+    <div class="auth-banner" style="background-image: url('https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=400&q=50&fm=webp');">
+      <div class="auth-banner-content">
+        <h1>Join the PureOrganic Family.</h1>
+        <p>Create an account to get fresh farm produce delivered to your doorstep and unlock exclusive member discounts.</p>
+      </div>
+    </div>
+
+    <!-- Right Form Area -->
+    <div class="auth-form-wrapper">
+      <div class="auth-form-container">
+        <a href="index.html" class="back-btn"><i class="fa-solid fa-arrow-left"></i> Back to Home</a>
+        <div class="auth-header">
+          <h2>Create an Account</h2>
+          <p>Fill in the details below to register</p>
+        </div>
+
+        <form id="signupForm">
+          <!-- Role Selector -->
+          <div class="role-selector">
+            <label class="role-label">
+              <input type="radio" name="role" value="user" checked required>
+              <span class="role-btn">User</span>
+            </label>
+            <label class="role-label">
+              <input type="radio" name="role" value="admin" required>
+              <span class="role-btn">Admin</span>
+            </label>
+          </div>
+
+          <!-- Username -->
+          <div class="input-group">
+            <input type="text" placeholder="Full Name" required>
+            <i class="fa-regular fa-user input-icon"></i>
+          </div>
+
+          <!-- Email -->
+          <div class="input-group">
+            <input type="email" placeholder="Email Address" required>
+            <i class="fa-regular fa-envelope input-icon"></i>
+          </div>
+
+          <!-- Password -->
+          <div class="input-group">
+            <input type="password" id="password" placeholder="Password" required>
+            <i class="fa-solid fa-lock input-icon"></i>
+            <i class="fa-regular fa-eye eye-toggle" onclick="togglePassword('password', this)"></i>
+          </div>
+
+          <!-- Confirm Password -->
+          <div class="input-group">
+            <input type="password" id="confirmPassword" placeholder="Confirm Password" required>
+            <i class="fa-solid fa-lock-open input-icon"></i>
+            <i class="fa-regular fa-eye eye-toggle" onclick="togglePassword('confirmPassword', this)"></i>
+          </div>
+
+          <!-- Extras -->
+          <div class="auth-extras" style="justify-content: flex-start;">
+            <label class="checkbox-group" style="font-size: 0.85rem; line-height: 1.4;">
+              <input type="checkbox" required>
+              <span>I accept the <a href="#" class="forgot-link">Terms & Conditions</a> and <a href="#" class="forgot-link">Privacy Policy</a></span>
+            </label>
+          </div>
+
+          <!-- Submit -->
+          <button type="submit" class="btn-submit">Register</button>
+
+          <!-- Footer -->
+          <div class="auth-footer">
+            Already have an account? <a href="login.html">Login</a>
+          </div>
+        </form>
+      </div>
+    </div>
+
+  </div>
+
+  <script>
+    function togglePassword(inputId, icon) {
+      const input = document.getElementById(inputId);
+      if (input.type === 'password') {
+        input.type = 'text';
+        icon.classList.remove('fa-eye');
+        icon.classList.add('fa-eye-slash');
+      } else {
+        input.type = 'password';
+        icon.classList.remove('fa-eye-slash');
+        icon.classList.add('fa-eye');
+      }
+    }
+
+    document.getElementById('signupForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      // Native validation has passed if this fires.
+      
+      // Additional simple check to ensure passwords match (optional, but good UX)
+      const pass = document.getElementById('password').value;
+      const conf = document.getElementById('confirmPassword').value;
+      if(pass !== conf) {
+        
+        return;
+      }
+
+      // Redirect to login upon successful registration
+      window.location.href = 'login.html';
+    });
+  </script>
+</body>
+</html>
+
+
+
+
+
+

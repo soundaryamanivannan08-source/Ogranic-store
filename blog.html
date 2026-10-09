@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Blog & Organic Journal - PureOrganic</title>
+  <link rel="stylesheet" href="blog.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="page-blog">
+  <!-- HEADER -->
+  <header class="header-static">
+    <a href="index.html" class="logo"><img src="Assest/images/logo_04.webp" alt="PureOrganic Logo"></a>
+    <div class="menu-toggle" id="mobile-menu"><i class="fa-solid fa-bars"></i></div>
+    <nav id="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="service.html">Service</a></li>
+        <li><a href="blog.html" class="active">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <div class="auth-mobile">
+        <a href="login.html" class="btn-login"><i class="fa-regular fa-user"></i> Login</a>
+      </div>
+    </nav>
+    <div class="auth-desktop">
+      <a href="login.html" class="btn-login"><i class="fa-regular fa-user"></i> Login</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- 1. BLOG HERO -->
+    <section class="blog-hero-section">
+      <div class="container">
+        <div class="blog-hero">
+          <span class="hero-pill"><i class="fa-solid fa-leaf"></i> PureOrganic Journal</span>
+          <h1>Fresh Ideas. Helpful Tips.<br><span class="highlight">Pure & Healthy Living.</span></h1>
+          <p>Explore inspiring recipes, seasonal harvesting guides, and nutritional wisdom to nurture your wellness naturally every single day.</p>
+          <div class="hero-tags-ribbon">
+            <a href="404.html" class="hero-tag"><i class="fa-solid fa-fire"></i> Trending</a>
+            <a href="404.html" class="hero-tag"><i class="fa-solid fa-apple-whole"></i> Nutrition</a>
+            <a href="404.html" class="hero-tag"><i class="fa-solid fa-seedling"></i> Farm Stories</a>
+            <a href="404.html" class="hero-tag"><i class="fa-solid fa-kitchen-set"></i> Quick Recipes</a>
+            <a href="404.html" class="hero-tag"><i class="fa-solid fa-earth-americas"></i> Sustainability</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 2. FEATURED POST / EDITOR'S PICK -->
+    <section class="featured-section">
+      <div class="container">
+        <div class="section-label-bar">
+          <h2>Editor's Featured Story</h2>
+        </div>
+        <div class="featured-post-card">
+          <div class="featured-post-img">
+            <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=60&fm=webp" alt="Fresh organic salad bowl">
+          </div>
+          <div class="featured-post-content">
+            <div class="featured-content-body">
+              <span class="category-pill accent"><i class="fa-solid fa-star"></i> Nutrition & Wellness</span>
+              <h2>The Ultimate Guide to Wholesome Meal Prepping for Busy Weeks</h2>
+              <p>Save precious time, reduce food waste, and eliminate stress by mastering mindful meal prep. Discover our nutritionist-backed roadmap for planning, batch-cooking, and storing farm-fresh meals that stay crisp all week.</p>
+            </div>
+            <div class="featured-post-footer">
+              <div class="author-meta">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=60&fm=webp" alt="Amanda Wright" class="author-avatar">
+                <div>
+                  <h4>Amanda Wright</h4>
+                  <span>August 28, 2024 • 8 min read</span>
+                </div>
+              </div>
+              <a href="404.html" class="btn-primary-custom">Read Full Article <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3. LATEST ARTICLES + SIDEBAR -->
+    <section class="container section-padding" id="articles">
+      <div class="blog-layout">
+        <!-- LEFT COLUMN: ARTICLES -->
+        <div class="blog-main-content">
+          <div class="section-header-flex">
+            <h2>Latest Fresh Stories</h2>
+            <a href="404.html" class="view-all-link">Browse All <i class="fa-solid fa-arrow-right"></i></a>
+          </div>
+          
+          <div class="article-grid-2-col">
+            <!-- Article 1 -->
+            <article class="blog-card">
+              <div class="blog-card-media">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?auto=format&fit=crop&w=600&q=60&fm=webp" alt="Healthy organic bowl">
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-cat">Health & Nutrition</span>
+                <h3 class="blog-card-title">10 Simple Habits for Cleaner Daily Eating</h3>
+                <p class="blog-card-excerpt">Small, sustainable diet shifts create lasting energy. Here are 10 easy habits to infuse your daily plates with pure organic power.</p>
+                <div class="blog-card-footer">
+                  <span><i class="fa-regular fa-calendar"></i> May 14, 2024</span>
+                  <a href="404.html" class="arrow-btn" aria-label="Read more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 2 -->
+            <article class="blog-card">
+              <div class="blog-card-media">
+                <img src="https://images.unsplash.com/photo-1610832958506-aa56368176cf?auto=format&fit=crop&w=600&q=60&fm=webp" alt="Seasonal produce citrus basket">
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-cat">Seasonal Guide</span>
+                <h3 class="blog-card-title">Seasonal Produce Calendar: What to Pick & When</h3>
+                <p class="blog-card-excerpt">Shopping by season locks in maximum micronutrients and optimal flavor. Learn what nature harvests best this current month.</p>
+                <div class="blog-card-footer">
+                  <span><i class="fa-regular fa-calendar"></i> May 07, 2024</span>
+                  <a href="404.html" class="arrow-btn" aria-label="Read more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 3 -->
+            <article class="blog-card">
+              <div class="blog-card-media">
+                <img src="https://images.unsplash.com/photo-1542838132-92c53300491e?auto=format&fit=crop&w=600&q=60&fm=webp" alt="Organic grocery shopping bag">
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-cat">Shopping Smart</span>
+                <h3 class="blog-card-title">Budget-Friendly Organic Shopping Secrets</h3>
+                <p class="blog-card-excerpt">Eating organic doesn't have to strain your wallet. Check out our proven hacks to fill your kitchen with premium produce for less.</p>
+                <div class="blog-card-footer">
+                  <span><i class="fa-regular fa-calendar"></i> Apr 30, 2024</span>
+                  <a href="404.html" class="arrow-btn" aria-label="Read more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </article>
+
+            <!-- Article 4 -->
+            <article class="blog-card">
+              <div class="blog-card-media">
+                <img src="https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=600&q=60&fm=webp" alt="20-minute dinner plate">
+              </div>
+              <div class="blog-card-content">
+                <span class="blog-card-cat">Quick Recipes</span>
+                <h3 class="blog-card-title">5 Quick 20-Minute Dinners for Busy Weeknights</h3>
+                <p class="blog-card-excerpt">Short on evening time? Whip up these flavorful, wholesome recipes packed with clean ingredients in just under 20 minutes.</p>
+                <div class="blog-card-footer">
+                  <span><i class="fa-regular fa-calendar"></i> Apr 22, 2024</span>
+                  <a href="404.html" class="arrow-btn" aria-label="Read more"><i class="fa-solid fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+
+        <!-- RIGHT COLUMN: SIDEBAR -->
+        <aside class="blog-sidebar">
+
+          <!-- Categories Widget -->
+          <div class="sidebar-widget">
+            <h4 class="widget-title"><i class="fa-solid fa-layer-group"></i> Topics</h4>
+            <ul class="cat-list">
+              <li>
+                <a href="404.html">
+                  <span class="cat-title"><i class="fa-regular fa-heart"></i> Health & Wellness</span>
+                  <span class="cat-count">12</span>
+                </a>
+              </li>
+              <li>
+                <a href="404.html">
+                  <span class="cat-title"><i class="fa-solid fa-seedling"></i> Organic Guides</span>
+                  <span class="cat-count">10</span>
+                </a>
+              </li>
+              <li>
+                <a href="404.html">
+                  <span class="cat-title"><i class="fa-solid fa-basket-shopping"></i> Shopping Smart</span>
+                  <span class="cat-count">8</span>
+                </a>
+              </li>
+              <li>
+                <a href="404.html">
+                  <span class="cat-title"><i class="fa-solid fa-kitchen-set"></i> Clean Recipes</span>
+                  <span class="cat-count">9</span>
+                </a>
+              </li>
+              <li>
+                <a href="404.html">
+                  <span class="cat-title"><i class="fa-solid fa-recycle"></i> Sustainability</span>
+                  <span class="cat-count">5</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- Popular Posts Widget -->
+          <div class="sidebar-widget">
+            <h4 class="widget-title"><i class="fa-solid fa-fire-flame-curved"></i> Most Read</h4>
+            <div class="pop-post-list">
+              <a href="404.html" class="pop-post">
+                <img src="https://images.unsplash.com/photo-1498557850523-fd3d118b962e?auto=format&fit=crop&w=200&q=60&fm=webp" alt="Organic berries">
+                <div>
+                  <h5>5 Must-Have Fruits for Natural Immunity</h5>
+                  <span>April 22, 2024</span>
+                </div>
+              </a>
+              <a href="404.html" class="pop-post">
+                <img src="https://images.unsplash.com/photo-1490645935967-10de6ba17061?auto=format&fit=crop&w=200&q=60&fm=webp" alt="Pantry organization">
+                <div>
+                  <h5>How to Organize an Eco Pantry Like a Pro</h5>
+                  <span>April 15, 2024</span>
+                </div>
+              </a>
+              <a href="404.html" class="pop-post">
+                <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=200&q=60&fm=webp" alt="Local farming">
+                <div>
+                  <h5>Sustainable Sourcing: Small Steps, Big Impact</h5>
+                  <span>April 08, 2024</span>
+                </div>
+              </a>
+            </div>
+          </div>
+
+          <!-- Sidebar Promo Card -->
+          <div class="sidebar-promo-card">
+            <div class="promo-icon"><i class="fa-solid fa-envelope-open-text"></i></div>
+            <h4>Farm Fresh Newsletter</h4>
+            <p>Get weekly seasonal recipes, farm updates, and exclusive grocery discounts right to your inbox.</p>
+            <form action="404.html" onsubmit="window.location.href='404.html'; return false;">
+              <input type="email" placeholder="Your email address" required>
+              <button type="submit">Join Community</button>
+            </form>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- 4. VIDEO TUTORIALS & STORIES -->
+    <section class="video-section section-padding">
+      <div class="container">
+        <div class="section-header-flex">
+          <h2>Masterclasses & Farm Stories</h2>
+          <a href="404.html" class="view-all-link" style="color: #a4d678;">Watch All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="video-grid">
+          <div class="video-card">
+            <img src="https://images.unsplash.com/photo-1556910103-1c02745aae4d?auto=format&fit=crop&w=600&q=60&fm=webp" alt="Cooking Masterclass">
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left: 4px;"></i></div>
+            <div class="video-overlay">
+              <h4>Mastering Handcrafted Organic Pasta</h4>
+              <span>By Chef David • 12 min watch</span>
+            </div>
+          </div>
+          <div class="video-card">
+            <img src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=600&q=60&fm=webp" alt="Kitchen Prep Session">
+            <div class="play-btn"><i class="fa-solid fa-play" style="margin-left: 4px;"></i></div>
+            <div class="video-overlay">
+              <h4>5 High-Protein Plant-Based Bowls</h4>
+              <span>By Nutritionist Amanda • 8 min watch</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-grid container">
+      <div class="footer-col">
+        <a href="index.html" class="logo"><img src="Assest/images/logo_04.webp" alt="PureOrganic Logo"></a>
+        <p style="margin-top: 1rem;">Your one-stop destination for freshly picked organic harvest and pure grocery essentials.</p>
+        <div class="socials" style="margin-top: 1.25rem;">
+          <a href="404.html" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+          <a href="404.html" aria-label="Twitter"><i class="fa-brands fa-twitter"></i></a>
+          <a href="404.html" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h4>Explore</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Categories</h4>
+        <ul>
+          <li><a href="404.html">Fresh Greens</a></li>
+          <li><a href="404.html">Organic Fruits</a></li>
+          <li><a href="404.html">Artisan Dairy</a></li>
+          <li><a href="404.html">Farm Pantry</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Contact Info</h4>
+        <ul>
+          <li><i class="fa-solid fa-location-dot"></i> MMR Complex, Chinna Thirupathi, Salem, TN 636008</li>
+          <li><i class="fa-solid fa-phone"></i> 9876543210</li>
+          <li><i class="fa-solid fa-envelope"></i> info@PureOrganic.com</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PureOrganic Food Store. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
